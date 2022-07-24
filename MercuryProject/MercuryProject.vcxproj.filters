@@ -53,6 +53,27 @@
     <Filter Include="Engine\03. Managers\Scene">
       <UniqueIdentifier>{f4e1db84-f017-44ee-aa22-2600b69ab3ee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\05. Scene\Start_Scene">
+      <UniqueIdentifier>{bbd4d3f2-097b-4297-980f-30af4cae33df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Managers\Event">
+      <UniqueIdentifier>{df507521-2862-4631-99e6-3a2aa9651a22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\01. Header\Func">
+      <UniqueIdentifier>{06705259-67ae-489b-9e5e-a40d4fcfa663}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\01. Header\Func\Event">
+      <UniqueIdentifier>{7859497a-6243-4c11-a1af-54f44953c951}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\01. Header\Func\Global">
+      <UniqueIdentifier>{f986c3cd-308c-4a9c-a9bb-7c2c0e1092ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Managers\Collision">
+      <UniqueIdentifier>{d5de76c4-85cc-4bb2-a9e0-975a898bb932}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\07. Component\Collider">
+      <UniqueIdentifier>{0bce54ce-ab33-480d-b11c-2ae812a03da4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -98,6 +119,27 @@
     <ClInclude Include="CSceneMgr.h">
       <Filter>Engine\03. Managers\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="CScene_Start.h">
+      <Filter>Engine\05. Scene\Start_Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CEventMgr.h">
+      <Filter>Engine\03. Managers\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="EventFunc.h">
+      <Filter>Engine\01. Header\Func\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalFunc.h">
+      <Filter>Engine\01. Header\Func\Global</Filter>
+    </ClInclude>
+    <ClInclude Include="CCollisionMgr.h">
+      <Filter>Engine\03. Managers\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CCollider.h">
+      <Filter>Engine\07. Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="CComponent.h">
+      <Filter>Engine\07. Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MercuryProject.rc">
@@ -139,6 +181,27 @@
     </ClCompile>
     <ClCompile Include="CSceneMgr.cpp">
       <Filter>Engine\03. Managers\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene_Start.cpp">
+      <Filter>Engine\05. Scene\Start_Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CEventMgr.cpp">
+      <Filter>Engine\03. Managers\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="EventFunc.cpp">
+      <Filter>Engine\01. Header\Func\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalFunc.cpp">
+      <Filter>Engine\01. Header\Func\Global</Filter>
+    </ClCompile>
+    <ClCompile Include="CCollisionMgr.cpp">
+      <Filter>Engine\03. Managers\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CCollider.cpp">
+      <Filter>Engine\07. Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="CComponent.cpp">
+      <Filter>Engine\07. Component</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

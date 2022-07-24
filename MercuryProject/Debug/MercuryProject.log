@@ -1,11 +1,14 @@
-﻿  CGameCore.cpp
-  CKeyMgr.cpp
+﻿  CEventMgr.cpp
+  CGameCore.cpp
   CObject.cpp
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CObject.cpp(38,19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CObject.cpp(37,19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CObject.cpp(36,19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CObject.cpp(35,19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CObject.cpp(45,19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CObject.cpp(44,19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CObject.cpp(43,19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CObject.cpp(42,19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   CPathMgr.cpp
+  CScene.cpp
+  CSceneMgr.cpp
+  CScene_Start.cpp
   CTimeMgr.cpp
-  MercuryProject.cpp
+  EventFunc.cpp
   MercuryProject.vcxproj -> C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\Output\bin_debug\MercuryProject.exe

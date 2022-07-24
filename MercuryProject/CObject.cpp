@@ -7,6 +7,8 @@
 CObject::CObject()
 	:m_vPos{}
 	, m_vScale{}
+	, m_bDead(false)
+	, m_eType(GROUP_TYPE::DEFAULT)
 {
 }
 
@@ -27,6 +29,11 @@ void CObject::update()
 		vPos.x -= 100.f * DeltaTime;
 		SetPos(vPos);
 	}
+}
+
+void CObject::finalupdate()
+{
+
 }
 
 void CObject::render(HDC _dc)

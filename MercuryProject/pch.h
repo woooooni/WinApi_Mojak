@@ -25,4 +25,5 @@ using std::wstring;
 #include <math.h>
 #include "define.h"
 #include "struct.h"
-
+#include "GlobalFunc.h"
+#include "EventFunc.h"

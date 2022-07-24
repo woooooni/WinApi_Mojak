@@ -35,12 +35,15 @@ enum class GROUP_TYPE
 
 enum class SCENE_TYPE
 {
-	TOOL,
 	START,
+	END
+};
 
-	STAGE_01,
-	STAGE_02,
-
+enum class EVENT_TYPE 
+{
+	CREATE_OBJECT,
+	SCENE_CHANGE,
+	DELETE_OBJECT,
 	END,
 };
 

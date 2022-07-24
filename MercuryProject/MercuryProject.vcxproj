@@ -150,6 +150,7 @@
   <ItemGroup>
     <ClInclude Include="CGameCore.h" />
     <ClInclude Include="CKeyMgr.h" />
+    <ClInclude Include="CObject.h" />
     <ClInclude Include="CPathMgr.h" />
     <ClInclude Include="CTimeMgr.h" />
     <ClInclude Include="define.h" />
@@ -163,6 +164,7 @@
   <ItemGroup>
     <ClCompile Include="CGameCore.cpp" />
     <ClCompile Include="CKeyMgr.cpp" />
+    <ClCompile Include="CObject.cpp" />
     <ClCompile Include="CPathMgr.cpp" />
     <ClCompile Include="CTimeMgr.cpp" />
     <ClCompile Include="MercuryProject.cpp" />

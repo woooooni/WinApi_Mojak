@@ -1,6 +1,6 @@
 #pragma once
 
-
+class CObject;
 class CGameCore
 {
 	SINGLETON(CGameCore);
@@ -13,7 +13,7 @@ private:
 	HBRUSH	m_arrBrush[(UINT)BRUSH_TYPE::END];
 	HPEN	m_arrPen[(UINT)PEN_TYPE::END];
 
-
+	CObject* obj;
 private:
 	void CreateBrushPen();
 	void Clear();

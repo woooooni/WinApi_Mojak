@@ -3,11 +3,13 @@
 #include "CTimeMgr.h"
 #include "CKeyMgr.h"
 #include "CPathMgr.h"
+#include "CObject.h"
 
 CGameCore::CGameCore()
 	: m_hWnd(0)
 	, m_ptResolution{}
 	, m_hDC(0)
+	, obj{}
 {
 }
 
@@ -31,7 +33,9 @@ int CGameCore::init(HWND _hWnd, POINT _ptResolution)
 	CTimeMgr::GetInst()->init();
 	CKeyMgr::GetInst()->init();
 
-
+	obj = new CObject;
+	obj->SetPos(Vec2(600, 400));
+	obj->SetScale(Vec2(100, 100));
 	return S_OK;
 }
 
@@ -41,10 +45,13 @@ void CGameCore::progress()
 	// MANAGER UPDATE
 	CTimeMgr::GetInst()->update();
 	CKeyMgr::GetInst()->update();
+	
 	//SCENE UPDATE
+	obj->update();
 
 	//RENDER
 	CTimeMgr::GetInst()->render();
+	obj->render(m_hDC);
 }
 
 void CGameCore::ChangeWindowSize(POINT _ptResolution, bool _bMenu)

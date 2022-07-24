@@ -29,6 +29,9 @@
     <Filter Include="Engine\03. Managers\Path">
       <UniqueIdentifier>{e5a09255-6964-4a68-9802-0dd442e4a2ca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\04. Object">
+      <UniqueIdentifier>{04eeb215-4f6c-492b-a88a-ffcda0541c3f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -62,6 +65,9 @@
     <ClInclude Include="CPathMgr.h">
       <Filter>Engine\03. Managers\Path</Filter>
     </ClInclude>
+    <ClInclude Include="CObject.h">
+      <Filter>Engine\04. Object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MercuryProject.rc">
@@ -91,6 +97,9 @@
     </ClCompile>
     <ClCompile Include="CPathMgr.cpp">
       <Filter>Engine\03. Managers\Path</Filter>
+    </ClCompile>
+    <ClCompile Include="CObject.cpp">
+      <Filter>Engine\04. Object</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

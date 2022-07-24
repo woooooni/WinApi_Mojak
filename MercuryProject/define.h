@@ -9,8 +9,16 @@
 						private:\
 							type();\
 							~type();
+
+
 #define DeltaTime CTimeMgr::GetInst()->GetfDT()
 #define PI 3.1415926535
+
+
+#define KEY_SITUATION(key) CKeyMgr::GetInst()->GetKeyState(key)
+#define KEY_TAP(key) KEY_SITUATION(key) == KEY_STATE::TAP
+#define KEY_HOLD(key) KEY_SITUATION(key) == KEY_STATE::HOLD
+#define KEY_AWAY(AWAY) KEY_SITUATION(key) == KEY_STATE::AWAY
 
 enum class GROUP_TYPE 
 {

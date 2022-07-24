@@ -21,7 +21,7 @@ void CObject::init()
 
 void CObject::update()
 {
-	if (CKeyMgr::GetInst()->GetKeyState(KEY::LEFT_ARROW) == KEY_STATE::HOLD)
+	if (KEY_HOLD(KEY::LEFT_ARROW))
 	{
 		Vec2 vPos = GetPos();
 		vPos.x -= 100.f * DeltaTime;

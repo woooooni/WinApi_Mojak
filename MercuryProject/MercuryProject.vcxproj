@@ -152,12 +152,15 @@
     <ClInclude Include="CKeyMgr.h" />
     <ClInclude Include="CObject.h" />
     <ClInclude Include="CPathMgr.h" />
+    <ClInclude Include="CScene.h" />
+    <ClInclude Include="CSceneMgr.h" />
     <ClInclude Include="CTimeMgr.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MercuryProject.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="SelectGDI.h" />
     <ClInclude Include="struct.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -166,8 +169,11 @@
     <ClCompile Include="CKeyMgr.cpp" />
     <ClCompile Include="CObject.cpp" />
     <ClCompile Include="CPathMgr.cpp" />
+    <ClCompile Include="CScene.cpp" />
+    <ClCompile Include="CSceneMgr.cpp" />
     <ClCompile Include="CTimeMgr.cpp" />
     <ClCompile Include="MercuryProject.cpp" />
+    <ClCompile Include="SelectGDI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MercuryProject.rc" />

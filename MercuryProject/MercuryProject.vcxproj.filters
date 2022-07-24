@@ -32,6 +32,27 @@
     <Filter Include="Engine\04. Object">
       <UniqueIdentifier>{04eeb215-4f6c-492b-a88a-ffcda0541c3f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\05. Scene">
+      <UniqueIdentifier>{80645f33-6db0-46bd-b21d-f217a36ea69c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\06. Resource">
+      <UniqueIdentifier>{3621cd79-6a7f-4c2d-9cda-4c3a5c1496f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\07. Component">
+      <UniqueIdentifier>{44c939a0-b718-4407-98cd-e2898a348b03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\08. Module">
+      <UniqueIdentifier>{10ff6850-7a9c-4d3e-9ece-5cfa3b3576d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\09. Factory">
+      <UniqueIdentifier>{d8095b39-4368-4740-bec4-2fe821a81fc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04. Object\Player">
+      <UniqueIdentifier>{463091bd-1b78-4d32-8685-f41990bca06e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Managers\Scene">
+      <UniqueIdentifier>{f4e1db84-f017-44ee-aa22-2600b69ab3ee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -68,6 +89,15 @@
     <ClInclude Include="CObject.h">
       <Filter>Engine\04. Object</Filter>
     </ClInclude>
+    <ClInclude Include="SelectGDI.h">
+      <Filter>Engine\08. Module</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>Engine\05. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneMgr.h">
+      <Filter>Engine\03. Managers\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MercuryProject.rc">
@@ -100,6 +130,15 @@
     </ClCompile>
     <ClCompile Include="CObject.cpp">
       <Filter>Engine\04. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectGDI.cpp">
+      <Filter>Engine\08. Module</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>Engine\05. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneMgr.cpp">
+      <Filter>Engine\03. Managers\Scene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,2 +1,5 @@
-﻿  MercuryProject.cpp
+﻿  CGameCore.cpp
+  CKeyMgr.cpp
+  CTimeMgr.cpp
+  MercuryProject.cpp
   MercuryProject.vcxproj -> C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\Debug\MercuryProject.exe

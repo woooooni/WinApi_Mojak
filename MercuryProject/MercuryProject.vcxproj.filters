@@ -20,6 +20,15 @@
     <Filter Include="Engine\03. Managers">
       <UniqueIdentifier>{306ac920-ed35-4b6d-b2ee-50b1eab42906}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Managers\Key">
+      <UniqueIdentifier>{9390c919-ec72-4a4c-af3f-e63666dcbc43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Managers\Time">
+      <UniqueIdentifier>{a9ae00b4-af07-4594-9aa5-1370ad2e5038}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Managers\Path">
+      <UniqueIdentifier>{e5a09255-6964-4a68-9802-0dd442e4a2ca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -41,6 +50,18 @@
       <Filter>Engine\01. Header</Filter>
     </ClInclude>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="struct.h">
+      <Filter>Engine\01. Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CTimeMgr.h">
+      <Filter>Engine\03. Managers\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="CKeyMgr.h">
+      <Filter>Engine\03. Managers\Key</Filter>
+    </ClInclude>
+    <ClInclude Include="CPathMgr.h">
+      <Filter>Engine\03. Managers\Path</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MercuryProject.rc">
@@ -61,6 +82,15 @@
     </ClCompile>
     <ClCompile Include="CGameCore.cpp">
       <Filter>Engine\02. Core</Filter>
+    </ClCompile>
+    <ClCompile Include="CTimeMgr.cpp">
+      <Filter>Engine\03. Managers\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="CKeyMgr.cpp">
+      <Filter>Engine\03. Managers\Key</Filter>
+    </ClCompile>
+    <ClCompile Include="CPathMgr.cpp">
+      <Filter>Engine\03. Managers\Path</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -10,7 +10,7 @@
 							type();\
 							~type();
 
-
+#define CLONE(type) type* Clone() { return new type(*this); }
 #define DeltaTime CTimeMgr::GetInst()->GetfDT()
 #define PI 3.1415926535
 

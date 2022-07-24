@@ -74,6 +74,9 @@
     <Filter Include="Engine\07. Component\Collider">
       <UniqueIdentifier>{0bce54ce-ab33-480d-b11c-2ae812a03da4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Managers\Camera">
+      <UniqueIdentifier>{7826e49d-d6f8-4952-8158-4a0dc428518b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -131,14 +134,14 @@
     <ClInclude Include="GlobalFunc.h">
       <Filter>Engine\01. Header\Func\Global</Filter>
     </ClInclude>
-    <ClInclude Include="CCollisionMgr.h">
-      <Filter>Engine\03. Managers\Collision</Filter>
-    </ClInclude>
     <ClInclude Include="CCollider.h">
       <Filter>Engine\07. Component\Collider</Filter>
     </ClInclude>
     <ClInclude Include="CComponent.h">
       <Filter>Engine\07. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="CCollisionMgr.h">
+      <Filter>Engine\03. Managers\Collision</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

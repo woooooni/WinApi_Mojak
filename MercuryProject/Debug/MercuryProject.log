@@ -1,14 +1,40 @@
-﻿  CEventMgr.cpp
+﻿  CCollider.cpp
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CCollider.cpp(50,20): error C2653: 'CCamera': 클래스 또는 네임스페이스 이름이 아닙니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CCollider.cpp(50,29): error C3861: 'GetInst': 식별자를 찾을 수 없습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CCollider.cpp(149,14): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CCollider.cpp(150,13): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CCollider.cpp(151,68): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CCollider.cpp(152,69): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  CCollisionMgr.cpp
+  CComponent.cpp
+  CEventMgr.cpp
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\GlobalFunc.h(8,1): error C2678: 이항 '!=': 왼쪽 피연산자로 'nullptr' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\guiddef.h(197,15): message : 'bool operator !=(const GUID &,const GUID &)'일 수 있습니다[인수 종속성을 조회하여 발견].
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\GlobalFunc.h(8,1): message : 인수 목록 '(nullptr, _Ty)'을(를) 일치시키는 동안
+          with
+          [
+              _Ty=tEvent
+          ]
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CEventMgr.cpp(16): message : 컴파일되는 함수 템플릿 인스턴스화 'void Safe_Delete_Vec<tEvent>(std::vector<tEvent,std::allocator<tEvent>> &)'에 대한 참조를 확인하세요.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\GlobalFunc.h(10,1): error C2440: 'delete': '_Ty'에서 'void*'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=tEvent
+          ]
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\GlobalFunc.h(10,17): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
   CGameCore.cpp
+  CKeyMgr.cpp
   CObject.cpp
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CObject.cpp(46,19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CObject.cpp(45,19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CObject.cpp(44,19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CObject.cpp(43,19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CObject.cpp(42,19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   CPathMgr.cpp
   CScene.cpp
   CSceneMgr.cpp
   CScene_Start.cpp
   CTimeMgr.cpp
   EventFunc.cpp
-  MercuryProject.vcxproj -> C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\Output\bin_debug\MercuryProject.exe
+  GlobalFunc.cpp
+  MercuryProject.cpp
+  SelectGDI.cpp

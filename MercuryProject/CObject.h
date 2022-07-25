@@ -12,7 +12,10 @@ private:
 	bool		m_bDead;
 	GROUP_TYPE	m_eType;
 
+
+	
 	CCollider*	m_pCollider;
+
 public:
 	Vec2 GetPos() { return m_vPos; }
 	Vec2 GetScale() { return m_vScale; }

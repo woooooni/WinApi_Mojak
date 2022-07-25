@@ -39,12 +39,20 @@ enum class SCENE_TYPE
 	END
 };
 
+enum class COMPONENT_TYPE 
+{
+	COLLIDER,
+	ANIMATOR,
+	RIGIDBODY,
+	END
+};
+
 enum class EVENT_TYPE 
 {
 	CREATE_OBJECT,
 	SCENE_CHANGE,
 	DELETE_OBJECT,
-	END,
+	END
 };
 
 enum class BRUSH_TYPE

@@ -8,74 +8,74 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Engine">
+    <Filter Include="Game">
       <UniqueIdentifier>{cd7d7550-5ab9-4d2d-ae3e-12e686daee19}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\01. Header">
+    <Filter Include="Game\01. Header">
       <UniqueIdentifier>{eaef8d43-0f68-4770-9d77-4a5344d41a00}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\02. Core">
-      <UniqueIdentifier>{777fd30d-ff6f-4765-8928-3eaaa6ee080b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\03. Managers">
-      <UniqueIdentifier>{306ac920-ed35-4b6d-b2ee-50b1eab42906}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\03. Managers\Key">
-      <UniqueIdentifier>{9390c919-ec72-4a4c-af3f-e63666dcbc43}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\03. Managers\Time">
-      <UniqueIdentifier>{a9ae00b4-af07-4594-9aa5-1370ad2e5038}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\03. Managers\Path">
-      <UniqueIdentifier>{e5a09255-6964-4a68-9802-0dd442e4a2ca}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\04. Object">
-      <UniqueIdentifier>{04eeb215-4f6c-492b-a88a-ffcda0541c3f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\05. Scene">
-      <UniqueIdentifier>{80645f33-6db0-46bd-b21d-f217a36ea69c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\06. Resource">
-      <UniqueIdentifier>{3621cd79-6a7f-4c2d-9cda-4c3a5c1496f7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\07. Component">
-      <UniqueIdentifier>{44c939a0-b718-4407-98cd-e2898a348b03}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\08. Module">
-      <UniqueIdentifier>{10ff6850-7a9c-4d3e-9ece-5cfa3b3576d4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\09. Factory">
-      <UniqueIdentifier>{d8095b39-4368-4740-bec4-2fe821a81fc9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\04. Object\Player">
-      <UniqueIdentifier>{463091bd-1b78-4d32-8685-f41990bca06e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\03. Managers\Scene">
-      <UniqueIdentifier>{f4e1db84-f017-44ee-aa22-2600b69ab3ee}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\05. Scene\Start_Scene">
-      <UniqueIdentifier>{bbd4d3f2-097b-4297-980f-30af4cae33df}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\03. Managers\Event">
-      <UniqueIdentifier>{df507521-2862-4631-99e6-3a2aa9651a22}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\01. Header\Func">
+    <Filter Include="Game\01. Header\Func">
       <UniqueIdentifier>{06705259-67ae-489b-9e5e-a40d4fcfa663}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\01. Header\Func\Event">
+    <Filter Include="Game\01. Header\Func\Event">
       <UniqueIdentifier>{7859497a-6243-4c11-a1af-54f44953c951}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\01. Header\Func\Global">
+    <Filter Include="Game\01. Header\Func\Global">
       <UniqueIdentifier>{f986c3cd-308c-4a9c-a9bb-7c2c0e1092ba}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\03. Managers\Collision">
+    <Filter Include="Game\02. Core">
+      <UniqueIdentifier>{777fd30d-ff6f-4765-8928-3eaaa6ee080b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\03. Managers">
+      <UniqueIdentifier>{306ac920-ed35-4b6d-b2ee-50b1eab42906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\03. Managers\Key">
+      <UniqueIdentifier>{9390c919-ec72-4a4c-af3f-e63666dcbc43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\03. Managers\Time">
+      <UniqueIdentifier>{a9ae00b4-af07-4594-9aa5-1370ad2e5038}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\03. Managers\Path">
+      <UniqueIdentifier>{e5a09255-6964-4a68-9802-0dd442e4a2ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\03. Managers\Scene">
+      <UniqueIdentifier>{f4e1db84-f017-44ee-aa22-2600b69ab3ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\03. Managers\Event">
+      <UniqueIdentifier>{df507521-2862-4631-99e6-3a2aa9651a22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\03. Managers\Collision">
       <UniqueIdentifier>{d5de76c4-85cc-4bb2-a9e0-975a898bb932}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\07. Component\Collider">
+    <Filter Include="Game\03. Managers\Camera">
+      <UniqueIdentifier>{7826e49d-d6f8-4952-8158-4a0dc428518b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04. Object">
+      <UniqueIdentifier>{04eeb215-4f6c-492b-a88a-ffcda0541c3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04. Object\Player">
+      <UniqueIdentifier>{463091bd-1b78-4d32-8685-f41990bca06e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\05. Scene">
+      <UniqueIdentifier>{80645f33-6db0-46bd-b21d-f217a36ea69c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\05. Scene\Start_Scene">
+      <UniqueIdentifier>{bbd4d3f2-097b-4297-980f-30af4cae33df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\06. Resource">
+      <UniqueIdentifier>{3621cd79-6a7f-4c2d-9cda-4c3a5c1496f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\07. Component">
+      <UniqueIdentifier>{44c939a0-b718-4407-98cd-e2898a348b03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\07. Component\Collider">
       <UniqueIdentifier>{0bce54ce-ab33-480d-b11c-2ae812a03da4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\03. Managers\Camera">
-      <UniqueIdentifier>{7826e49d-d6f8-4952-8158-4a0dc428518b}</UniqueIdentifier>
+    <Filter Include="Game\08. Module">
+      <UniqueIdentifier>{10ff6850-7a9c-4d3e-9ece-5cfa3b3576d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\09. Factory">
+      <UniqueIdentifier>{d8095b39-4368-4740-bec4-2fe821a81fc9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -92,56 +92,56 @@
       <Filter>Default</Filter>
     </ClInclude>
     <ClInclude Include="CGameCore.h">
-      <Filter>Engine\02. Core</Filter>
+      <Filter>Game\02. Core</Filter>
     </ClInclude>
     <ClInclude Include="define.h">
-      <Filter>Engine\01. Header</Filter>
+      <Filter>Game\01. Header</Filter>
     </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="struct.h">
-      <Filter>Engine\01. Header</Filter>
+      <Filter>Game\01. Header</Filter>
     </ClInclude>
     <ClInclude Include="CTimeMgr.h">
-      <Filter>Engine\03. Managers\Time</Filter>
+      <Filter>Game\03. Managers\Time</Filter>
     </ClInclude>
     <ClInclude Include="CKeyMgr.h">
-      <Filter>Engine\03. Managers\Key</Filter>
+      <Filter>Game\03. Managers\Key</Filter>
     </ClInclude>
     <ClInclude Include="CPathMgr.h">
-      <Filter>Engine\03. Managers\Path</Filter>
+      <Filter>Game\03. Managers\Path</Filter>
     </ClInclude>
     <ClInclude Include="CObject.h">
-      <Filter>Engine\04. Object</Filter>
+      <Filter>Game\04. Object</Filter>
     </ClInclude>
     <ClInclude Include="SelectGDI.h">
-      <Filter>Engine\08. Module</Filter>
+      <Filter>Game\08. Module</Filter>
     </ClInclude>
     <ClInclude Include="CScene.h">
-      <Filter>Engine\05. Scene</Filter>
+      <Filter>Game\05. Scene</Filter>
     </ClInclude>
     <ClInclude Include="CSceneMgr.h">
-      <Filter>Engine\03. Managers\Scene</Filter>
+      <Filter>Game\03. Managers\Scene</Filter>
     </ClInclude>
     <ClInclude Include="CScene_Start.h">
-      <Filter>Engine\05. Scene\Start_Scene</Filter>
+      <Filter>Game\05. Scene\Start_Scene</Filter>
     </ClInclude>
     <ClInclude Include="CEventMgr.h">
-      <Filter>Engine\03. Managers\Event</Filter>
+      <Filter>Game\03. Managers\Event</Filter>
     </ClInclude>
     <ClInclude Include="EventFunc.h">
-      <Filter>Engine\01. Header\Func\Event</Filter>
+      <Filter>Game\01. Header\Func\Event</Filter>
     </ClInclude>
     <ClInclude Include="GlobalFunc.h">
-      <Filter>Engine\01. Header\Func\Global</Filter>
+      <Filter>Game\01. Header\Func\Global</Filter>
     </ClInclude>
     <ClInclude Include="CCollider.h">
-      <Filter>Engine\07. Component\Collider</Filter>
+      <Filter>Game\07. Component\Collider</Filter>
     </ClInclude>
     <ClInclude Include="CComponent.h">
-      <Filter>Engine\07. Component</Filter>
+      <Filter>Game\07. Component</Filter>
     </ClInclude>
     <ClInclude Include="CCollisionMgr.h">
-      <Filter>Engine\03. Managers\Collision</Filter>
+      <Filter>Game\03. Managers\Collision</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -162,49 +162,49 @@
       <Filter>Default</Filter>
     </ClCompile>
     <ClCompile Include="CGameCore.cpp">
-      <Filter>Engine\02. Core</Filter>
+      <Filter>Game\02. Core</Filter>
     </ClCompile>
     <ClCompile Include="CTimeMgr.cpp">
-      <Filter>Engine\03. Managers\Time</Filter>
+      <Filter>Game\03. Managers\Time</Filter>
     </ClCompile>
     <ClCompile Include="CKeyMgr.cpp">
-      <Filter>Engine\03. Managers\Key</Filter>
+      <Filter>Game\03. Managers\Key</Filter>
     </ClCompile>
     <ClCompile Include="CPathMgr.cpp">
-      <Filter>Engine\03. Managers\Path</Filter>
+      <Filter>Game\03. Managers\Path</Filter>
     </ClCompile>
     <ClCompile Include="CObject.cpp">
-      <Filter>Engine\04. Object</Filter>
+      <Filter>Game\04. Object</Filter>
     </ClCompile>
     <ClCompile Include="SelectGDI.cpp">
-      <Filter>Engine\08. Module</Filter>
+      <Filter>Game\08. Module</Filter>
     </ClCompile>
     <ClCompile Include="CScene.cpp">
-      <Filter>Engine\05. Scene</Filter>
+      <Filter>Game\05. Scene</Filter>
     </ClCompile>
     <ClCompile Include="CSceneMgr.cpp">
-      <Filter>Engine\03. Managers\Scene</Filter>
+      <Filter>Game\03. Managers\Scene</Filter>
     </ClCompile>
     <ClCompile Include="CScene_Start.cpp">
-      <Filter>Engine\05. Scene\Start_Scene</Filter>
+      <Filter>Game\05. Scene\Start_Scene</Filter>
     </ClCompile>
     <ClCompile Include="CEventMgr.cpp">
-      <Filter>Engine\03. Managers\Event</Filter>
+      <Filter>Game\03. Managers\Event</Filter>
     </ClCompile>
     <ClCompile Include="EventFunc.cpp">
-      <Filter>Engine\01. Header\Func\Event</Filter>
+      <Filter>Game\01. Header\Func\Event</Filter>
     </ClCompile>
     <ClCompile Include="GlobalFunc.cpp">
-      <Filter>Engine\01. Header\Func\Global</Filter>
+      <Filter>Game\01. Header\Func\Global</Filter>
     </ClCompile>
     <ClCompile Include="CCollisionMgr.cpp">
-      <Filter>Engine\03. Managers\Collision</Filter>
+      <Filter>Game\03. Managers\Collision</Filter>
     </ClCompile>
     <ClCompile Include="CCollider.cpp">
-      <Filter>Engine\07. Component\Collider</Filter>
+      <Filter>Game\07. Component\Collider</Filter>
     </ClCompile>
     <ClCompile Include="CComponent.cpp">
-      <Filter>Engine\07. Component</Filter>
+      <Filter>Game\07. Component</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

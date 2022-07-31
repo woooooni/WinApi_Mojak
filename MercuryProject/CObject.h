@@ -11,8 +11,6 @@ private:
 
 	bool		m_bDead;
 	GROUP_TYPE	m_eType;
-
-
 	
 	CCollider*	m_pCollider;
 

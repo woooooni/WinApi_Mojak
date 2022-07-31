@@ -6,7 +6,6 @@
 #include "CTimeMgr.h"
 #include "CTexture.h"
 #include "CResMgr.h"
-#include "GlobalFunc.h"
 
 CCamera::CCamera()
 	: m_pTargetObj(nullptr)
@@ -23,7 +22,7 @@ CCamera::~CCamera()
 }
 
 
-void CCamera::Init()
+void CCamera::init()
 {
 	Vec2 vResolution = CGameCore::GetInst()->GetResoultion();
 	m_pVeilTex = CResMgr::GetInst()->CreateTexture(L"CameraVeil", (UINT)vResolution.x, (UINT)vResolution.y);

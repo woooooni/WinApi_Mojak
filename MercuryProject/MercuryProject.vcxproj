@@ -75,6 +75,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)Output\bin_debug\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -91,10 +92,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MaxFilesInUnityFile>0</MaxFilesInUnityFile>
+      <MinFilesInUnityFile>10</MinFilesInUnityFile>
+      <UnityFilesDirectory>$(ProjectDir)Unity\\</UnityFilesDirectory>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -107,10 +111,13 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <MaxFilesInUnityFile>0</MaxFilesInUnityFile>
+      <MinFilesInUnityFile>10</MinFilesInUnityFile>
+      <UnityFilesDirectory>$(ProjectDir)Unity\\</UnityFilesDirectory>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -159,6 +166,7 @@
     <ClInclude Include="CKeyMgr.h" />
     <ClInclude Include="CObject.h" />
     <ClInclude Include="CPathMgr.h" />
+    <ClInclude Include="CPlayer.h" />
     <ClInclude Include="CRes.h" />
     <ClInclude Include="CResMgr.h" />
     <ClInclude Include="CRigidBody.h" />
@@ -168,10 +176,13 @@
     <ClInclude Include="CStateMachine.h" />
     <ClInclude Include="CTexture.h" />
     <ClInclude Include="CTimeMgr.h" />
+    <ClInclude Include="CUI.h" />
+    <ClInclude Include="CUIMgr.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="EventFunc.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="GlobalFunc.h" />
+    <ClInclude Include="func.h" />
+    <ClInclude Include="global.h" />
     <ClInclude Include="MercuryProject.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
@@ -191,6 +202,7 @@
     <ClCompile Include="CKeyMgr.cpp" />
     <ClCompile Include="CObject.cpp" />
     <ClCompile Include="CPathMgr.cpp" />
+    <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="CRes.cpp" />
     <ClCompile Include="CResMgr.cpp" />
     <ClCompile Include="CRigidBody.cpp" />
@@ -200,8 +212,10 @@
     <ClCompile Include="CStateMachine.cpp" />
     <ClCompile Include="CTexture.cpp" />
     <ClCompile Include="CTimeMgr.cpp" />
+    <ClCompile Include="CUI.cpp" />
+    <ClCompile Include="CUIMgr.cpp" />
     <ClCompile Include="EventFunc.cpp" />
-    <ClCompile Include="GlobalFunc.cpp" />
+    <ClCompile Include="func.cpp" />
     <ClCompile Include="MercuryProject.cpp" />
     <ClCompile Include="SelectGDI.cpp" />
   </ItemGroup>

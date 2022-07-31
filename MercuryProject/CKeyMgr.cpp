@@ -11,20 +11,29 @@ int g_arrVK[(int)KEY::END] =
 	'q','w','e','r','t','y','u','i','o','p',
 	'a','s','d','f','g','h','j','k','l',
 	'z','x','c','v','b','n','m',
-	VK_MENU, VK_CONTROL, VK_LSHIFT,
-	VK_SPACE, VK_RETURN, VK_ESCAPE,
-	VK_LBUTTON, VK_RBUTTON
+	VK_MENU,
+	VK_CONTROL,
+	VK_LSHIFT,
+	VK_SPACE,
+	VK_RETURN,
+	VK_ESCAPE,
+
+	VK_LBUTTON,
+	VK_RBUTTON,
 };
 
 
-CKeyMgr::CKeyMgr() 
+
+CKeyMgr::CKeyMgr()
 {
 
 }
-CKeyMgr::~CKeyMgr() 
+
+CKeyMgr::~CKeyMgr()
 {
 
 }
+
 void CKeyMgr::init()
 {
 	for (int i = 0; i < (int)KEY::END; ++i)
@@ -35,7 +44,10 @@ void CKeyMgr::init()
 
 void CKeyMgr::update()
 {
-	HWND hWnd = GetFocus();
+	//HWND hMainWnd = CCore::GetInst()->GetMainHwnd();// 메인 윈도우 핸들
+	HWND hWnd = GetFocus(); // 현재 프로그램에서 포커싱된 윈도우 핸들
+
+
 
 	if (hWnd != nullptr) //윈도우 포커싱 상태
 	{
@@ -86,5 +98,7 @@ void CKeyMgr::update()
 			}
 		}
 
+
 	}
+
 }

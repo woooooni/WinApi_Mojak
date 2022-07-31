@@ -1,19 +1,18 @@
 #pragma once
-
-class CObject;
+#include "pch.h"
+class CTexture;
 class CGameCore
 {
 	SINGLETON(CGameCore);
 private:
-	HWND	m_hWnd;
-	HDC		m_hDC;
-	POINT	m_ptResolution;
+	HWND		m_hWnd;
+	HDC			m_hDC;
+	CTexture*	m_pMemTex;				// 백버퍼 텍스쳐
+	POINT		m_ptResolution;
 
 	//자주 사용할 GDI Object
 	HBRUSH	m_arrBrush[(UINT)BRUSH_TYPE::END];
 	HPEN	m_arrPen[(UINT)PEN_TYPE::END];
-
-	CObject* obj;
 private:
 	void CreateBrushPen();
 	void Clear();

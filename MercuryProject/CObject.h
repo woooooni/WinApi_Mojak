@@ -1,5 +1,4 @@
 #pragma once
-#include "global.h"
 #include "CCamera.h"
 
 class CComponent;
@@ -39,8 +38,8 @@ public:
 	void CreateCollider();
 	CCollider* GetCollider() { return (CCollider*)m_arrComponent[(UINT)COMPONENT_TYPE::COLLIDER]; }
 
-	virtual void OnCollision(CCollider* _pOther) {}
 	virtual void OnCollisionEnter(CCollider* _pOther) {}
+	virtual void OnCollision(CCollider* _pOther) {}
 	virtual void OnCollisionExit(CCollider* _pOther) {}
 
 

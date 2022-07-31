@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "CCore.h"
+#include "CGameCore.h"
 #include "CAnimation.h"
 #include "CTexture.h"
 #include "CAnimator.h"
@@ -31,7 +31,7 @@ void CAnimation::update()
 	if (m_bFinish)
 		return;
 
-	m_fAccTime += DeltaTimef;
+	m_fAccTime += DeltaTime;
 
 	//1. 반복 문제
 	//2. 남은 시간 문제.

@@ -1,20 +1,19 @@
 #include "pch.h"
-#include "CEventMgr.h"
+#include "CObject.h"
 #include "CSceneMgr.h"
 #include "CScene.h"
-#include "CObject.h"
+#include "CUIMgr.h"
+#include "CEventMgr.h"
+
 
 CEventMgr::CEventMgr()
-	: m_vecEvent{}
-	, m_vecDead{}
 {
 
 }
 
 CEventMgr::~CEventMgr()
 {
-	Safe_Delete_Vec(m_vecEvent);
-	Safe_Delete_Vec(m_vecDead);
+
 }
 
 void CEventMgr::update()
@@ -26,24 +25,24 @@ void CEventMgr::update()
 	}
 	m_vecDead.clear();
 
-	for (size_t i = 0; i < m_vecEvent.size(); i++) 
+	for (size_t i = 0; i < m_vecEvent.size(); i++)
 	{
 		Excute(m_vecEvent[i]);
 	}
 	m_vecEvent.clear();
 }
 
-void CEventMgr::Excute(const tEvent& _event)
+void CEventMgr::Excute(const tEvent& _eve)
 {
 	//이벤트 처리함수
-	switch (_event.eEven)
+	switch (_eve.eEven)
 	{
 	case EVENT_TYPE::CREATE_OBJECT:
 	{
 		// lParam : Object Address
 		// wParam : Group Type
-		CObject* pNewObj = (CObject*)_event.lParam;
-		GROUP_TYPE eType = (GROUP_TYPE)_event.wParam;
+		CObject* pNewObj = (CObject*)_eve.lParam;
+		GROUP_TYPE eType = (GROUP_TYPE)_eve.wParam;
 
 		CSceneMgr::GetInst()->GetCurrScene()->AddObject(pNewObj, eType);
 	}
@@ -55,7 +54,7 @@ void CEventMgr::Excute(const tEvent& _event)
 		// lParam : Object Address
 		// Object를 Dead 상태로 변경.
 		// 삭제 예정 오브젝트를 모아두기.
-		CObject* pDeadObj = (CObject*)_event.lParam;
+		CObject* pDeadObj = (CObject*)_eve.lParam;
 		pDeadObj->SetDead();
 
 		m_vecDead.push_back(pDeadObj);
@@ -69,11 +68,20 @@ void CEventMgr::Excute(const tEvent& _event)
 		// lParam : SCENE_TYPE
 
 		//1. Scene 변경.
-		CSceneMgr::GetInst()->ChangeScene((SCENE_TYPE)_event.lParam);
+		CSceneMgr::GetInst()->ChangeScene((SCENE_TYPE)_eve.lParam);
 		//2. 포커스 UI 해제.
-		//CUIMgr::GetInst()->SetFocusedUI(nullptr);
+		CUIMgr::GetInst()->SetFocusedUI(nullptr);
 	}
+	break;
+
+	//case EVENT_TYPE::CHANGE_AI_STATE:
+	//{
+	//	// lParam : AI*
+	//	// wParam : STATE
+	//	AI* _pAI = (AI*)_eve.lParam;
+	//	MONSTER_STATE eNext = (MONSTER_STATE)_eve.wParam;
+	//	_pAI->ChangeState(eNext);
+	//}
 	break;
 	}
 }
-

@@ -15,12 +15,15 @@
 #define PI 3.1415926535
 
 
-#define KEY_SITUATION(key) CKeyMgr::GetInst()->GetKeyState(key)
-#define KEY_TAP(key) KEY_SITUATION(key) == KEY_STATE::TAP
-#define KEY_HOLD(key) KEY_SITUATION(key) == KEY_STATE::HOLD
-#define KEY_AWAY(AWAY) KEY_SITUATION(key) == KEY_STATE::AWAY
+#define KEY_CHECK(key, state) CKeyMgr::GetInst()->GetKeyState(key) == state
+#define KEY_HOLD(key) KEY_CHECK(key, KEY_STATE::HOLD)
+#define KEY_TAP(key) KEY_CHECK(key, KEY_STATE::TAP)
+#define KEY_AWAY(key) KEY_CHECK(key, KEY_STATE::AWAY)
+#define KEY_NONE(key) KEY_CHECK(key, KEY_STATE::NONE)
 
-enum class GROUP_TYPE 
+#define MOUSE_POS CKeyMgr::GetInst()->GetMousePos()
+
+enum class GROUP_TYPE
 {
 	DEFAULT,
 	TILE,
@@ -35,37 +38,69 @@ enum class GROUP_TYPE
 
 enum class SCENE_TYPE
 {
+	TOOL,
 	START,
-	END
-};
 
-enum class COMPONENT_TYPE 
-{
-	COLLIDER,
-	ANIMATOR,
-	RIGIDBODY,
-	STATE_MACHINE,
-	END
-};
+	STAGE_01,
+	STAGE_02,
 
-enum class EVENT_TYPE 
-{
-	CREATE_OBJECT,
-	SCENE_CHANGE,
-	DELETE_OBJECT,
-	END
+	END,
 };
 
 enum class BRUSH_TYPE
 {
 	HOLLOW,
 	BLACK,
-	END
+	END,
 };
-enum class PEN_TYPE 
+
+enum class PEN_TYPE
 {
 	RED,
 	GREEN,
 	BLUE,
 	END
+};
+
+enum class EVENT_TYPE
+{
+	CREATE_OBJECT,
+	DELETE_OBJECT,
+	SCENE_CHANGE,
+	CHANGE_AI_STATE,
+
+
+	END,
+};
+
+enum class COMPONENT_TYPE
+{
+	RIGIDBODY,
+	COLLIDER,
+	ANIMATOR,
+	STATE_MACHINE,
+	END
+};
+enum class PLAYER_STATE
+{
+	IDLE,
+	WALK,
+	ATTACK,
+	JUMP,
+	ALERT,
+	PRONE,
+	ROPE,
+	LADDER,
+	END,
+};
+
+enum class MONSTER_STATE
+{
+	IDLE,
+	PATROL,
+	TRACE,
+	ATTACK,
+	RUN_AWAY,
+	DEAD,
+	END,
 };

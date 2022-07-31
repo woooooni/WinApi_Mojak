@@ -42,14 +42,8 @@ public:
 	void update();
 
 public:
-	KEY_STATE GetKeyState(KEY _eKey) 
-	{
-		return m_vecKey[(int)_eKey].eState;
-	}
+	KEY_STATE GetKeyState(KEY _eKey) { return m_vecKey[(int)_eKey].eState; }
 
-	Vec2 GetMousePos()
-	{
-		return m_vCurMousePos;
-	}
+	Vec2 GetMousePos(){	return m_vCurMousePos; }
 };
 

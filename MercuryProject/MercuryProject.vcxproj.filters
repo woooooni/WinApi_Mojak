@@ -20,9 +20,6 @@
     <Filter Include="Game\01. Header\Func\Event">
       <UniqueIdentifier>{7859497a-6243-4c11-a1af-54f44953c951}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\01. Header\Func\Global">
-      <UniqueIdentifier>{f986c3cd-308c-4a9c-a9bb-7c2c0e1092ba}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game\02. Core">
       <UniqueIdentifier>{777fd30d-ff6f-4765-8928-3eaaa6ee080b}</UniqueIdentifier>
     </Filter>
@@ -95,6 +92,12 @@
     <Filter Include="Game\07. Component\StateMachine">
       <UniqueIdentifier>{c76bf99c-650a-4c84-a681-1c8ab95ddb24}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\03. Managers\UI">
+      <UniqueIdentifier>{ce562312-b88a-44b7-8ca3-971e780e0e92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04. Object\UI">
+      <UniqueIdentifier>{2c84e7e0-0660-446b-a133-1af4851b7df1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -149,9 +152,6 @@
     <ClInclude Include="EventFunc.h">
       <Filter>Game\01. Header\Func\Event</Filter>
     </ClInclude>
-    <ClInclude Include="GlobalFunc.h">
-      <Filter>Game\01. Header\Func\Global</Filter>
-    </ClInclude>
     <ClInclude Include="CCollider.h">
       <Filter>Game\07. Component\Collider</Filter>
     </ClInclude>
@@ -184,6 +184,21 @@
     </ClInclude>
     <ClInclude Include="CRigidBody.h">
       <Filter>Game\07. Component\RigidBody</Filter>
+    </ClInclude>
+    <ClInclude Include="func.h">
+      <Filter>Game\01. Header\Func</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>Game\01. Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CUIMgr.h">
+      <Filter>Game\03. Managers\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="CUI.h">
+      <Filter>Game\04. Object\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayer.h">
+      <Filter>Game\04. Object\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -236,9 +251,6 @@
     <ClCompile Include="EventFunc.cpp">
       <Filter>Game\01. Header\Func\Event</Filter>
     </ClCompile>
-    <ClCompile Include="GlobalFunc.cpp">
-      <Filter>Game\01. Header\Func\Global</Filter>
-    </ClCompile>
     <ClCompile Include="CCollisionMgr.cpp">
       <Filter>Game\03. Managers\Collision</Filter>
     </ClCompile>
@@ -271,6 +283,18 @@
     </ClCompile>
     <ClCompile Include="CRigidBody.cpp">
       <Filter>Game\07. Component\RigidBody</Filter>
+    </ClCompile>
+    <ClCompile Include="func.cpp">
+      <Filter>Game\01. Header\Func</Filter>
+    </ClCompile>
+    <ClCompile Include="CUIMgr.cpp">
+      <Filter>Game\03. Managers\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CUI.cpp">
+      <Filter>Game\04. Object\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayer.cpp">
+      <Filter>Game\04. Object\Player</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

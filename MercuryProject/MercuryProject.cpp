@@ -25,10 +25,13 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_ LPWSTR    lpCmdLine,
                      _In_ int       nCmdShow)
 {
-    UNREFERENCED_PARAMETER(hPrevInstance);
-    UNREFERENCED_PARAMETER(lpCmdLine);
+    
 
     // TODO: 여기에 코드를 입력합니다.
+
+    // 메모리 릭 체크
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+    //_CrtSetBreakAlloc(219);//문제 발생 시, 메모리 릭 부분에 중단점
 
     // 전역 문자열을 초기화합니다.
     LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
@@ -144,31 +147,31 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch (message)
     {
-    case WM_COMMAND:
-        {
-            int wmId = LOWORD(wParam);
-            // 메뉴 선택을 구문 분석합니다:
-            switch (wmId)
-            {
-            case IDM_ABOUT:
-                DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
-                break;
-            case IDM_EXIT:
-                DestroyWindow(hWnd);
-                break;
-            default:
-                return DefWindowProc(hWnd, message, wParam, lParam);
-            }
-        }
-        break;
-    case WM_PAINT:
-        {
-            PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(hWnd, &ps);
-            // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
-            EndPaint(hWnd, &ps);
-        }
-        break;
+    //case WM_COMMAND:
+    //    {
+    //        int wmId = LOWORD(wParam);
+    //        // 메뉴 선택을 구문 분석합니다:
+    //        switch (wmId)
+    //        {
+    //        case IDM_ABOUT:
+    //            DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+    //            break;
+    //        case IDM_EXIT:
+    //            DestroyWindow(hWnd);
+    //            break;
+    //        default:
+    //            return DefWindowProc(hWnd, message, wParam, lParam);
+    //        }
+    //    }
+    //    break;
+    //case WM_PAINT:
+    //    {
+    //        PAINTSTRUCT ps;
+    //        HDC hdc = BeginPaint(hWnd, &ps);
+    //        // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
+    //        EndPaint(hWnd, &ps);
+    //    }
+    //    break;
     case WM_DESTROY:
         PostQuitMessage(0);
         break;

@@ -77,6 +77,24 @@
     <Filter Include="Game\09. Factory">
       <UniqueIdentifier>{d8095b39-4368-4740-bec4-2fe821a81fc9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\03. Managers\Resource">
+      <UniqueIdentifier>{37b44e57-092a-4ce4-b1a4-d638326ef3f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\06. Resource\Texture">
+      <UniqueIdentifier>{b3dc0628-c288-412d-8a37-82526728d5d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\07. Component\RigidBody">
+      <UniqueIdentifier>{b370672e-ac5d-4906-ae0f-2d66097d7b3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\07. Component\Animator">
+      <UniqueIdentifier>{d1d8b117-6bdd-4af7-8fbc-f1766cfc5f9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\07. Component\Animator\Animations">
+      <UniqueIdentifier>{0dbd376b-d26d-4e11-9775-af0fffd0bba4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\07. Component\StateMachine">
+      <UniqueIdentifier>{c76bf99c-650a-4c84-a681-1c8ab95ddb24}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -143,6 +161,30 @@
     <ClInclude Include="CCollisionMgr.h">
       <Filter>Game\03. Managers\Collision</Filter>
     </ClInclude>
+    <ClInclude Include="CCamera.h">
+      <Filter>Game\03. Managers\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="CResMgr.h">
+      <Filter>Game\03. Managers\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="CTexture.h">
+      <Filter>Game\06. Resource\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="CRes.h">
+      <Filter>Game\06. Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="CAnimator.h">
+      <Filter>Game\07. Component\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="CAnimation.h">
+      <Filter>Game\07. Component\Animator\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="CStateMachine.h">
+      <Filter>Game\07. Component\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="CRigidBody.h">
+      <Filter>Game\07. Component\RigidBody</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MercuryProject.rc">
@@ -205,6 +247,30 @@
     </ClCompile>
     <ClCompile Include="CComponent.cpp">
       <Filter>Game\07. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="CCamera.cpp">
+      <Filter>Game\03. Managers\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="CResMgr.cpp">
+      <Filter>Game\03. Managers\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="CTexture.cpp">
+      <Filter>Game\06. Resource\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="CRes.cpp">
+      <Filter>Game\06. Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="CAnimator.cpp">
+      <Filter>Game\07. Component\Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="CAnimation.cpp">
+      <Filter>Game\07. Component\Animator\Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="CStateMachine.cpp">
+      <Filter>Game\07. Component\StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="CRigidBody.cpp">
+      <Filter>Game\07. Component\RigidBody</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

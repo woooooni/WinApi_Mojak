@@ -16,6 +16,7 @@ private:
 private:
 	void CreateBrushPen();
 	void Clear();
+
 public:
 	void ChangeWindowSize(POINT _ptResolution, bool _bMenu);
 

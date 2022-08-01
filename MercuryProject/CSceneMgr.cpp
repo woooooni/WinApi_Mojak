@@ -20,7 +20,6 @@ CSceneMgr::~CSceneMgr()
 		{
 			delete m_arrScene[i];
 		}
-
 	}
 }
 

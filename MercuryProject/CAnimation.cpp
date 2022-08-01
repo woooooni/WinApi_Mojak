@@ -2,12 +2,14 @@
 #include "CGameCore.h"
 #include "CAnimation.h"
 #include "CTexture.h"
+#include "CSound.h"
 #include "CAnimator.h"
 #include "CObject.h"
 #include "CTimeMgr.h"
 #include "CCamera.h"
 #include "CPathMgr.h"
 #include "CResMgr.h"
+
 
 CAnimation::CAnimation()
 	:m_pAnimator(nullptr)
@@ -22,6 +24,7 @@ CAnimation::CAnimation()
 
 CAnimation::~CAnimation()
 {
+	
 }
 
 
@@ -70,7 +73,7 @@ void CAnimation::render(HDC _dc)
 
 	//카메라의 위치에 따른 렌더링 좌표로 전환.
 	vPos = CCamera::GetInst()->GetRenderPos(vPos);
-	draw(_dc, vPos);
+	play(_dc, vPos);
 
 }
 
@@ -86,12 +89,19 @@ void CAnimation::Create(CTexture* _pTex,
 		frm.fDuration = _fDuration;
 		frm.vSlice = _vSliceSize;
 		frm.vLT = _vLT + _vStep * (float)i;
-
 		m_vecFrame.push_back(frm);
 	}
 }
 
-void CAnimation::draw(HDC _dc, Vec2 _vRenderPos)
+void CAnimation::AddSound(CSound* _pSound, int _idx)
+{
+	if (_idx > m_vecFrame.size())
+		assert(nullptr);
+
+	m_vecFrame[_idx].m_pSound = _pSound;
+}
+
+void CAnimation::play(HDC _dc, Vec2 _vRenderPos)
 {
 	TransparentBlt(_dc
 		, (int)(_vRenderPos.x - m_vecFrame[m_iCurFrm].vSlice.x / 2.f)
@@ -104,6 +114,9 @@ void CAnimation::draw(HDC _dc, Vec2 _vRenderPos)
 		, (int)(m_vecFrame[m_iCurFrm].vSlice.x)
 		, (int)(m_vecFrame[m_iCurFrm].vSlice.y)
 		, RGB(255, 0, 255));
+
+	if (m_vecFrame[m_iCurFrm].m_pSound != nullptr)
+		m_vecFrame[m_iCurFrm].m_pSound->Play();
 }
 
 //void CAnimation::Save(const wstring& _strRelativePath)

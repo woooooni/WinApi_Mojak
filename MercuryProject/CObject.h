@@ -15,9 +15,12 @@ private:
 	Vec2			m_vScale;
 	GROUP_TYPE		m_eType;
 
-	CComponent* m_arrComponent[(UINT)COMPONENT_TYPE::END];
 	bool			m_bAlive;
 
+	CCollider*		m_pCollider;
+	CAnimator*		m_pAnimator;
+	CRigidBody*		m_pRigidBody;
+	CStateMachine*	m_pStateMachine;
 
 public:
 	void SetPos(Vec2 _vPos) { m_vPos = _vPos; }
@@ -36,7 +39,7 @@ public:
 
 public:
 	void CreateCollider();
-	CCollider* GetCollider() { return (CCollider*)m_arrComponent[(UINT)COMPONENT_TYPE::COLLIDER]; }
+	CCollider* GetCollider() { return m_pCollider; }
 
 	virtual void OnCollisionEnter(CCollider* _pOther) {}
 	virtual void OnCollision(CCollider* _pOther) {}
@@ -44,13 +47,13 @@ public:
 
 
 	void CreateAnimator();
-	CAnimator* GetAnimator() { return (CAnimator*)m_arrComponent[(UINT)COMPONENT_TYPE::ANIMATOR]; }
+	CAnimator* GetAnimator() { return m_pAnimator; }
 
 	void CreateRigidBody();
-	CRigidBody* GetRigidBody() { return (CRigidBody*)m_arrComponent[(UINT)COMPONENT_TYPE::RIGIDBODY]; }
+	CRigidBody* GetRigidBody() { return m_pRigidBody; }
 
 	void CreateStateMachine();
-	CStateMachine* GetStateMachine() { return (CStateMachine*)m_arrComponent[(UINT)COMPONENT_TYPE::STATE_MACHINE]; }
+	CStateMachine* GetStateMachine() { return m_pStateMachine; }
 
 private:
 	void SetDead() { m_bAlive = false; }

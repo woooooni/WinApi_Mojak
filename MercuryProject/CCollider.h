@@ -31,6 +31,7 @@ public:
 
 	Vec2 GetFinalPos() { return m_vFinalPos; }
 	void SetTrigger(bool _bTrigger) { m_bTrigger = _bTrigger; }
+
 public:
 	virtual void finalupdate();
 	virtual void render(HDC _dc);

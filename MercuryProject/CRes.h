@@ -1,10 +1,9 @@
 #pragma once
 
-
 class CRes
 {
 private:
-	wstring m_strkey;	// 리소스 키값
+	wstring m_strkey;				// 리소스 키값
 	wstring m_strRelativePath;		// 리소스 "상대"경로
 
 public:

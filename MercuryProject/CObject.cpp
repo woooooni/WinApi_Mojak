@@ -13,61 +13,71 @@ CObject::CObject()
 	, m_vScale{}
 	, m_bAlive(true)
 	, m_eType(GROUP_TYPE::DEFAULT)
+	, m_pAnimator(nullptr)
+	, m_pCollider(nullptr)
+	, m_pRigidBody(nullptr)
+	, m_pStateMachine(nullptr)
 {
-	for (UINT i = 0; i < (UINT)COMPONENT_TYPE::END; i++)
-	{
-		m_arrComponent[i] = nullptr;
-	}
+	
 }
 
 CObject::CObject(const CObject& _origin)
 	: m_strName(_origin.m_strName)
-	, m_arrComponent{}
 	, m_vPos(_origin.m_vPos)
 	, m_vScale(_origin.m_vScale)
 	, m_bAlive(true)
 	, m_eType(_origin.m_eType)
+	, m_pAnimator(_origin.m_pAnimator)
+	, m_pCollider(_origin.m_pCollider)
+	, m_pRigidBody(_origin.m_pRigidBody)
+	, m_pStateMachine(_origin.m_pStateMachine)
 {
 
-	for (UINT i = 0; i < (UINT)COMPONENT_TYPE::END; i++)
-	{
-		if (nullptr != _origin.m_arrComponent[i])
-			m_arrComponent[i] = _origin.m_arrComponent[i];
-	}
+	//for (UINT i = 0; i < (UINT)COMPONENT_TYPE::END; i++)
+	//{
+	//	if (nullptr != _origin.m_arrComponent[i])
+	//		m_arrComponent[i] = _origin.m_arrComponent[i];
+	//}
 }
 
 CObject::~CObject()
 {
-	for (UINT i = 0; i < (UINT)COMPONENT_TYPE::END; i++)
-	{
-		if (nullptr != m_arrComponent[i])
-			delete m_arrComponent[i];
-	}
+	if (nullptr != m_pAnimator)
+		delete m_pAnimator;
+
+	if (nullptr != m_pCollider)
+		delete m_pCollider;
+
+	if (nullptr != m_pRigidBody)
+		delete m_pRigidBody;
+
+	if (nullptr != m_pStateMachine)
+		delete m_pStateMachine;
 }
 
 
 void CObject::CreateCollider()
 {
-	m_arrComponent[(UINT)COMPONENT_TYPE::COLLIDER] = new CCollider;
-	m_arrComponent[(UINT)COMPONENT_TYPE::COLLIDER]->m_pOwner = this;
+	m_pCollider = new CCollider;
+	m_pCollider->SetOwner(this);
 }
 
 void CObject::CreateAnimator()
 {
-	m_arrComponent[(UINT)COMPONENT_TYPE::ANIMATOR] = new CAnimator;
-	m_arrComponent[(UINT)COMPONENT_TYPE::ANIMATOR]->m_pOwner = this;
+	m_pAnimator = new CAnimator;
+	m_pAnimator->SetOwner(this);
 }
 
 void CObject::CreateRigidBody()
 {
-	m_arrComponent[(UINT)COMPONENT_TYPE::RIGIDBODY] = new CRigidBody;
-	m_arrComponent[(UINT)COMPONENT_TYPE::RIGIDBODY]->m_pOwner = this;
+	m_pRigidBody = new CRigidBody;
+	m_pRigidBody->SetOwner(this);
 }
 
 void CObject::CreateStateMachine()
 {
-	m_arrComponent[(UINT)COMPONENT_TYPE::STATE_MACHINE] = new CStateMachine;
-	m_arrComponent[(UINT)COMPONENT_TYPE::STATE_MACHINE]->m_pOwner = this;
+	m_pStateMachine = new CStateMachine;
+	m_pStateMachine->SetOwner(this);
 }
 
 void CObject::update()
@@ -77,11 +87,17 @@ void CObject::update()
 
 void CObject::finalupdate()
 {
-	for (UINT i = 0; i < (UINT)COMPONENT_TYPE::END; i++)
-	{
-		if (nullptr != m_arrComponent[i])
-			m_arrComponent[i]->finalupdate();
-	}
+	if (nullptr != m_pAnimator)
+		m_pAnimator->finalupdate();
+
+	if (nullptr != m_pCollider)
+		m_pCollider->finalupdate();
+
+	if (nullptr != m_pRigidBody)
+		m_pRigidBody->finalupdate();
+
+	if (nullptr != m_pStateMachine)
+		m_pStateMachine->finalupdate();
 }
 
 void CObject::render(HDC _dc)
@@ -98,10 +114,16 @@ void CObject::render(HDC _dc)
 
 void CObject::component_render(HDC _dc)
 {
-	for (UINT i = 0; i < (UINT)COMPONENT_TYPE::END; i++)
-	{
-		if (nullptr != m_arrComponent[i])
-			m_arrComponent[i]->render(_dc);
-	}
+	if (nullptr != m_pAnimator)
+		m_pAnimator->render(_dc);
+
+	if (nullptr != m_pCollider)
+		m_pCollider->render(_dc);
+
+	if (nullptr != m_pRigidBody)
+		m_pRigidBody->render(_dc);
+
+	if (nullptr != m_pStateMachine)
+		m_pStateMachine->render(_dc);
 }
 

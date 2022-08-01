@@ -61,27 +61,16 @@ void CUI::render(HDC _dc)
 		vPos = CCamera::GetInst()->GetRenderPos(vPos);
 	}
 
-	if (m_bLbtnDown)
-	{
-		SelectGDI select(_dc, PEN_TYPE::GREEN);
-		Rectangle(_dc
-			, (int)vPos.x
-			, (int)vPos.y
-			, (int)(vPos.x + vScale.x)
-			, (int)(vPos.y + vScale.y));
-	}
-	else
-	{
-		Rectangle(_dc
-			, (int)vPos.x
-			, (int)vPos.y
-			, (int)(vPos.x + vScale.x)
-			, (int)(vPos.y + vScale.y));
-	}
+	if (m_bLbtnDown){	SelectGDI select(_dc, PEN_TYPE::GREEN); }
+	Rectangle(_dc
+		, (int)vPos.x
+		, (int)vPos.y
+		, (int)(vPos.x + vScale.x)
+		, (int)(vPos.y + vScale.y));
 
 	SetBkMode(_dc, TRANSPARENT);
 	RECT rt = { (int)vPos.x , (int)vPos.y , (int)(vPos.x + vScale.x),  (int)(vPos.y + vScale.y) };
-	DrawText(_dc, m_strText.c_str(), m_strText.length(), &rt, DT_CENTER | DT_VCENTER);
+	DrawText(_dc, m_strText.c_str(), (int)m_strText.length(), &rt, DT_CENTER | DT_VCENTER);
 	SetBkMode(_dc, OPAQUE);
 
 	render_child(_dc);

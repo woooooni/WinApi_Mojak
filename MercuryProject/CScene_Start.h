@@ -4,9 +4,7 @@ class CScene_Start :
     public CScene
 {
 public:
-	virtual void init();
 	virtual void update();
-	virtual void finalupdate();
 	virtual void render(HDC _dc);
 
 public:

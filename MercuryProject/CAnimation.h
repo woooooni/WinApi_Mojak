@@ -2,21 +2,22 @@
 
 class CAnimator;
 class CTexture;
-
+class CSound;
 struct tAnimFrame
 {
-	Vec2	vLT;
-	Vec2	vSlice;
-	Vec2	vOffset;
-	float	fDuration;
+	Vec2		vLT;
+	Vec2		vSlice;
+	Vec2		vOffset;
+	CSound*		m_pSound;		//	애니메이션 사운드.
+	float		fDuration;
 };
 
 class CAnimation
 {
 private:
 	wstring					m_strName;		//	애니메이션 이름.
-	CAnimator* m_pAnimator;	//	애니메이터.
-	CTexture* m_pTex;			//	애니메이션이 사용할 텍스쳐.
+	CAnimator*				m_pAnimator;	//	애니메이터.
+	CTexture*				m_pTex;			//	애니메이션이 사용할 텍스쳐.
 	vector<tAnimFrame>		m_vecFrame;		//	애니메이션 프레임 정보.
 	int						m_iCurFrm;		//	현재 프레임.
 	float					m_fAccTime;		//	누적시간.
@@ -41,16 +42,17 @@ public:
 	UINT GetMaxFrame() { return (UINT)m_vecFrame.size(); }
 
 	//void Save(const wstring& _strRelativePath);
-	void Load(const wstring& _strRelativePath);
+	//void Load(const wstring& _strRelativePath);
 public:
 	void update();
 	void render(HDC _dc);
 
 	void Create(CTexture* _pTex, Vec2 _vLT, Vec2 _vSliceSize, Vec2 _vStep, float _fDuration, UINT _iFrameCount);
-
+	void AddSound(CSound* _pSound, int _idx);
 
 private:
-	void draw(HDC _dc, Vec2 _vRenderPos);
+
+	void play(HDC _dc, Vec2 _vRenderPos);
 public:
 	CAnimation();
 	~CAnimation();

@@ -20,6 +20,8 @@ using std::string;
 using std::wstring;
 
 #pragma comment(lib, "Msimg32.lib")
+#include<mmsystem.h>
+#pragma comment(lib, "winmm.lib")
 
 
 #include<assert.h>

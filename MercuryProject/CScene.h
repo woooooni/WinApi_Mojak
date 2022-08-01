@@ -1,6 +1,5 @@
 #pragma once
-
-class CObject; //전방 선언 => 컴파일 속도에 영향을 주지 않음.
+#include "CObject.h"
 
 class CScene
 {
@@ -8,12 +7,14 @@ class CScene
 private:
 	vector<CObject*>	m_arrObj[(UINT)GROUP_TYPE::END];
 	wstring				m_strName; // Scene 이름
-
-	CObject* m_pPlayer;
+	CObject*			m_pPlayer;
 
 public:
 	void SetName(const wstring& _strName);
 	const wstring& GetName();
+
+private:
+	
 
 public:
 	virtual void init();
@@ -44,5 +45,6 @@ public:
 public:
 	CScene();
 	virtual ~CScene();
+	friend class CEventMgr;
 };
 

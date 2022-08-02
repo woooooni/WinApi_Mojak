@@ -31,6 +31,7 @@ void CPlayer::init()
 	CreateAnimator();
 	//Texture·Îµù
 	CTexture* pTexIdle = CResMgr::GetInst()->LoadTexture(L"Player_Idle", L"texture\\jackson\\Jackson_Idle.bmp");
+	CTexture* pTexIdle = CResMgr::GetInst()->LoadTexture(L"Player_Dead", L"texture\\jackson\\Jackson_Dead.bmp");
 	GetAnimator()->CreateAnimation(
 									L"IDLE"
 									, pTexIdle

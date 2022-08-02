@@ -31,7 +31,7 @@ void CPlayer::init()
 	CreateAnimator();
 	//Texture·Îµù
 	CTexture* pTexIdle = CResMgr::GetInst()->LoadTexture(L"Player_Idle", L"texture\\jackson\\Jackson_Idle.bmp");
-	CTexture* pTexIdle = CResMgr::GetInst()->LoadTexture(L"Player_Dead", L"texture\\jackson\\Jackson_Dead.bmp");
+	CTexture* pTexDead = CResMgr::GetInst()->LoadTexture(L"Player_Dead", L"texture\\jackson\\Jackson_Dead.bmp");
 	GetAnimator()->CreateAnimation(
 									L"IDLE"
 									, pTexIdle
@@ -41,7 +41,16 @@ void CPlayer::init()
 									, Vec2(pTexIdle->Width() / 3, 0.f)
 									, .5f
 									, 3);
-	GetAnimator()->Play(L"IDLE", true);
+	GetAnimator()->CreateAnimation(
+		L"DEAD"
+		, pTexDead
+		, Vec2(0.f, 0.f)
+		, Vec2(pTexDead->Width() / 3
+			, (float)pTexDead->Height())
+		, Vec2(pTexDead->Width() / 3, 0.f)
+		, .5f
+		, 3);
+	GetAnimator()->Play(L"DEAD", true);
 }
 
 void CPlayer::update()

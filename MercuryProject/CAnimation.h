@@ -8,7 +8,7 @@ struct tAnimFrame
 	Vec2		vLT;
 	Vec2		vSlice;
 	Vec2		vOffset;
-	CSound*		m_pSound;		//	애니메이션 사운드.
+	wstring		strSoundFile;		//	애니메이션 사운드.
 	float		fDuration;
 };
 

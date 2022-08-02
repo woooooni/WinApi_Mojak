@@ -115,8 +115,11 @@ void CAnimation::play(HDC _dc, Vec2 _vRenderPos)
 		, (int)(m_vecFrame[m_iCurFrm].vSlice.y)
 		, RGB(255, 0, 255));
 
-	if (m_vecFrame[m_iCurFrm].m_pSound != nullptr)
-		m_vecFrame[m_iCurFrm].m_pSound->Play();
+	if (m_vecFrame[m_iCurFrm].strSoundFile != L"")
+	{
+		CResMgr::GetInst()->FindSound(m_vecFrame[m_iCurFrm].strSoundFile);
+	}
+		
 }
 
 //void CAnimation::Save(const wstring& _strRelativePath)

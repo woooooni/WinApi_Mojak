@@ -6,7 +6,7 @@
 #include "CObject.h"
 #include "CPlayer.h"
 //#include "CMonster.h"
-//#include "CGround.h"
+#include "CGround.h"
 
 #include "CPathMgr.h"
 #include "CTexture.h"
@@ -57,6 +57,18 @@ void CScene_Start::Enter()
 	CCollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::PLAYER, GROUP_TYPE::MONSTER_PROJECTILE);
 	CCollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::MONSTER, GROUP_TYPE::PLAYER_PROJECTILE);
 	CCollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::GROUND, GROUP_TYPE::PLAYER);
+
+
+
+	for (int i = 0; i < 30; i++)
+	{
+		CGround* pGround = new CGround;
+		pGround->SetScale(Vec2(60.f, 1.f));
+		pGround->SetPos(Vec2(i * 60.f, 700.f));
+		pGround->SetType(GROUP_TYPE::GROUND);
+		AddObject(pGround, GROUP_TYPE::GROUND);
+	}
+
 
 	//CameraLook ÁöÁ¤
 	Vec2 vResolution = CGameCore::GetInst()->GetResoultion();

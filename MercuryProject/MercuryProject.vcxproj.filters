@@ -101,6 +101,9 @@
     <Filter Include="Game\06. Resource\Sound">
       <UniqueIdentifier>{a8bffd4e-dfdb-412c-abcf-5479d1cf81bc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\04. Object\Ground">
+      <UniqueIdentifier>{4d2565e5-161a-410f-a440-5afe27278d66}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -206,6 +209,9 @@
     <ClInclude Include="CSound.h">
       <Filter>Game\06. Resource\Sound</Filter>
     </ClInclude>
+    <ClInclude Include="CGround.h">
+      <Filter>Game\04. Object\Ground</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MercuryProject.rc">
@@ -304,6 +310,9 @@
     </ClCompile>
     <ClCompile Include="CSound.cpp">
       <Filter>Game\06. Resource\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="CGround.cpp">
+      <Filter>Game\04. Object\Ground</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

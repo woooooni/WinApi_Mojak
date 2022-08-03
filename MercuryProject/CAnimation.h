@@ -48,7 +48,7 @@ public:
 	void render(HDC _dc);
 
 	void Create(CTexture* _pTex, Vec2 _vLT, Vec2 _vSliceSize, Vec2 _vStep, float _fDuration, UINT _iFrameCount);
-	void AddSound(CSound* _pSound, int _idx);
+	void AddSound(wstring _soundFileName, int _idx);
 
 private:
 

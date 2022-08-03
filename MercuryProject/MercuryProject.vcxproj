@@ -171,6 +171,7 @@
     <ClInclude Include="CComponent.h" />
     <ClInclude Include="CEventMgr.h" />
     <ClInclude Include="CGameCore.h" />
+    <ClInclude Include="CGround.h" />
     <ClInclude Include="CKeyMgr.h" />
     <ClInclude Include="CObject.h" />
     <ClInclude Include="CPathMgr.h" />
@@ -208,6 +209,7 @@
     <ClCompile Include="CComponent.cpp" />
     <ClCompile Include="CEventMgr.cpp" />
     <ClCompile Include="CGameCore.cpp" />
+    <ClCompile Include="CGround.cpp" />
     <ClCompile Include="CKeyMgr.cpp" />
     <ClCompile Include="CObject.cpp" />
     <ClCompile Include="CPathMgr.cpp" />

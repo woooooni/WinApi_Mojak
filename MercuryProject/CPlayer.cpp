@@ -24,8 +24,8 @@ void CPlayer::init()
 	GetCollider()->SetOffsetPos(Vec2(0.f, 0.f));
 	GetCollider()->SetScale(Vec2(vScale.x, vScale.y));
 
-	//CreateRigidBody();
-	//GetRigidBody()->SetGravity(true);
+	CreateRigidBody();
+	GetRigidBody()->SetGravity(true);
 
 	CreateStateMachine();
 	CreateAnimator();

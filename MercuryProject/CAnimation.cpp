@@ -93,12 +93,12 @@ void CAnimation::Create(CTexture* _pTex,
 	}
 }
 
-void CAnimation::AddSound(CSound* _pSound, int _idx)
+void CAnimation::AddSound(wstring _soundFileName, int _idx)
 {
 	if (_idx > m_vecFrame.size())
 		assert(nullptr);
 
-	m_vecFrame[_idx].m_pSound = _pSound;
+	m_vecFrame[_idx].strSoundFile = _soundFileName;
 }
 
 void CAnimation::play(HDC _dc, Vec2 _vRenderPos)

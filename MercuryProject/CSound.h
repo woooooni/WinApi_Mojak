@@ -1,16 +1,18 @@
 #pragma once
 #include "CRes.h"
+#include <fmod.hpp>
+
 class CSound
 	:public CRes
 {
 private:
-	FMOD_SYSTEM*			m_pSoundSystem;
+	FMOD::System*			m_pSoundSystem;
 
-	FMOD_SOUND*				m_pSound;
-	FMOD_CHANNEL*			m_pChannel;
+	FMOD::Sound*			m_pSound;
+	FMOD::Channel*			m_pChannel;
 
 	float					m_fVolume;
-	FMOD_BOOL				m_bLoop;
+	bool					m_bLoop;
 
 
 public:
@@ -19,7 +21,9 @@ public:
 	void Pause();
 
 private:
+	void update();
 	void Load(const wstring& _strPath);
+
 public:
 	CSound();
 	~CSound();

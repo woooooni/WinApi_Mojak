@@ -24,6 +24,7 @@ using std::wstring;
 #include<mmsystem.h>
 
 #include<fmod.h>
+#include <fmod.hpp>
 
 
 

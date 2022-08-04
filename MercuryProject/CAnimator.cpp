@@ -58,9 +58,6 @@ void CAnimator::Play(const wstring& _strName, bool _bRepeat)
 void CAnimator::update()
 {
 
-
-
-
 }
 
 void CAnimator::finalupdate()

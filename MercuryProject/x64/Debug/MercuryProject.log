@@ -1,6 +1,6 @@
-﻿  unity_7TQGKU40GSDPW2R4.cpp
+﻿  unity_U83RIJDNM89S9LYK.cpp
 C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(39,35): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(41,35): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(48,28): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(50,28): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(49,35): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(51,35): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   MercuryProject.vcxproj -> C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\Output\bin_debug\MercuryProject.exe

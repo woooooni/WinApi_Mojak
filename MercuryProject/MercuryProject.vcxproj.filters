@@ -104,6 +104,9 @@
     <Filter Include="Game\04. Object\Ground">
       <UniqueIdentifier>{4d2565e5-161a-410f-a440-5afe27278d66}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\07. Component\StateMachine\Monster">
+      <UniqueIdentifier>{87ebb270-96ca-4947-a374-52e90560e881}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -212,6 +215,9 @@
     <ClInclude Include="CGround.h">
       <Filter>Game\04. Object\Ground</Filter>
     </ClInclude>
+    <ClInclude Include="CState.h">
+      <Filter>Game\07. Component\StateMachine\Monster</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MercuryProject.rc">
@@ -313,6 +319,9 @@
     </ClCompile>
     <ClCompile Include="CGround.cpp">
       <Filter>Game\04. Object\Ground</Filter>
+    </ClCompile>
+    <ClCompile Include="CState.cpp">
+      <Filter>Game\07. Component\StateMachine\Monster</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

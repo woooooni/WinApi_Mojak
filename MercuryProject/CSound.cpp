@@ -3,25 +3,44 @@
 #include "CPathMgr.h"
 #include "CSound.h"
 
+
+
 CSound::CSound()
-	:m_uFlag(SND_ASYNC)
+	: m_pSoundSystem(nullptr)
+	, m_pSound(nullptr)
+	, m_pChannel(nullptr)
+	, m_fVolume(50.f)
+	, m_bLoop(false)
 {
+	
+
 }
 
 CSound::~CSound()
 {
+	
+}
+
+void CSound::Load(const wstring& _strPath)
+{
+	const wchar_t* str = _strPath.c_str();
+	size_t size = (wcslen(str) + 1) * sizeof(wchar_t);
+	char* buffer = new char[size];
+
+	size_t convertedSize;
+	wcstombs_s(&convertedSize, buffer, size, str, size);
+	FMOD_System_Create(&m_pSoundSystem, 0);
+	delete[] buffer;
 }
 
 void CSound::Play()
 {
-	wstring _strFilePath = CPathMgr::GetInst()->GetContentPath();
-	_strFilePath += GetRelativePath();
-	sndPlaySound(_strFilePath.c_str(), m_uFlag);
+
 }
 
 void CSound::Stop()
 {
-	sndPlaySound(NULL, SND_ASYNC);
+
 }
 
 void CSound::Pause()

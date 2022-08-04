@@ -11,6 +11,7 @@ CResMgr::CResMgr()
 CResMgr::~CResMgr()
 {
 	Safe_Delete_Map(m_mapTex);
+	Safe_Delete_Map(m_mapSound);
 }
 
 
@@ -61,7 +62,7 @@ CTexture* CResMgr::FindTexture(const wstring& _strKey)
 	return (CTexture*)iter->second;
 }
 
-CSound* CResMgr::CreateSound(const wstring& _strKey, const wstring& _strRelativePath)
+CSound* CResMgr::LoadSound(const wstring& _strKey, const wstring& _strRelativePath)
 {
 	CSound* pSound = FindSound(_strKey);
 	if (pSound != nullptr)
@@ -70,24 +71,15 @@ CSound* CResMgr::CreateSound(const wstring& _strKey, const wstring& _strRelative
 	wstring strFilePath = CPathMgr::GetInst()->GetContentPath();
 	strFilePath += _strRelativePath;
 
+
 	pSound = new CSound;
 	pSound->SetKey(_strKey);
 	pSound->SetRelativePath(_strRelativePath);
-
-	m_mapTex.insert(make_pair(_strKey, pSound));
-
-	return pSound;
-}
-
-CSound* CResMgr::LoadSound(const wstring& _strKey, const wstring& _strRelativePath)
-{
-	CSound* pSound = FindSound(_strKey);
-	if (pSound != nullptr)
-		return pSound;
-
-	pSound = CreateSound(_strKey, _strRelativePath);
+	pSound->Load(strFilePath);
+	m_mapSound.insert(make_pair(_strKey, pSound));
 
 	return pSound;
+
 }
 
 CSound* CResMgr::FindSound(const wstring& _strKey)

@@ -3,6 +3,7 @@
 #include "CSceneMgr.h"
 #include "CScene.h"
 #include "CUIMgr.h"
+#include "CStateMachine.h"
 #include "CEventMgr.h"
 
 
@@ -73,7 +74,17 @@ void CEventMgr::Excute(const tEvent& _eve)
 		CUIMgr::GetInst()->SetFocusedUI(nullptr);
 	}
 	break;
+	case EVENT_TYPE::STATE_CHANGE:
+	{
+		// wParam : Object Address
+		// lParam : wstring.c_str()
 
+		CObject* pObj = (CObject*)_eve.wParam;
+		CStateMachine* pMachine = pObj->GetStateMachine();
+		assert(pMachine);
+
+		pMachine->SetState(std::to_wstring(_eve.lParam));
+	}
 	//case EVENT_TYPE::CHANGE_AI_STATE:
 	//{
 	//	// lParam : AI*

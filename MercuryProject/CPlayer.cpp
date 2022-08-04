@@ -41,16 +41,18 @@ void CPlayer::init()
 									, Vec2(pTexIdle->Width() / 3, 0.f)
 									, .5f
 									, 3);
+	GetAnimator()->FindAnimation(L"IDLE")->AddSound(L"IDLE_SOUND", L"sound\\PunchSound.wav", 1);
 	GetAnimator()->CreateAnimation(
-		L"DEAD"
-		, pTexDead
-		, Vec2(0.f, 0.f)
-		, Vec2(pTexDead->Width() / 3
-			, (float)pTexDead->Height())
-		, Vec2(pTexDead->Width() / 3, 0.f)
-		, .5f
-		, 3);
-	GetAnimator()->Play(L"DEAD", true);
+									L"DEAD"
+									, pTexDead
+									, Vec2(0.f, 0.f)
+									, Vec2(pTexDead->Width() / 3
+										, (float)pTexDead->Height())
+									, Vec2(pTexDead->Width() / 3, 0.f)
+									, .5f
+									, 3);
+	
+	GetAnimator()->Play(L"IDLE", true);
 }
 
 void CPlayer::update()

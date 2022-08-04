@@ -8,7 +8,8 @@ struct tAnimFrame
 	Vec2		vLT;
 	Vec2		vSlice;
 	Vec2		vOffset;
-	wstring		strSoundFile;		//	애니메이션 사운드.
+	wstring		soundKey;		// 애니메이션 사운드 키.
+	wstring		soundPath;		// 애니메이션 사운드 경로.
 	float		fDuration;
 };
 
@@ -28,7 +29,6 @@ private:
 private:
 	void SetName(const wstring& _strName) { m_strName = _strName; }
 
-public:
 	const wstring& GetName() { return m_strName; }
 	bool IsFinish() { return m_bFinish; }
 
@@ -41,18 +41,18 @@ public:
 	tAnimFrame& GetFrame(int _iIdx) { return m_vecFrame[_iIdx]; }
 	UINT GetMaxFrame() { return (UINT)m_vecFrame.size(); }
 
+public:
+	void Create(CTexture* _pTex, Vec2 _vLT, Vec2 _vSliceSize, Vec2 _vStep, float _fDuration, UINT _iFrameCount);
+	void AddSound(wstring soundKey, wstring _soundPath, int _idx);
 	//void Save(const wstring& _strRelativePath);
 	//void Load(const wstring& _strRelativePath);
 public:
 	void update();
 	void render(HDC _dc);
 
-	void Create(CTexture* _pTex, Vec2 _vLT, Vec2 _vSliceSize, Vec2 _vStep, float _fDuration, UINT _iFrameCount);
-	void AddSound(wstring _soundFileName, int _idx);
-
 private:
+	void Play(HDC _dc, Vec2 _vRenderPos);
 
-	void play(HDC _dc, Vec2 _vRenderPos);
 public:
 	CAnimation();
 	~CAnimation();

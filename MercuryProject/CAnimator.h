@@ -9,7 +9,7 @@ class CAnimator
 {
 private:
 	map<wstring, CAnimation*>	m_mapAnim;		// 모든 애니메이션.
-	CAnimation* m_pCurAnim;		// 현재 재생중인 애니메이션.
+	CAnimation*					m_pCurAnim;		// 현재 재생중인 애니메이션.
 	bool						m_bRepeat;		// 반복재생 여부.
 	bool						m_bFlipX;		// 좌우반전 여부.
 	bool						m_bFlipY;		// 상하반전 여부.
@@ -26,7 +26,7 @@ public:
 	void SetFlipY(bool _bFlipY) { m_bFlipY = _bFlipY; }
 
 	bool GetFlipX() { return m_bFlipX; }
-	bool GetFlipY() { return m_bFlipY; }
+	bool GetFlipY() { return m_bFlipY; }	
 
 public:
 	void update();

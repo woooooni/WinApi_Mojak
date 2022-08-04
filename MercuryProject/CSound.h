@@ -4,14 +4,22 @@ class CSound
 	:public CRes
 {
 private:
-	UINT m_uFlag;
+	FMOD_SYSTEM*			m_pSoundSystem;
+
+	FMOD_SOUND*				m_pSound;
+	FMOD_CHANNEL*			m_pChannel;
+
+	float					m_fVolume;
+	FMOD_BOOL				m_bLoop;
+
+
 public:
 	void Play();
 	void Stop();
 	void Pause();
 
-	void SetFlag(UINT _flag) { m_uFlag = _flag; }
-	UINT GetFlag() { return m_uFlag; }
+private:
+	void Load(const wstring& _strPath);
 public:
 	CSound();
 	~CSound();

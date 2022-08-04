@@ -73,7 +73,7 @@ void CAnimation::render(HDC _dc)
 
 	//카메라의 위치에 따른 렌더링 좌표로 전환.
 	vPos = CCamera::GetInst()->GetRenderPos(vPos);
-	play(_dc, vPos);
+	Play(_dc, vPos);
 
 }
 
@@ -93,15 +93,16 @@ void CAnimation::Create(CTexture* _pTex,
 	}
 }
 
-void CAnimation::AddSound(wstring _soundFileName, int _idx)
+void CAnimation::AddSound(wstring _soundKey, wstring _soundPath, int _idx)
 {
 	if (_idx > m_vecFrame.size())
 		assert(nullptr);
 
-	m_vecFrame[_idx].strSoundFile = _soundFileName;
+	m_vecFrame[_idx].soundKey = _soundKey;
+	m_vecFrame[_idx].soundPath = _soundPath;
 }
 
-void CAnimation::play(HDC _dc, Vec2 _vRenderPos)
+void CAnimation::Play(HDC _dc, Vec2 _vRenderPos)
 {
 	TransparentBlt(_dc
 		, (int)(_vRenderPos.x - m_vecFrame[m_iCurFrm].vSlice.x / 2.f)
@@ -115,11 +116,12 @@ void CAnimation::play(HDC _dc, Vec2 _vRenderPos)
 		, (int)(m_vecFrame[m_iCurFrm].vSlice.y)
 		, RGB(255, 0, 255));
 
-	if (m_vecFrame[m_iCurFrm].strSoundFile != L"")
+	if (m_vecFrame[m_iCurFrm].soundKey != L"" && !m_vecFrame[m_iCurFrm].soundKey.empty())
 	{
-		CResMgr::GetInst()->FindSound(m_vecFrame[m_iCurFrm].strSoundFile);
+		CSound* pSound = CResMgr::GetInst()->LoadSound(m_vecFrame[m_iCurFrm].soundKey, m_vecFrame[m_iCurFrm].soundPath);
+		assert(pSound);
+		pSound->Play();
 	}
-		
 }
 
 //void CAnimation::Save(const wstring& _strRelativePath)

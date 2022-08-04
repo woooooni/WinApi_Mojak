@@ -17,10 +17,12 @@
 #include "CKeyMgr.h"
 #include "CCamera.h"
 #include "CTimeMgr.h"
+#include "CResMgr.h"
 
 #include "CRigidBody.h"
 #include "SelectGDI.h"
 #include "EventFunc.h"
+#include "CSound.h"
 
 CScene_Start::CScene_Start()
 {
@@ -59,7 +61,7 @@ void CScene_Start::Enter()
 	CCollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::GROUND, GROUP_TYPE::PLAYER);
 
 
-
+	//Ground 생성
 	for (int i = 0; i < 30; i++)
 	{
 		CGround* pGround = new CGround;
@@ -77,6 +79,10 @@ void CScene_Start::Enter()
 	//Camera효과 지정
 	CCamera::GetInst()->FadeOut(1.f);
 	CCamera::GetInst()->FadeIn(1.f);
+
+	//bgm Play
+	CSound* pBgm = CResMgr::GetInst()->LoadSound(L"BGM_01", L"bgm\\bgm_01.mp3");
+	pBgm->Play();
 
 	init();
 }

@@ -4,7 +4,9 @@
 #include "CRigidBody.h"
 #include "CStateMachine.h"
 #include "CAnimator.h"
+#include "CKeyMgr.h"
 #include "CAnimation.h"
+#include "CTimeMgr.h"
 #include "CResMgr.h"
 
 CPlayer::CPlayer()
@@ -57,7 +59,24 @@ void CPlayer::init()
 
 void CPlayer::update()
 {
-
+	Vec2 vPos = GetPos();
+	if (KEY_HOLD(KEY::UP_ARROW))
+	{
+		vPos.y -= 300.f * DeltaTime;
+	}
+	if (KEY_HOLD(KEY::DOWN_ARROW))
+	{
+		vPos.y += 300.f * DeltaTime;
+	}
+	if (KEY_HOLD(KEY::LEFT_ARROW))
+	{
+		vPos.x -= 300.f * DeltaTime;
+	}
+	if (KEY_HOLD(KEY::RIGHT_ARROW))
+	{
+		vPos.x += 300.f * DeltaTime;
+	}
+	SetPos(vPos);
 }
 
 void CPlayer::render(HDC _dc)
@@ -80,6 +99,7 @@ void CPlayer::OnCollisionEnter(CCollider* _pOther)
 
 void CPlayer::OnCollision(CCollider* _pOther)
 {
+
 }
 
 

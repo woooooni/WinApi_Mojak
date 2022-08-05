@@ -6,23 +6,17 @@ class CSound
 	:public CRes
 {
 private:
-	FMOD::System*			m_pSoundSystem;
-
 	FMOD::Sound*			m_pSound;
 	FMOD::Channel*			m_pChannel;
-
-	float					m_fVolume;
 	bool					m_bLoop;
 
-
 public:
-	void Play();
+	void Play(SOUND_CHANNEL_GROUP _eGroup);
 	void Stop();
 	void Pause();
 
 private:
-	void update();
-	void Load(const wstring& _strPath);
+	void Load(const wstring& _strPath, bool _bLoop=false);
 
 public:
 	CSound();

@@ -51,6 +51,7 @@ enum class BRUSH_TYPE
 {
 	HOLLOW,
 	BLACK,
+	WHITE,
 	END,
 };
 
@@ -104,4 +105,11 @@ enum class MONSTER_STATE
 	RUN_AWAY,
 	DEAD,
 	END,
+};
+
+enum class SOUND_CHANNEL_GROUP
+{
+	BGM,
+	SOUND_EFFECT,
+	END
 };

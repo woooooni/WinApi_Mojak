@@ -47,6 +47,7 @@ int CGameCore::init(HWND _hWnd, POINT _ptResolution)
 	CPathMgr::GetInst()->init();
 	CTimeMgr::GetInst()->init();
 	CKeyMgr::GetInst()->init();
+	CResMgr::GetInst()->init();
 	CSceneMgr::GetInst()->init();
 	CCamera::GetInst()->init();
 
@@ -59,6 +60,7 @@ void CGameCore::progress()
 	// MANAGER UPDATE
 	CTimeMgr::GetInst()->update();
 	CKeyMgr::GetInst()->update();
+	CResMgr::GetInst()->update();
 	CCamera::GetInst()->update();
 
 	//SCENE UPDATE
@@ -68,7 +70,7 @@ void CGameCore::progress()
 	CCollisionMgr::GetInst()->update();
 
 	//TODO::UIÀÌº¥Æ®
-
+	
 
 
 	//RENDER
@@ -100,7 +102,7 @@ void CGameCore::CreateBrushPen()
 	// hollow brush
 	m_arrBrush[(UINT)BRUSH_TYPE::HOLLOW] = (HBRUSH)GetStockObject(HOLLOW_BRUSH);
 	m_arrBrush[(UINT)BRUSH_TYPE::BLACK] = (HBRUSH)GetStockObject(BLACK_BRUSH);
-
+	m_arrBrush[(UINT)BRUSH_TYPE::WHITE] = (HBRUSH)GetStockObject(WHITE_BRUSH);
 
 	//red pen
 	//green pen
@@ -112,7 +114,7 @@ void CGameCore::CreateBrushPen()
 
 void CGameCore::Clear()
 {
-	SelectGDI gdi(m_pMemTex->GetDC(), BRUSH_TYPE::HOLLOW);
+	SelectGDI gdi(m_pMemTex->GetDC(), BRUSH_TYPE::WHITE);
 	Rectangle(m_pMemTex->GetDC(), -1, -1, m_ptResolution.x + 1, m_ptResolution.y + 1);
 }
 

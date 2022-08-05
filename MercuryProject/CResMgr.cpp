@@ -5,13 +5,19 @@
 #include "CSound.h"
 
 CResMgr::CResMgr()
+	: m_pSoundSystem(nullptr)
+	, m_ChannelGroup{}
+	, m_mapTex{}
+	, m_mapSound{}
 {
-
+	
 }
 CResMgr::~CResMgr()
 {
 	Safe_Delete_Map(m_mapTex);
 	Safe_Delete_Map(m_mapSound);
+	m_pSoundSystem->release();
+	
 }
 
 
@@ -56,9 +62,9 @@ CTexture* CResMgr::LoadTexture(const wstring& _strKey, const wstring& _strRelati
 CTexture* CResMgr::FindTexture(const wstring& _strKey)
 {
 	map<wstring, CRes*>::iterator iter = m_mapTex.find(_strKey);
-	if (iter == m_mapTex.end()) {
+	if (iter == m_mapTex.end()) 
 		return nullptr;
-	}
+
 	return (CTexture*)iter->second;
 }
 
@@ -82,11 +88,34 @@ CSound* CResMgr::LoadSound(const wstring& _strKey, const wstring& _strRelativePa
 
 }
 
+
 CSound* CResMgr::FindSound(const wstring& _strKey)
 {
 	map<wstring, CRes*>::iterator iter = m_mapSound.find(_strKey);
-	if (iter == m_mapSound.end()) {
+	if (iter == m_mapSound.end())
 		return nullptr;
-	}
+
 	return (CSound*)iter->second;
+}
+
+void CResMgr::init()
+{
+	FMOD_RESULT result;
+
+	result = FMOD::System_Create(&m_pSoundSystem);
+	if (result != FMOD_OK) assert(nullptr);
+
+	result = m_pSoundSystem->init(32, FMOD_INIT_NORMAL, nullptr);
+	if (result != FMOD_OK) assert(nullptr);
+
+	for (UINT i = 0; i < (UINT)SOUND_CHANNEL_GROUP::END; i++)
+	{
+		m_fGroupVolume[i] = .3f;
+		m_ChannelGroup[i]->setVolume(m_fGroupVolume[i]);
+	}
+}
+
+void CResMgr::update()
+{
+	m_pSoundSystem->update();
 }

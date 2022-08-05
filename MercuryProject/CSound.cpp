@@ -1,29 +1,27 @@
 #include "pch.h"
 #include "CGameCore.h"
+#include "CResMgr.h"
 #include "CPathMgr.h"
 #include "CSound.h"
 #include "fmod.hpp"
 
 
 CSound::CSound()
-	: m_pSoundSystem(nullptr)
-	, m_pSound(nullptr)
-	, m_pChannel(nullptr)
-	, m_fVolume(50.f)
+	: m_pSound(nullptr)
 	, m_bLoop(false)
 {
 	
-
 }
 
 CSound::~CSound()
 {
-	m_pSoundSystem->release();
+	m_pSound->release();
 }
 
-void CSound::Load(const wstring& _strPath)
+void CSound::Load(const wstring& _strPath, bool _bLoop)
 {
-	const wchar_t* str = _strPath.c_str();
+	SetRelativePath(_strPath);
+	const wchar_t* str = GetRelativePath().c_str();
 
 	size_t size = (wcslen(str) + 1) * sizeof(wchar_t);
 	char* buffer = new char[size];
@@ -32,30 +30,32 @@ void CSound::Load(const wstring& _strPath)
 	wcstombs_s(&convertedSize, buffer, size, str, size);
 	
 
-
 	FMOD_RESULT result;
-	result = FMOD::System_Create(&m_pSoundSystem);
+	if (_bLoop)
+	{
+		result = CResMgr::GetInst()->GetSoundSystem()->createSound(buffer, FMOD_LOOP_NORMAL, 0, &m_pSound);
+	}
+	else 
+	{
+		result = CResMgr::GetInst()->GetSoundSystem()->createSound(buffer, FMOD_LOOP_OFF, 0, &m_pSound);
+	}
+	
 	if (result != FMOD_OK) assert(nullptr);
 
-	result = m_pSoundSystem->init(32, FMOD_INIT_NORMAL, nullptr);
-	if (result != FMOD_OK) assert(nullptr);
-
-	result = m_pSoundSystem->createSound(buffer, FMOD_LOOP_OFF, 0, &m_pSound);
-	if (result != FMOD_OK) assert(nullptr);
-
-
-	delete[] buffer;
 }
 
-void CSound::Play()
+void CSound::Play(SOUND_CHANNEL_GROUP _eGroup)
 {
-	m_pSoundSystem->playSound(m_pSound, 0, false, &m_pChannel);
+	bool isPlaying = false;
+	m_pChannel->isPlaying(&isPlaying);
+
+	if (isPlaying)
+		m_pChannel->stop();
+
+	CResMgr::GetInst()->GetSoundSystem()->playSound(m_pSound, NULL, false, &m_pChannel);
+	m_pChannel->setVolume(CResMgr::GetInst()->GetVolume(_eGroup));
 }
 
-void CSound::update()
-{
-	m_pSoundSystem->update();
-}
 
 void CSound::Stop()
 {
@@ -64,6 +64,7 @@ void CSound::Stop()
 
 void CSound::Pause()
 {
+	
 }
 
 

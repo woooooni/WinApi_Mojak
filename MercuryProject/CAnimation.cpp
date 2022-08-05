@@ -120,7 +120,8 @@ void CAnimation::Play(HDC _dc, Vec2 _vRenderPos)
 	{
 		CSound* pSound = CResMgr::GetInst()->LoadSound(m_vecFrame[m_iCurFrm].soundKey, m_vecFrame[m_iCurFrm].soundPath);
 		assert(pSound);
-		pSound->Play();
+
+		pSound->Play(SOUND_CHANNEL_GROUP::SOUND_EFFECT);
 	}
 }
 

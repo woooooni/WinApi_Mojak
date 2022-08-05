@@ -16,6 +16,7 @@ CSound::CSound()
 CSound::~CSound()
 {
 	m_pSound->release();
+	
 }
 
 void CSound::Load(const wstring& _strPath, bool _bLoop)
@@ -39,9 +40,9 @@ void CSound::Load(const wstring& _strPath, bool _bLoop)
 	{
 		result = CResMgr::GetInst()->GetSoundSystem()->createSound(buffer, FMOD_LOOP_OFF, 0, &m_pSound);
 	}
-	
 	if (result != FMOD_OK) assert(nullptr);
 
+	delete[] buffer;
 }
 
 void CSound::Play(SOUND_CHANNEL_GROUP _eGroup)
@@ -50,21 +51,10 @@ void CSound::Play(SOUND_CHANNEL_GROUP _eGroup)
 	m_pChannel->isPlaying(&isPlaying);
 
 	if (isPlaying)
-		m_pChannel->stop();
+		Stop();
 
+	CResMgr::GetInst()->RegisterSoundGroup(_eGroup, m_pChannel);
 	CResMgr::GetInst()->GetSoundSystem()->playSound(m_pSound, NULL, false, &m_pChannel);
-	m_pChannel->setVolume(CResMgr::GetInst()->GetVolume(_eGroup));
-}
-
-
-void CSound::Stop()
-{
-
-}
-
-void CSound::Pause()
-{
-	
 }
 
 

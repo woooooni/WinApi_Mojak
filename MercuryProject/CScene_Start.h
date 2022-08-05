@@ -3,6 +3,8 @@
 class CScene_Start :
     public CScene
 {
+private:
+	CSound*		m_pBgm;
 public:
 	virtual void update();
 	virtual void render(HDC _dc);

@@ -14,6 +14,7 @@
 #include "CCollisionMgr.h"
 
 #include "CSceneMgr.h"
+#include "CSound.h"
 #include "CKeyMgr.h"
 #include "CCamera.h"
 #include "CTimeMgr.h"
@@ -22,9 +23,9 @@
 #include "CRigidBody.h"
 #include "SelectGDI.h"
 #include "EventFunc.h"
-#include "CSound.h"
 
 CScene_Start::CScene_Start()
+	:m_pBgm(nullptr)
 {
 }
 
@@ -36,6 +37,15 @@ CScene_Start::~CScene_Start()
 void CScene_Start::update()
 {
 	CScene::update();
+	if (KEY_HOLD(KEY::U))
+	{
+		CResMgr::GetInst()->VolumeUp(SOUND_CHANNEL_GROUP::BGM, 0.1);
+	}
+	if (KEY_HOLD(KEY::I))
+	{
+		CResMgr::GetInst()->VolumeDown(SOUND_CHANNEL_GROUP::BGM, 0.1);
+	}
+
 }
 
 void CScene_Start::render(HDC _dc)
@@ -81,8 +91,8 @@ void CScene_Start::Enter()
 	CCamera::GetInst()->FadeIn(1.f);
 
 	//bgm Play
-	CSound* pBgm = CResMgr::GetInst()->LoadSound(L"BGM_01", L"bgm\\bgm_01.mp3");
-	pBgm->Play(SOUND_CHANNEL_GROUP::BGM);
+	m_pBgm = CResMgr::GetInst()->LoadSound(L"BGM_01", L"bgm\\bgm_01.mp3");
+	m_pBgm->Play(SOUND_CHANNEL_GROUP::BGM);
 
 	init();
 }

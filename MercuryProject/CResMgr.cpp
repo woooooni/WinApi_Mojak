@@ -6,7 +6,7 @@
 
 CResMgr::CResMgr()
 	: m_pSoundSystem(nullptr)
-	, m_ChannelGroup{}
+	, m_arrChannelGroup{}
 	, m_mapTex{}
 	, m_mapSound{}
 {
@@ -16,8 +16,12 @@ CResMgr::~CResMgr()
 {
 	Safe_Delete_Map(m_mapTex);
 	Safe_Delete_Map(m_mapSound);
+	for (UINT i = 0; i < (UINT)SOUND_CHANNEL_GROUP::END; i++)
+	{
+		m_arrChannelGroup[i]->release();
+	}
+
 	m_pSoundSystem->release();
-	
 }
 
 
@@ -110,8 +114,8 @@ void CResMgr::init()
 
 	for (UINT i = 0; i < (UINT)SOUND_CHANNEL_GROUP::END; i++)
 	{
-		m_fGroupVolume[i] = .3f;
-		m_ChannelGroup[i]->setVolume(m_fGroupVolume[i]);
+		CResMgr::GetInst()->GetSoundSystem()->createChannelGroup("Channel_Group" + i, &m_arrChannelGroup[i]);
+		m_arrChannelGroup[i]->setVolume(.3f);
 	}
 }
 

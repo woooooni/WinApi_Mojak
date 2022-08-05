@@ -16,7 +16,6 @@ CObject::CObject()
 	, m_pAnimator(nullptr)
 	, m_pCollider(nullptr)
 	, m_pRigidBody(nullptr)
-	, m_pStateMachine(nullptr)
 {
 	
 }
@@ -30,7 +29,6 @@ CObject::CObject(const CObject& _origin)
 	, m_pAnimator(_origin.m_pAnimator)
 	, m_pCollider(_origin.m_pCollider)
 	, m_pRigidBody(_origin.m_pRigidBody)
-	, m_pStateMachine(_origin.m_pStateMachine)
 {
 
 	//for (UINT i = 0; i < (UINT)COMPONENT_TYPE::END; i++)
@@ -50,9 +48,6 @@ CObject::~CObject()
 
 	if (nullptr != m_pRigidBody)
 		delete m_pRigidBody;
-
-	if (nullptr != m_pStateMachine)
-		delete m_pStateMachine;
 }
 
 
@@ -74,12 +69,6 @@ void CObject::CreateRigidBody()
 	m_pRigidBody->SetOwner(this);
 }
 
-void CObject::CreateStateMachine()
-{
-	m_pStateMachine = new CStateMachine;
-	m_pStateMachine->SetOwner(this);
-}
-
 void CObject::update()
 {
 
@@ -95,9 +84,6 @@ void CObject::finalupdate()
 
 	if (nullptr != m_pRigidBody)
 		m_pRigidBody->finalupdate();
-
-	if (nullptr != m_pStateMachine)
-		m_pStateMachine->finalupdate();
 }
 
 void CObject::render(HDC _dc)
@@ -122,8 +108,5 @@ void CObject::component_render(HDC _dc)
 
 	if (nullptr != m_pRigidBody)
 		m_pRigidBody->render(_dc);
-
-	if (nullptr != m_pStateMachine)
-		m_pStateMachine->render(_dc);
 }
 

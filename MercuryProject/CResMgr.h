@@ -15,51 +15,32 @@ private:
 	map<wstring, CRes*>		m_mapSound;
 
 public:
+
+	//Texture
 	CTexture* CreateTexture(const wstring& _strKey, UINT _iWidth, UINT _iHeight);
 	CTexture* FindTexture(const wstring& _strKey);
 	CTexture* LoadTexture(const wstring& _strKey, const wstring& _strRelativePath);
 	
+
+	//Sound
 	FMOD::System* GetSoundSystem() { return m_pSoundSystem; }
 
 	CSound* FindSound(const wstring& _strKey);
 	CSound* LoadSound(const wstring& _strKey, const wstring& _strRelativePath);
 
-	void SetVolume(SOUND_CHANNEL_GROUP _eGroup, float _fVolume)
-	{
-		//Volume = 0.f ~ 1.f
-		if (_fVolume >= 0 && _fVolume <= 1.f)
-			m_arrChannelGroup[(UINT)_eGroup]->setVolume(_fVolume);
-	}
+	void SetVolume(SOUND_CHANNEL_GROUP _eGroup, float _fVolume){ }
+
 	float GetVolume(SOUND_CHANNEL_GROUP _eGroup) 
 	{	
 		float fVolume; 
 		m_arrChannelGroup[(UINT)_eGroup]->getVolume(&fVolume);
-
 		return fVolume;
 	}
 
-	void VolumeUp(SOUND_CHANNEL_GROUP _eGroup, float _fInc) 
-	{  
-		float fVolume;
-		m_arrChannelGroup[(UINT)_eGroup]->getVolume(&fVolume) + _fInc;
+	void VolumeUp(SOUND_CHANNEL_GROUP _eGroup, float _fInc);
+	void VolumeDown(SOUND_CHANNEL_GROUP _eGroup, float _fDec);
 
-		if (fVolume > 1.f)
-			fVolume = 1.f;
-
-		m_arrChannelGroup[(UINT)_eGroup]->setVolume(fVolume);
-	}
-	void VolumeDown(SOUND_CHANNEL_GROUP _eGroup, float _fDec) 
-	{ 
-		float fVolume;
-		m_arrChannelGroup[(UINT)_eGroup]->getVolume(&fVolume) - _fDec;
-
-		if (fVolume < 0.f)
-			fVolume = 0.f;
-
-		m_arrChannelGroup[(UINT)_eGroup]->setVolume(fVolume);
-	}
-
-	void RegisterSoundGroup(SOUND_CHANNEL_GROUP _eGroup, FMOD::Channel* _channel){ _channel->setChannelGroup(m_arrChannelGroup[(UINT)_eGroup]); }
+	FMOD::ChannelGroup* GetSoundGroup(SOUND_CHANNEL_GROUP _eGroup) { return m_arrChannelGroup[(UINT)_eGroup]; }
 	
 
 public:

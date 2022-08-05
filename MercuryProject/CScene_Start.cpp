@@ -37,15 +37,14 @@ CScene_Start::~CScene_Start()
 void CScene_Start::update()
 {
 	CScene::update();
-	if (KEY_HOLD(KEY::U))
+	if (KEY_TAP(KEY::A))
 	{
 		CResMgr::GetInst()->VolumeUp(SOUND_CHANNEL_GROUP::BGM, 0.1);
 	}
-	if (KEY_HOLD(KEY::I))
+	if (KEY_TAP(KEY::S))
 	{
 		CResMgr::GetInst()->VolumeDown(SOUND_CHANNEL_GROUP::BGM, 0.1);
 	}
-
 }
 
 void CScene_Start::render(HDC _dc)
@@ -65,6 +64,7 @@ void CScene_Start::Enter()
 	AddObject(pPlayer, GROUP_TYPE::PLAYER);
 	RegisterPlayer(pPlayer);
 
+	//Collision Detect
 	CCollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::PLAYER, GROUP_TYPE::MONSTER);
 	CCollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::PLAYER, GROUP_TYPE::MONSTER_PROJECTILE);
 	CCollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::MONSTER, GROUP_TYPE::PLAYER_PROJECTILE);

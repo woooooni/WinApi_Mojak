@@ -16,7 +16,6 @@ CSound::CSound()
 CSound::~CSound()
 {
 	m_pSound->release();
-	
 }
 
 void CSound::Load(const wstring& _strPath, bool _bLoop)
@@ -53,8 +52,7 @@ void CSound::Play(SOUND_CHANNEL_GROUP _eGroup)
 	if (isPlaying)
 		Stop();
 
-	CResMgr::GetInst()->RegisterSoundGroup(_eGroup, m_pChannel);
-	CResMgr::GetInst()->GetSoundSystem()->playSound(m_pSound, NULL, false, &m_pChannel);
+	CResMgr::GetInst()->GetSoundSystem()->playSound(m_pSound, CResMgr::GetInst()->GetSoundGroup(_eGroup), false, &m_pChannel);
 }
 
 

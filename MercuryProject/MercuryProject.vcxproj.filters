@@ -107,6 +107,15 @@
     <Filter Include="Game\07. Component\StateMachine\Monster">
       <UniqueIdentifier>{87ebb270-96ca-4947-a374-52e90560e881}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\04. Object\Skill">
+      <UniqueIdentifier>{4b2fc250-ee26-48c6-9a2c-7be99c39f240}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\05. Scene\Stage01">
+      <UniqueIdentifier>{cf9ae9e7-5bc2-455b-a563-f899a572d8f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\05. Scene\Statge02">
+      <UniqueIdentifier>{ee7ad5a2-3c0e-4353-8837-8c1941ccf3a2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">

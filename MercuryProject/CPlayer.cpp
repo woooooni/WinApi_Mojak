@@ -29,7 +29,6 @@ void CPlayer::init()
 	CreateRigidBody();
 	GetRigidBody()->SetGravity(true);
 
-	CreateStateMachine();
 	CreateAnimator();
 	//Texture·Îµù
 	CTexture* pTexIdle = CResMgr::GetInst()->LoadTexture(L"Player_Idle", L"texture\\jackson\\Jackson_Idle.bmp");

@@ -60,16 +60,17 @@ void CGameCore::progress()
 	// MANAGER UPDATE
 	CTimeMgr::GetInst()->update();
 	CKeyMgr::GetInst()->update();
-	CResMgr::GetInst()->update();
 	CCamera::GetInst()->update();
 
 	//SCENE UPDATE
 	CSceneMgr::GetInst()->update();
+	CResMgr::GetInst()->update();
 
 	//충돌체크
 	CCollisionMgr::GetInst()->update();
 
 	//TODO::UI이벤트
+
 	
 
 

@@ -89,7 +89,6 @@ CSound* CResMgr::LoadSound(const wstring& _strKey, const wstring& _strRelativePa
 	m_mapSound.insert(make_pair(_strKey, pSound));
 
 	return pSound;
-
 }
 
 
@@ -100,6 +99,23 @@ CSound* CResMgr::FindSound(const wstring& _strKey)
 		return nullptr;
 
 	return (CSound*)iter->second;
+}
+
+void CResMgr::VolumeUp(SOUND_CHANNEL_GROUP _eGroup, float _fInc)
+{
+	float fVolume;
+	m_arrChannelGroup[(UINT)_eGroup]->getVolume(&fVolume);
+	fVolume = clamp(fVolume + _fInc, 0.f, 1.f);
+	m_arrChannelGroup[(UINT)_eGroup]->setVolume(fVolume);
+	
+}
+
+void CResMgr::VolumeDown(SOUND_CHANNEL_GROUP _eGroup, float _fDec)
+{
+	float fVolume;
+	m_arrChannelGroup[(UINT)_eGroup]->getVolume(&fVolume);
+	fVolume = clamp(fVolume - _fDec, 0.f, 1.f);
+	m_arrChannelGroup[(UINT)_eGroup]->setVolume(fVolume);
 }
 
 void CResMgr::init()
@@ -115,8 +131,9 @@ void CResMgr::init()
 	for (UINT i = 0; i < (UINT)SOUND_CHANNEL_GROUP::END; i++)
 	{
 		CResMgr::GetInst()->GetSoundSystem()->createChannelGroup("Channel_Group" + i, &m_arrChannelGroup[i]);
-		m_arrChannelGroup[i]->setVolume(.3f);
 	}
+	m_arrChannelGroup[(UINT)SOUND_CHANNEL_GROUP::BGM]->setVolume(.5f);
+	m_arrChannelGroup[(UINT)SOUND_CHANNEL_GROUP::SOUND_EFFECT]->setVolume(.3f);
 }
 
 void CResMgr::update()

@@ -74,16 +74,16 @@ void CEventMgr::Excute(const tEvent& _eve)
 		CUIMgr::GetInst()->SetFocusedUI(nullptr);
 	}
 	break;
-	case EVENT_TYPE::STATE_CHANGE:
-	{
-		// wParam : Object Address
-		// lParam : wstring.c_str()
+	//case EVENT_TYPE::STATE_CHANGE:
+	//{
+	//	// wParam : Object Address
+	//	// lParam : wstring.c_str()
 
-		CObject* pObj = (CObject*)_eve.wParam;
-		CStateMachine* pMachine = pObj->GetStateMachine();
-		assert(pMachine);
+	//	CObject* pObj = (CObject*)_eve.wParam;
+	//	CStateMachine* pMachine = pObj->GetStateMachine();
+	//	assert(pMachine);
 
-		pMachine->SetState(std::to_wstring(_eve.lParam));
+	//	pMachine->SetState(std::to_wstring(_eve.lParam));
 	}
 	//case EVENT_TYPE::CHANGE_AI_STATE:
 	//{
@@ -93,6 +93,5 @@ void CEventMgr::Excute(const tEvent& _eve)
 	//	MONSTER_STATE eNext = (MONSTER_STATE)_eve.wParam;
 	//	_pAI->ChangeState(eNext);
 	//}
-	break;
-	}
+	//break;
 }

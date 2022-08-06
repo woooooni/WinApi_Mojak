@@ -10,17 +10,16 @@ class CStateMachine;
 class CObject
 {
 private:
-	wstring				m_strName;
-	Vec2				m_vPos;
-	Vec2				m_vScale;
-	GROUP_TYPE			m_eType;
+	wstring			m_strName;
+	Vec2			m_vPos;
+	Vec2			m_vScale;
+	GROUP_TYPE		m_eType;
 
-	bool				m_bAlive;
+	bool			m_bAlive;
 
-	CCollider*			m_pCollider;
-	CAnimator*			m_pAnimator;
-	CRigidBody*			m_pRigidBody;
-	CStateMachine*		m_pStateMachine;
+	CCollider*		m_pCollider;
+	CAnimator*		m_pAnimator;
+	CRigidBody*		m_pRigidBody;
 
 public:
 	void SetPos(Vec2 _vPos) { m_vPos = _vPos; }
@@ -51,9 +50,6 @@ public:
 
 	void CreateRigidBody();
 	CRigidBody* GetRigidBody() { return m_pRigidBody; }
-
-	void CreateStateMachine();
-	CStateMachine* GetStateMachine() { return m_pStateMachine; }
 
 private:
 	void SetDead() { m_bAlive = false; }

@@ -8,7 +8,7 @@ class CStateMachine
 private:
 	CState*					m_pCurState;
 	map<wstring, CState*>	m_mapStates;
-	
+	CAnimator*				m_pAnimator;
 
 public:
 	CState* GetCurrState() { return m_pCurState; }
@@ -26,10 +26,9 @@ public:
 	}
 
 private:
-	void	SetState(wstring _strName) { m_pCurState->Exit();  m_pCurState = m_mapStates.find(_strName)->second; m_pCurState->Enter(); }
+	void	SetState(wstring _strName) { m_pCurState = m_mapStates.find(_strName)->second; }
 
 public:
-	virtual void init();
 	virtual void update();
 	virtual void finalupdate();
 	virtual void render(HDC _dc);

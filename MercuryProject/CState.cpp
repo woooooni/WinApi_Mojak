@@ -3,11 +3,8 @@
 
 CState::CState()
 {
-
 }
 
 CState::~CState()
 {
-
 }
-

@@ -41,11 +41,11 @@ void CScene_Start::update()
 	CScene::update();
 	if (KEY_TAP(KEY::A))
 	{
-		CResMgr::GetInst()->VolumeUp(SOUND_CHANNEL_GROUP::BGM, 0.1f);
+		CResMgr::GetInst()->VolumeUp(SOUND_CHANNEL_GROUP::BGM, 0.1);
 	}
 	if (KEY_TAP(KEY::S))
 	{
-		CResMgr::GetInst()->VolumeDown(SOUND_CHANNEL_GROUP::BGM, 0.1f);
+		CResMgr::GetInst()->VolumeDown(SOUND_CHANNEL_GROUP::BGM, 0.1);
 	}
 }
 

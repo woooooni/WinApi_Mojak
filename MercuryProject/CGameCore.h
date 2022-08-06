@@ -11,8 +11,8 @@ private:
 	POINT		m_ptResolution;
 
 	//자주 사용할 GDI Object
-	HBRUSH		m_arrBrush[(UINT)BRUSH_TYPE::END];
-	HPEN		m_arrPen[(UINT)PEN_TYPE::END];
+	HBRUSH	m_arrBrush[(UINT)BRUSH_TYPE::END];
+	HPEN	m_arrPen[(UINT)PEN_TYPE::END];
 private:
 	void CreateBrushPen();
 	void Clear();

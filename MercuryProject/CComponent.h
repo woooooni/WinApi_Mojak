@@ -9,8 +9,6 @@ protected:
 	CObject* m_pOwner;		//해당 컴포넌트를 소유하고 있는 오브젝트
 
 public:
-	virtual void init() {};
-	virtual void update() {};
 	virtual void finalupdate() {};
 	virtual void render(HDC _dc) {};
 

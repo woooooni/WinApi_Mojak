@@ -16,7 +16,6 @@ CObject::CObject()
 	, m_pAnimator(nullptr)
 	, m_pCollider(nullptr)
 	, m_pRigidBody(nullptr)
-	, m_pStateMachine(nullptr)
 {
 	
 }
@@ -49,9 +48,6 @@ CObject::~CObject()
 
 	if (nullptr != m_pRigidBody)
 		delete m_pRigidBody;
-
-	if (nullptr != m_pStateMachine)
-		delete m_pStateMachine;
 }
 
 
@@ -59,43 +55,23 @@ void CObject::CreateCollider()
 {
 	m_pCollider = new CCollider;
 	m_pCollider->SetOwner(this);
-	m_pCollider->init();
 }
 
 void CObject::CreateAnimator()
 {
 	m_pAnimator = new CAnimator;
 	m_pAnimator->SetOwner(this);
-	m_pAnimator->init();
 }
 
 void CObject::CreateRigidBody()
 {
 	m_pRigidBody = new CRigidBody;
 	m_pRigidBody->SetOwner(this);
-	m_pRigidBody->init();
-}
-
-void CObject::CreateStateMachine()
-{
-	m_pStateMachine = new CStateMachine;
-	m_pStateMachine->SetOwner(this);
-	m_pStateMachine->init();
 }
 
 void CObject::update()
 {
-	if (nullptr != m_pAnimator)
-		m_pAnimator->update();
 
-	if (nullptr != m_pCollider)
-		m_pCollider->update();
-
-	if (nullptr != m_pRigidBody)
-		m_pRigidBody->update();
-
-	if (nullptr != m_pStateMachine)
-		m_pStateMachine->update();
 }
 
 void CObject::finalupdate()
@@ -108,9 +84,6 @@ void CObject::finalupdate()
 
 	if (nullptr != m_pRigidBody)
 		m_pRigidBody->finalupdate();
-
-	if (nullptr != m_pStateMachine)
-		m_pStateMachine->finalupdate();
 }
 
 void CObject::render(HDC _dc)

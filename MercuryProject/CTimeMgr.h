@@ -13,6 +13,7 @@ private:
 	double			m_Acc;			// 1초 체크를 위한 누적 시간
 	UINT			m_iCallCount;	// 함수 호출 횟수 체크
 	UINT			m_iFPS;
+	float			m_fTimeScale;
 
 public:
 	void init();
@@ -20,6 +21,8 @@ public:
 	void render();
 
 public:
+	float GetTimeScale() { return m_fTimeScale; }
+	void SetTimeScale(float _fScale) { m_fTimeScale = _fScale; }
 	float GetfDT() { return (float)m_dDT; }
 };
 

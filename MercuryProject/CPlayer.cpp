@@ -21,66 +21,43 @@ CPlayer::~CPlayer()
 
 void CPlayer::init()
 {
-	CreateCollider();
-	Vec2 vScale = GetScale();
-	GetCollider()->SetOffsetPos(Vec2(0.f, 5.f));
-	GetCollider()->SetScale(Vec2(vScale.x, vScale.y));
 
 	CreateRigidBody();
 	GetRigidBody()->SetGravity(true);
 
+	CreateCollider();
+	Vec2 vScale = GetScale();
+	GetCollider()->SetOffsetPos(Vec2(0.f, 10.f));
+	GetCollider()->SetScale(Vec2(vScale.x - 50.f, vScale.y - 5.f));
+
 	CreateAnimator();
 	//Texture·Îµù
-	CTexture* pTexIdle = CResMgr::GetInst()->LoadTexture(L"Player_Idle", L"texture\\jackson\\Jackson_Idle.bmp");
-	CTexture* pTexWalk = CResMgr::GetInst()->LoadTexture(L"Player_Walk", L"texture\\jackson\\Jackson_Walk1.bmp");
-	CTexture* pTexDead = CResMgr::GetInst()->LoadTexture(L"Player_Dead", L"texture\\jackson\\Jackson_Dead.bmp");
+	CTexture* pTexCharacter = CResMgr::GetInst()->LoadTexture(L"character", L"texture\\character\\character_1.bmp");
 
 	GetAnimator()->CreateAnimation(
 									L"IDLE"
-									, pTexIdle
+									, pTexCharacter
 									, Vec2(0.f, 0.f)
-									, Vec2(pTexIdle->Width() / 3
-										, (float)pTexIdle->Height())
-									, Vec2(pTexIdle->Width() / 3, 0.f)
-									, .5f
+									, Vec2((float)pTexCharacter->Width() / 9
+										, (float)pTexCharacter->Height() / 6)
+									, Vec2((float)pTexCharacter->Width() / 9, 0.f)
+									, .2f
 									, 3);
-	GetAnimator()->CreateAnimation(
-									L"WALK"
-									, pTexWalk
-									, Vec2(0.f, 0.f)
-									, Vec2(pTexWalk->Width() / 3
-										, (float)pTexWalk->Height())
-									, Vec2(pTexWalk->Width() / 3, 0.f)
-									, .1f
-									, 3);
-
-	GetAnimator()->CreateAnimation(
-									L"DEAD"
-									, pTexDead
-									, Vec2(0.f, 0.f)
-									, Vec2(pTexDead->Width() / 3
-										, (float)pTexDead->Height())
-									, Vec2(pTexDead->Width() / 3, 0.f)
-									, .5f
-									, 3);
-
-	
-	GetAnimator()->FindAnimation(L"WALK")->AddSound(L"WALK_SOUND", L"sound\\walk_jackson.mp3", 0);
-	GetAnimator()->FindAnimation(L"WALK")->AddSound(L"WALK_SOUND", L"sound\\walk_jackson.mp3", 2);
-	
-	GetAnimator()->Play(L"WALK", true);
+	GetAnimator()->Play(L"IDLE", true);
 }
 
 void CPlayer::update()
 {
+	CRigidBody* pRigid = GetRigidBody();
 	Vec2 vPos = GetPos();
-	if (KEY_HOLD(KEY::UP_ARROW))
+	if (KEY_TAP(KEY::SPACE))
 	{
-		vPos.y -= 300.f * DeltaTime;
+		pRigid->SetGround(false);
+		pRigid->SetVelocity(Vec2(pRigid->GetVelocity().x, -400.f));
 	}
-	if (KEY_HOLD(KEY::DOWN_ARROW))
+	if (KEY_TAP(KEY::SHIFT))
 	{
-		vPos.y += 300.f * DeltaTime;
+		pRigid->AddVelocity(Vec2(1001.f, pRigid->GetVelocity().y));
 	}
 	if (KEY_HOLD(KEY::LEFT_ARROW))
 	{
@@ -109,16 +86,42 @@ void CPlayer::render(HDC _dc)
 
 void CPlayer::OnCollisionEnter(CCollider* _pOther)
 {
+	CObject* pOtherObj = _pOther->GetObj();
+	if (pOtherObj->GetType() == GROUP_TYPE::GROUND)
+	{
+		CRigidBody* rigid = GetRigidBody();
+		if (rigid == nullptr)
+			return;
+
+		rigid->SetGround(true);
+	}
 }
 
 void CPlayer::OnCollision(CCollider* _pOther)
 {
+	CObject* pOtherObj = _pOther->GetObj();
+	if (pOtherObj->GetType() == GROUP_TYPE::GROUND)
+	{
+		CRigidBody* rigid = GetRigidBody();
+		if (rigid == nullptr)
+			return;
 
+		rigid->SetGround(true);
+	}
 }
 
 
 
 void CPlayer::OnCollisionExit(CCollider* _pOther)
 {
+	CObject* pOtherObj = _pOther->GetObj();
+	if (pOtherObj->GetType() == GROUP_TYPE::GROUND)
+	{
+		CRigidBody* rigid = GetRigidBody();
+		if (rigid == nullptr)
+			return;
+
+		rigid->SetGround(false);
+	}
 }
 

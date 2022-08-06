@@ -42,10 +42,15 @@ void CScene_Start::update()
 	if (KEY_TAP(KEY::A))
 	{
 		CResMgr::GetInst()->VolumeUp(SOUND_CHANNEL_GROUP::BGM, 0.1);
+		CTimeMgr::GetInst()->SetTimeScale(1.f);
+		CResMgr::GetInst()->GetSoundGroup(SOUND_CHANNEL_GROUP::BGM)->setPitch(CTimeMgr::GetInst()->GetTimeScale());
 	}
 	if (KEY_TAP(KEY::S))
 	{
 		CResMgr::GetInst()->VolumeDown(SOUND_CHANNEL_GROUP::BGM, 0.1);
+		CTimeMgr::GetInst()->SetTimeScale(.5f);
+		CResMgr::GetInst()->GetSoundGroup(SOUND_CHANNEL_GROUP::BGM)->setPitch(CTimeMgr::GetInst()->GetTimeScale());
+
 	}
 }
 
@@ -92,7 +97,7 @@ void CScene_Start::Enter()
 	CCamera::GetInst()->FadeIn(1.f);
 
 	//bgm Play
-	m_pBgm = CResMgr::GetInst()->LoadSound(L"BGM_01", L"bgm\\BillieJean.mp3");
+	m_pBgm = CResMgr::GetInst()->LoadSound(L"BGM_01", L"bgm\\BGM_Fantagy.mp3");
 	m_pBgm->Play(SOUND_CHANNEL_GROUP::BGM);
 
 	init();

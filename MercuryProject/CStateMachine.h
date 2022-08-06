@@ -15,7 +15,6 @@ public:
 	CState* GetState(const wstring _strName) { return m_mapStates.find(_strName)->second; }
 	void AddState(const wstring _strName, CState* _state) 
 	{ 
-		_state->SetName(_strName);
 		m_mapStates.insert(make_pair(_strName, _state));
 	}
 

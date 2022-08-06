@@ -43,11 +43,11 @@ CObject::~CObject()
 	if (nullptr != m_pAnimator)
 		delete m_pAnimator;
 
-	if (nullptr != m_pCollider)
-		delete m_pCollider;
-
 	if (nullptr != m_pRigidBody)
 		delete m_pRigidBody;
+
+	if (nullptr != m_pCollider)
+		delete m_pCollider;
 }
 
 
@@ -79,11 +79,11 @@ void CObject::finalupdate()
 	if (nullptr != m_pAnimator)
 		m_pAnimator->finalupdate();
 
-	if (nullptr != m_pCollider)
-		m_pCollider->finalupdate();
-
 	if (nullptr != m_pRigidBody)
 		m_pRigidBody->finalupdate();
+
+	if (nullptr != m_pCollider)
+		m_pCollider->finalupdate();
 }
 
 void CObject::render(HDC _dc)
@@ -103,10 +103,10 @@ void CObject::component_render(HDC _dc)
 	if (nullptr != m_pAnimator)
 		m_pAnimator->render(_dc);
 
-	if (nullptr != m_pCollider)
-		m_pCollider->render(_dc);
-
 	if (nullptr != m_pRigidBody)
 		m_pRigidBody->render(_dc);
+
+	if (nullptr != m_pCollider)
+		m_pCollider->render(_dc);
 }
 

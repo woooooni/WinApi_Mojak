@@ -9,6 +9,7 @@ CTimeMgr::CTimeMgr()
 	, m_iCallCount(0)
 	, m_Acc(0)
 	, m_iFPS(0)
+	, m_fTimeScale(1.f)
 {
 
 }
@@ -36,7 +37,8 @@ void CTimeMgr::update()
 	//QuadPart는 union 타입.
 	//union => 구조체와 비슷.
 
-	m_dDT = (double)(m_llCurCount.QuadPart - m_llPrevCount.QuadPart) / (double)m_llFrequency.QuadPart;
+	
+	m_dDT = (double)((m_llCurCount.QuadPart - m_llPrevCount.QuadPart) / (double)m_llFrequency.QuadPart) * m_fTimeScale;
 
 	//2. 이전 카운트 값을 현재 카운트 값으로 갱신한다.
 	m_llPrevCount = m_llCurCount;

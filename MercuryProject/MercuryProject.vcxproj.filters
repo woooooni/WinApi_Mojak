@@ -68,12 +68,6 @@
     <Filter Include="Game\07. Component\Collider">
       <UniqueIdentifier>{0bce54ce-ab33-480d-b11c-2ae812a03da4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\08. Module">
-      <UniqueIdentifier>{10ff6850-7a9c-4d3e-9ece-5cfa3b3576d4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\09. Factory">
-      <UniqueIdentifier>{d8095b39-4368-4740-bec4-2fe821a81fc9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game\03. Managers\Resource">
       <UniqueIdentifier>{37b44e57-092a-4ce4-b1a4-d638326ef3f9}</UniqueIdentifier>
     </Filter>
@@ -104,9 +98,6 @@
     <Filter Include="Game\04. Object\Ground">
       <UniqueIdentifier>{4d2565e5-161a-410f-a440-5afe27278d66}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\07. Component\StateMachine\Monster">
-      <UniqueIdentifier>{87ebb270-96ca-4947-a374-52e90560e881}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game\04. Object\Skill">
       <UniqueIdentifier>{4b2fc250-ee26-48c6-9a2c-7be99c39f240}</UniqueIdentifier>
     </Filter>
@@ -133,6 +124,18 @@
     </Filter>
     <Filter Include="Game\04. Object\UI\ButtonUI">
       <UniqueIdentifier>{bf720fe2-022a-4e23-be13-b330cef5b54e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\08. State">
+      <UniqueIdentifier>{10ff6850-7a9c-4d3e-9ece-5cfa3b3576d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\09. Module">
+      <UniqueIdentifier>{cec4b527-e3cc-4eb9-8baa-8e781235f73a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\08. State\Monster">
+      <UniqueIdentifier>{87ebb270-96ca-4947-a374-52e90560e881}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\08. State\Player">
+      <UniqueIdentifier>{72aa4994-a179-40d7-8cad-5191cd7bb652}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -169,9 +172,6 @@
     </ClInclude>
     <ClInclude Include="CObject.h">
       <Filter>Game\04. Object</Filter>
-    </ClInclude>
-    <ClInclude Include="SelectGDI.h">
-      <Filter>Game\08. Module</Filter>
     </ClInclude>
     <ClInclude Include="CScene.h">
       <Filter>Game\05. Scene</Filter>
@@ -242,14 +242,17 @@
     <ClInclude Include="CGround.h">
       <Filter>Game\04. Object\Ground</Filter>
     </ClInclude>
-    <ClInclude Include="CState.h">
-      <Filter>Game\07. Component\StateMachine\Monster</Filter>
-    </ClInclude>
     <ClInclude Include="CPanelUI.h">
       <Filter>Game\04. Object\UI\PanelUI</Filter>
     </ClInclude>
     <ClInclude Include="CButtonUI.h">
       <Filter>Game\04. Object\UI\ButtonUI</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectGDI.h">
+      <Filter>Game\09. Module</Filter>
+    </ClInclude>
+    <ClInclude Include="CState.h">
+      <Filter>Game\08. State</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -283,9 +286,6 @@
     </ClCompile>
     <ClCompile Include="CObject.cpp">
       <Filter>Game\04. Object</Filter>
-    </ClCompile>
-    <ClCompile Include="SelectGDI.cpp">
-      <Filter>Game\08. Module</Filter>
     </ClCompile>
     <ClCompile Include="CScene.cpp">
       <Filter>Game\05. Scene</Filter>
@@ -353,14 +353,17 @@
     <ClCompile Include="CGround.cpp">
       <Filter>Game\04. Object\Ground</Filter>
     </ClCompile>
-    <ClCompile Include="CState.cpp">
-      <Filter>Game\07. Component\StateMachine\Monster</Filter>
-    </ClCompile>
     <ClCompile Include="CPanelUI.cpp">
       <Filter>Game\04. Object\UI\PanelUI</Filter>
     </ClCompile>
     <ClCompile Include="CButtonUI.cpp">
       <Filter>Game\04. Object\UI\ButtonUI</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectGDI.cpp">
+      <Filter>Game\09. Module</Filter>
+    </ClCompile>
+    <ClCompile Include="CState.cpp">
+      <Filter>Game\08. State</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

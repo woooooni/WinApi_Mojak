@@ -77,22 +77,10 @@ void CScene_Start::Enter()
 	for (int i = 0; i < 30; i++)
 	{
 		CGround* pGround = new CGround;
-		pGround->SetScale(Vec2(60.f, 1.f));
+		pGround->SetScale(Vec2(60.f, 60.f));
 		pGround->SetPos(Vec2(i * 60.f, 700.f));
 		AddObjectEvt(pGround, GROUP_TYPE::GROUND);
 	}
-
-	CUI* panel = new CPanelUI;
-	panel->SetPos(Vec2(100.f, 100.f));
-	panel->SetScale(Vec2(300.f, 600.f));
-	panel->SetText(L"Parent");
-
-	CPanelUI* child = new CPanelUI;
-	child->SetPos(Vec2(0.f, 0.f));
-	child->SetScale(Vec2(100.f, 100.f));
-
-	panel->AddChild(child);
-	AddObjectEvt(panel, GROUP_TYPE::UI);
 
 
 	//CameraLook ÁöÁ¤
@@ -104,7 +92,7 @@ void CScene_Start::Enter()
 	CCamera::GetInst()->FadeIn(1.f);
 
 	//bgm Play
-	m_pBgm = CResMgr::GetInst()->LoadSound(L"BGM_01", L"bgm\\bgm_01.mp3");
+	m_pBgm = CResMgr::GetInst()->LoadSound(L"BGM_01", L"bgm\\BillieJean.mp3");
 	m_pBgm->Play(SOUND_CHANNEL_GROUP::BGM);
 
 	init();

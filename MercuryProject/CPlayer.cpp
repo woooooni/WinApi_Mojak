@@ -23,7 +23,7 @@ void CPlayer::init()
 {
 	CreateCollider();
 	Vec2 vScale = GetScale();
-	GetCollider()->SetOffsetPos(Vec2(0.f, 0.f));
+	GetCollider()->SetOffsetPos(Vec2(0.f, 5.f));
 	GetCollider()->SetScale(Vec2(vScale.x, vScale.y));
 
 	CreateRigidBody();

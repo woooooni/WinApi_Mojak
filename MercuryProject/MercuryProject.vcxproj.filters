@@ -131,6 +131,9 @@
     <Filter Include="Game\04. Object\UI\PanelUI">
       <UniqueIdentifier>{d74041d6-59fd-4457-877f-0c186d9d9f49}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\04. Object\UI\ButtonUI">
+      <UniqueIdentifier>{bf720fe2-022a-4e23-be13-b330cef5b54e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -245,6 +248,9 @@
     <ClInclude Include="CPanelUI.h">
       <Filter>Game\04. Object\UI\PanelUI</Filter>
     </ClInclude>
+    <ClInclude Include="CButtonUI.h">
+      <Filter>Game\04. Object\UI\ButtonUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MercuryProject.rc">
@@ -352,6 +358,9 @@
     </ClCompile>
     <ClCompile Include="CPanelUI.cpp">
       <Filter>Game\04. Object\UI\PanelUI</Filter>
+    </ClCompile>
+    <ClCompile Include="CButtonUI.cpp">
+      <Filter>Game\04. Object\UI\ButtonUI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -44,4 +44,9 @@ void CGround::OnCollision(CCollider* _pOther)
 }
 void CGround::OnCollisionExit(CCollider* _pOther) 
 {
+	if (_pOther->GetObj()->GetType() == GROUP_TYPE::PLAYER)
+	{
+		CObject* obj = _pOther->GetObj();
+		obj->GetRigidBody()->SetGround(false);
+	}
 }

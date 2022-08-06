@@ -1,8 +1,11 @@
-﻿  unity_U83RIJDNM89S9LYK.cpp
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(40,35): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  unity_8BN037QTYGDWP4JJ.cpp
 C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(42,35): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(50,35): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(52,35): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CScene_Start.cpp(42,61): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CScene_Start.cpp(46,63): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(44,35): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(51,35): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(53,35): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(61,35): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(63,35): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CScene_Start.cpp(44,61): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CScene_Start.cpp(48,63): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CUI.cpp(84,82): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   MercuryProject.vcxproj -> C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\Output\bin_debug\MercuryProject.exe

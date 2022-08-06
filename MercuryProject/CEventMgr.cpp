@@ -38,7 +38,7 @@ void CEventMgr::Excute(const tEvent& _eve)
 	//이벤트 처리함수
 	switch (_eve.eEven)
 	{
-	case EVENT_TYPE::CREATE_OBJECT:
+	case EVENT_TYPE::ADD_OBJECT:
 	{
 		// lParam : Object Address
 		// wParam : Group Type

@@ -30,7 +30,7 @@ public:
 
 
 public:
-	void AddObject(CObject* _obj, GROUP_TYPE _eType) { m_arrObj[(UINT)_eType].push_back(_obj); }
+	void AddObject(CObject* _obj, GROUP_TYPE _eType) { _obj->init(); m_arrObj[(UINT)_eType].push_back(_obj); }
 
 	void RegisterPlayer(CObject* _pPlayer) { m_pPlayer = _pPlayer; }
 	CObject* GetPlayer() { return m_pPlayer; }

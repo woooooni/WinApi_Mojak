@@ -8,6 +8,7 @@
 #include "CResMgr.h"
 #include "CSceneMgr.h"
 #include "CEventMgr.h"
+#include "CUIMgr.h"
 #include "CCollisionMgr.h"
 #include "SelectGDI.h"
 
@@ -63,14 +64,14 @@ void CGameCore::progress()
 	CCamera::GetInst()->update();
 
 	//SCENE UPDATE
-	CSceneMgr::GetInst()->update();
 	CResMgr::GetInst()->update();
+	CSceneMgr::GetInst()->update();
 
 	//충돌체크
 	CCollisionMgr::GetInst()->update();
 
-	//TODO::UI이벤트
-
+	//UI이벤트
+	CUIMgr::GetInst()->update();
 	
 
 
@@ -89,6 +90,13 @@ void CGameCore::progress()
 	//===========
 	CEventMgr::GetInst()->update();
 	
+}
+
+
+void CGameCore::Clear()
+{
+	SelectGDI gdi(m_pMemTex->GetDC(), BRUSH_TYPE::WHITE);
+	Rectangle(m_pMemTex->GetDC(), -1, -1, m_ptResolution.x + 1, m_ptResolution.y + 1);
 }
 
 void CGameCore::ChangeWindowSize(POINT _ptResolution, bool _bMenu)
@@ -113,10 +121,5 @@ void CGameCore::CreateBrushPen()
 	m_arrPen[(UINT)PEN_TYPE::BLUE] = CreatePen(PS_SOLID, 1, RGB(0, 0, 255));;
 }
 
-void CGameCore::Clear()
-{
-	SelectGDI gdi(m_pMemTex->GetDC(), BRUSH_TYPE::WHITE);
-	Rectangle(m_pMemTex->GetDC(), -1, -1, m_ptResolution.x + 1, m_ptResolution.y + 1);
-}
 
 

@@ -32,7 +32,9 @@ void CPlayer::init()
 	CreateAnimator();
 	//Texture·Îµù
 	CTexture* pTexIdle = CResMgr::GetInst()->LoadTexture(L"Player_Idle", L"texture\\jackson\\Jackson_Idle.bmp");
+	CTexture* pTexWalk = CResMgr::GetInst()->LoadTexture(L"Player_Walk", L"texture\\jackson\\Jackson_Walk1.bmp");
 	CTexture* pTexDead = CResMgr::GetInst()->LoadTexture(L"Player_Dead", L"texture\\jackson\\Jackson_Dead.bmp");
+
 	GetAnimator()->CreateAnimation(
 									L"IDLE"
 									, pTexIdle
@@ -42,7 +44,16 @@ void CPlayer::init()
 									, Vec2(pTexIdle->Width() / 3, 0.f)
 									, .5f
 									, 3);
-	GetAnimator()->FindAnimation(L"IDLE")->AddSound(L"IDLE_SOUND", L"sound\\PunchSound.wav", 1);
+	GetAnimator()->CreateAnimation(
+									L"WALK"
+									, pTexWalk
+									, Vec2(0.f, 0.f)
+									, Vec2(pTexWalk->Width() / 3
+										, (float)pTexWalk->Height())
+									, Vec2(pTexWalk->Width() / 3, 0.f)
+									, .1f
+									, 3);
+
 	GetAnimator()->CreateAnimation(
 									L"DEAD"
 									, pTexDead
@@ -52,8 +63,12 @@ void CPlayer::init()
 									, Vec2(pTexDead->Width() / 3, 0.f)
 									, .5f
 									, 3);
+
 	
-	GetAnimator()->Play(L"IDLE", true);
+	GetAnimator()->FindAnimation(L"WALK")->AddSound(L"WALK_SOUND", L"sound\\walk_jackson.mp3", 0);
+	GetAnimator()->FindAnimation(L"WALK")->AddSound(L"WALK_SOUND", L"sound\\walk_jackson.mp3", 2);
+	
+	GetAnimator()->Play(L"WALK", true);
 }
 
 void CPlayer::update()

@@ -20,14 +20,9 @@ using std::string;
 using std::wstring;
 
 #pragma comment(lib, "Msimg32.lib")
-#pragma comment(lib, "winmm.lib")
-#include<mmsystem.h>
 
 #include<fmod.h>
 #include <fmod.hpp>
-
-
-
 
 #include<assert.h>
 #include<math.h>
@@ -36,7 +31,9 @@ using std::wstring;
 #include "define.h"
 #include "struct.h"
 #include "func.h"
-#include "EventFunc.h"
+#include "eventfunc.h"
+
+
 
 
 

@@ -10,8 +10,10 @@
 							type();\
 							~type();
 
-#define CLONE(type) type* Clone() { return new type(*this); }
+
 #define DeltaTime CTimeMgr::GetInst()->GetfDT()
+
+#define CLONE(type) type* Clone() { return new type(*this); }
 #define PI 3.1415926535
 
 
@@ -65,7 +67,7 @@ enum class PEN_TYPE
 
 enum class EVENT_TYPE
 {
-	CREATE_OBJECT,
+	ADD_OBJECT,
 	DELETE_OBJECT,
 	SCENE_CHANGE,
 	STATE_CHANGE,

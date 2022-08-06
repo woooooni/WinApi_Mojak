@@ -14,22 +14,24 @@ private:
 	map<wstring, CRes*>		m_mapTex;
 	map<wstring, CRes*>		m_mapSound;
 
+private:
+	CTexture* FindTexture(const wstring& _strKey);
+	CSound* FindSound(const wstring& _strKey);
+
 public:
 
 	//Texture
 	CTexture* CreateTexture(const wstring& _strKey, UINT _iWidth, UINT _iHeight);
-	CTexture* FindTexture(const wstring& _strKey);
 	CTexture* LoadTexture(const wstring& _strKey, const wstring& _strRelativePath);
 	
 
 	//Sound
 	FMOD::System* GetSoundSystem() { return m_pSoundSystem; }
 
-	CSound* FindSound(const wstring& _strKey);
+	
 	CSound* LoadSound(const wstring& _strKey, const wstring& _strRelativePath);
 
-	void SetVolume(SOUND_CHANNEL_GROUP _eGroup, float _fVolume){ }
-
+	void SetVolume(SOUND_CHANNEL_GROUP _eGroup, float _fVolume);
 	float GetVolume(SOUND_CHANNEL_GROUP _eGroup) 
 	{	
 		float fVolume; 

@@ -1,12 +1,12 @@
 #include "pch.h"
-#include "EventFunc.h"
+#include "eventfunc.h"
 #include "CEventMgr.h"
 #include "CObject.h"
 
-void CreateObj(CObject* _pObj, GROUP_TYPE _eGroup)
+void AddObjectEvt(CObject* _pObj, GROUP_TYPE _eGroup)
 {
 	tEvent event = {};
-	event.eEven = EVENT_TYPE::CREATE_OBJECT;
+	event.eEven = EVENT_TYPE::ADD_OBJECT;
 	_pObj->SetType(_eGroup);
 	event.lParam = (DWORD_PTR)_pObj;
 	event.wParam = (DWORD_PTR)_eGroup;

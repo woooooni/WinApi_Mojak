@@ -7,18 +7,20 @@
 #include "CPlayer.h"
 //#include "CMonster.h"
 #include "CGround.h"
-
-#include "CPathMgr.h"
+#include "CUI.h"
+#include "CPanelUI.h"
 #include "CTexture.h"
 
+#include "CPathMgr.h"
 #include "CCollisionMgr.h"
-
+#include "CUIMgr.h"
 #include "CSceneMgr.h"
 #include "CSound.h"
 #include "CKeyMgr.h"
 #include "CCamera.h"
 #include "CTimeMgr.h"
 #include "CResMgr.h"
+
 
 #include "CRigidBody.h"
 #include "SelectGDI.h"
@@ -60,9 +62,9 @@ void CScene_Start::Enter()
 	CPlayer* pPlayer = new CPlayer;
 	pPlayer->SetPos(Vec2(640.f, 384.f));
 	pPlayer->SetScale(Vec2(100.f, 100.f));
-	pPlayer->SetType(GROUP_TYPE::PLAYER);
-	AddObject(pPlayer, GROUP_TYPE::PLAYER);
 	RegisterPlayer(pPlayer);
+	AddObjectEvt(pPlayer, GROUP_TYPE::PLAYER);
+	
 
 	//Collision Detect
 	CCollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::PLAYER, GROUP_TYPE::MONSTER);
@@ -77,9 +79,20 @@ void CScene_Start::Enter()
 		CGround* pGround = new CGround;
 		pGround->SetScale(Vec2(60.f, 1.f));
 		pGround->SetPos(Vec2(i * 60.f, 700.f));
-		pGround->SetType(GROUP_TYPE::GROUND);
-		AddObject(pGround, GROUP_TYPE::GROUND);
+		AddObjectEvt(pGround, GROUP_TYPE::GROUND);
 	}
+
+	CUI* panel = new CPanelUI;
+	panel->SetPos(Vec2(100.f, 100.f));
+	panel->SetScale(Vec2(300.f, 600.f));
+	panel->SetText(L"Parent");
+
+	CPanelUI* child = new CPanelUI;
+	child->SetPos(Vec2(0.f, 0.f));
+	child->SetScale(Vec2(100.f, 100.f));
+
+	panel->AddChild(child);
+	AddObjectEvt(panel, GROUP_TYPE::UI);
 
 
 	//CameraLook ÁöÁ¤

@@ -91,6 +91,14 @@ CSound* CResMgr::LoadSound(const wstring& _strKey, const wstring& _strRelativePa
 	return pSound;
 }
 
+void CResMgr::SetVolume(SOUND_CHANNEL_GROUP _eGroup, float _fVolume)
+{
+	float fVolume;
+	m_arrChannelGroup[(UINT)_eGroup]->getVolume(&fVolume);
+	fVolume = clamp(fVolume + _fVolume, 0.f, 1.f);
+	m_arrChannelGroup[(UINT)_eGroup]->setVolume(fVolume);
+}
+
 
 CSound* CResMgr::FindSound(const wstring& _strKey)
 {

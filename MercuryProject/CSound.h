@@ -14,7 +14,7 @@ public:
 	void Play(SOUND_CHANNEL_GROUP _eGroup);
 	void Stop() { m_pChannel->stop(); }
 	void Pause() { m_pChannel->setPaused(true); }
-	void RePlay() { m_pChannel->setPaused(false); }
+	void ReSume() { m_pChannel->setPaused(false); }
 
 private:
 	void Load(const wstring& _strPath, bool _bLoop=false);

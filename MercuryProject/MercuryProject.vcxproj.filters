@@ -116,6 +116,21 @@
     <Filter Include="Game\05. Scene\Statge02">
       <UniqueIdentifier>{ee7ad5a2-3c0e-4353-8837-8c1941ccf3a2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\04. Object\UI\InventoryUI">
+      <UniqueIdentifier>{3018441e-c594-4d2f-b1f4-8c1fcdcd7532}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04. Object\UI\LabelUI">
+      <UniqueIdentifier>{77727f0d-2331-47ef-8958-90103852f971}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04. Object\UI\HPUI">
+      <UniqueIdentifier>{72166258-7a13-4260-8741-1bbb712ce143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04. Object\UI\PlayeInfo">
+      <UniqueIdentifier>{5d30af1c-cf89-4f54-ab89-4277d1771f68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04. Object\UI\PanelUI">
+      <UniqueIdentifier>{d74041d6-59fd-4457-877f-0c186d9d9f49}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -167,7 +182,7 @@
     <ClInclude Include="CEventMgr.h">
       <Filter>Game\03. Managers\Event</Filter>
     </ClInclude>
-    <ClInclude Include="EventFunc.h">
+    <ClInclude Include="eventfunc.h">
       <Filter>Game\01. Header\Func\Event</Filter>
     </ClInclude>
     <ClInclude Include="CCollider.h">
@@ -227,6 +242,9 @@
     <ClInclude Include="CState.h">
       <Filter>Game\07. Component\StateMachine\Monster</Filter>
     </ClInclude>
+    <ClInclude Include="CPanelUI.h">
+      <Filter>Game\04. Object\UI\PanelUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MercuryProject.rc">
@@ -275,7 +293,7 @@
     <ClCompile Include="CEventMgr.cpp">
       <Filter>Game\03. Managers\Event</Filter>
     </ClCompile>
-    <ClCompile Include="EventFunc.cpp">
+    <ClCompile Include="eventfunc.cpp">
       <Filter>Game\01. Header\Func\Event</Filter>
     </ClCompile>
     <ClCompile Include="CCollisionMgr.cpp">
@@ -331,6 +349,9 @@
     </ClCompile>
     <ClCompile Include="CState.cpp">
       <Filter>Game\07. Component\StateMachine\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="CPanelUI.cpp">
+      <Filter>Game\04. Object\UI\PanelUI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

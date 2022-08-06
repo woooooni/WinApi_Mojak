@@ -1,11 +1,22 @@
-﻿  unity_8BN037QTYGDWP4JJ.cpp
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(42,35): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(44,35): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(51,35): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(53,35): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(61,35): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CPlayer.cpp(63,35): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CScene_Start.cpp(44,61): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CScene_Start.cpp(48,63): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+﻿  unity_737T5X1HSRW02ZTG.cpp
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.cpp(17,22): error C2248: 'CGameCore::CGameCore': private 멤버('CGameCore' 클래스에서 선언)에 액세스할 수 없습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.h(6): message : 'CGameCore::CGameCore' 선언을 참조하십시오.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.h(4): message : 'CGameCore' 선언을 참조하십시오.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.cpp(17,22): error C2248: 'CGameCore::~CGameCore': private 멤버('CGameCore' 클래스에서 선언)에 액세스할 수 없습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.h(6): message : 'CGameCore::~CGameCore' 선언을 참조하십시오.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.h(4): message : 'CGameCore' 선언을 참조하십시오.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.cpp(18,2): error C2143: 구문 오류: ';'이(가) ':' 앞에 없습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.cpp(18,2): error C2059: 구문 오류: ':'
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.cpp(19,18): error C2143: 구문 오류: ';'이(가) '{' 앞에 없습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.cpp(20,2): error C2059: 구문 오류: ','
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.cpp(21,1): error C2143: 구문 오류: ';'이(가) '{' 앞에 없습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.cpp(24,23): error C2248: 'CGameCore::~CGameCore': private 멤버('CGameCore' 클래스에서 선언)에 액세스할 수 없습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.h(6): message : 'CGameCore::~CGameCore' 선언을 참조하십시오.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.h(4): message : 'CGameCore' 선언을 참조하십시오.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.cpp(24,13): error C2352: 'CGameCore::~CGameCore': 비정적 멤버 함수를 잘못 호출했습니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.h(6): message : 'CGameCore::~CGameCore' 선언을 참조하십시오.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.cpp(26,12): error C2065: 'm_hWnd': 선언되지 않은 식별자입니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.cpp(26,20): error C2065: 'm_hDC': 선언되지 않은 식별자입니다.
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.cpp(26,26): error C2059: 구문 오류: ';'
+C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CGameCore.cpp(29,16): error C2065: 'm_arrPen': 선언되지 않은 식별자입니다.
 C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CUI.cpp(84,82): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  MercuryProject.vcxproj -> C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\Output\bin_debug\MercuryProject.exe

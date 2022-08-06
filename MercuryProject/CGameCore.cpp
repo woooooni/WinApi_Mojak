@@ -12,6 +12,8 @@
 #include "CCollisionMgr.h"
 #include "SelectGDI.h"
 
+
+
 CGameCore::CGameCore()
 	: m_hWnd(0)
 	, m_ptResolution{}

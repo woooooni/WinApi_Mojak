@@ -6,7 +6,9 @@
 
 
 CStateMachine::CStateMachine()
+	:m_pCurState(nullptr)
 {
+	
 }
 
 CStateMachine::~CStateMachine()
@@ -14,9 +16,13 @@ CStateMachine::~CStateMachine()
 	Safe_Delete_Map(m_mapStates);
 }
 
+void CStateMachine::init()
+{
+}
+
 void CStateMachine::update()
 {
-	
+	m_pCurState->update();
 }
 
 void CStateMachine::finalupdate()

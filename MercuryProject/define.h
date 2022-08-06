@@ -1,5 +1,6 @@
 #pragma once
 
+
 #define SINGLETON(type) public:\
 						static type* GetInst()\
 						{\

@@ -39,7 +39,7 @@ void CSound::Load(const wstring& _strPath, bool _bLoop)
 	{
 		result = CResMgr::GetInst()->GetSoundSystem()->createSound(buffer, FMOD_LOOP_OFF, 0, &m_pSound);
 	}
-	if (result != FMOD_OK) assert(nullptr);
+	if (result != FMOD_OK) assert(result);
 
 	delete[] buffer;
 }

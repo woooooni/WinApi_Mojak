@@ -21,7 +21,6 @@ CPlayer::~CPlayer()
 
 void CPlayer::init()
 {
-
 	CreateRigidBody();
 	GetRigidBody()->SetGravity(true);
 
@@ -35,14 +34,14 @@ void CPlayer::init()
 	CTexture* pTexCharacter = CResMgr::GetInst()->LoadTexture(L"character", L"texture\\character\\character_1.bmp");
 
 	GetAnimator()->CreateAnimation(
-									L"IDLE"
-									, pTexCharacter
-									, Vec2(0.f, 0.f)
-									, Vec2((float)pTexCharacter->Width() / 9
-										, (float)pTexCharacter->Height() / 6)
-									, Vec2((float)pTexCharacter->Width() / 9, 0.f)
-									, .2f
-									, 3);
+		L"IDLE"
+		, pTexCharacter
+		, Vec2(0.f, 0.f)
+		, Vec2((float)pTexCharacter->Width() / 9
+			, (float)pTexCharacter->Height() / 6)
+		, Vec2((float)pTexCharacter->Width() / 9, 0.f)
+		, .2f
+		, 3);
 	GetAnimator()->Play(L"IDLE", true);
 }
 
@@ -59,6 +58,23 @@ void CPlayer::update()
 	{
 		pRigid->AddVelocity(Vec2(1001.f, pRigid->GetVelocity().y));
 	}
+
+	//KEY_TAP
+	if (KEY_TAP(KEY::LEFT_ARROW))
+	{
+		pRigid->SetVelocity(Vec2(0.f, pRigid->GetVelocity().y));
+	}
+	if (KEY_TAP(KEY::RIGHT_ARROW))
+	{
+		pRigid->SetVelocity(Vec2(0.f, pRigid->GetVelocity().y));
+	}
+
+	if (KEY_TAP(KEY::SPACE))
+	{
+		pRigid->SetGround(false);
+		pRigid->SetVelocity(Vec2(pRigid->GetVelocity().x, -400.f));
+	}
+
 	if (KEY_HOLD(KEY::LEFT_ARROW))
 	{
 		vPos.x -= 300.f * DeltaTime;

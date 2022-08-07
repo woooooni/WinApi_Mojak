@@ -54,6 +54,7 @@ public:
     virtual CUI* Clone() = 0;
 
 public:
+    virtual void init() {};
     virtual void update();
     virtual void finalupdate();
     virtual void render(HDC _dc);

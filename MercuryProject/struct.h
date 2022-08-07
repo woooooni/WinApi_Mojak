@@ -30,6 +30,14 @@ public:
 		return *this;
 	}
 
+	Vec2 Lerp(Vec2 _vOther, float _fDuration)
+	{
+		Vec2 vLerp{ 0, 0 };
+		vLerp.x = (1 - _fDuration) * x + _fDuration * _vOther.x;
+		vLerp.y = (1 - _fDuration) * y + _fDuration * _vOther.y;
+		return vLerp;
+	}
+
 public:
 	Vec2 operator -()
 	{

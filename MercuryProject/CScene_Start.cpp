@@ -50,7 +50,6 @@ void CScene_Start::update()
 		CResMgr::GetInst()->VolumeDown(SOUND_CHANNEL_GROUP::BGM, 0.1);
 		CTimeMgr::GetInst()->SetTimeScale(.5f);
 		CResMgr::GetInst()->GetSoundGroup(SOUND_CHANNEL_GROUP::BGM)->setPitch(CTimeMgr::GetInst()->GetTimeScale());
-
 	}
 }
 
@@ -79,7 +78,7 @@ void CScene_Start::Enter()
 
 
 	//Ground 생성
-	for (int i = 0; i < 30; i++)
+	for (int i = 0; i < 50; i++)
 	{
 		CGround* pGround = new CGround;
 		pGround->SetScale(Vec2(60.f, 60.f));
@@ -90,7 +89,8 @@ void CScene_Start::Enter()
 
 	//CameraLook 지정
 	Vec2 vResolution = CGameCore::GetInst()->GetResoultion();
-	CCamera::GetInst()->SetLookAt(vResolution / 2.f);
+	CCamera::GetInst()->SetTarget(pPlayer);
+	//CCamera::GetInst()->SetLookAt(vResolution / 2.f);
 
 	//Camera효과 지정
 	CCamera::GetInst()->FadeOut(1.f);

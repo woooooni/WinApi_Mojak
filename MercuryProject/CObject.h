@@ -20,6 +20,7 @@ private:
 	CCollider*		m_pCollider;
 	CAnimator*		m_pAnimator;
 	CRigidBody*		m_pRigidBody;
+	CStateMachine*	m_pStateMachine;
 
 public:
 	void SetPos(Vec2 _vPos) { m_vPos = _vPos; }
@@ -51,11 +52,13 @@ public:
 	void CreateRigidBody();
 	CRigidBody* GetRigidBody() { return m_pRigidBody; }
 
+	void CreateStateMachine();
+	CStateMachine* GetStateMachine() { return m_pStateMachine; }
 private:
 	void SetDead() { m_bAlive = false; }
 
 public:
-	virtual void init() {}
+	virtual void init() = 0;
 	virtual void update() = 0;
 	virtual void finalupdate();
 	virtual void render(HDC _dc);

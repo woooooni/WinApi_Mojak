@@ -20,13 +20,19 @@ public:
 		float _fDuration, UINT _iFrameCount);
 	CAnimation* FindAnimation(const wstring& _strName);
 	void LoadAnimation(const wstring& _strRelativePath);
-	void Play(const wstring& _strName, bool _bRepeat);
+	void Play(const wstring& _strName, bool _bRepeat)
+	{
+		m_pCurAnim = FindAnimation(_strName);
+		m_bRepeat = _bRepeat;
+	}
 
 	void SetFlipX(bool _bFlipX) { m_bFlipX = _bFlipX; }
 	void SetFlipY(bool _bFlipY) { m_bFlipY = _bFlipY; }
 
 	bool GetFlipX() { return m_bFlipX; }
 	bool GetFlipY() { return m_bFlipY; }	
+
+	bool IsPlaying() { return !m_pCurAnim->IsFinish(); }
 
 public:
 	void update();

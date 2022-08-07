@@ -177,7 +177,9 @@
     <ClInclude Include="CCollisionMgr.h" />
     <ClInclude Include="CComponent.h" />
     <ClInclude Include="CEventMgr.h" />
+    <ClInclude Include="CFactory.h" />
     <ClInclude Include="CGameCore.h" />
+    <ClInclude Include="CRole.h" />
     <ClInclude Include="CGround.h" />
     <ClInclude Include="CKeyMgr.h" />
     <ClInclude Include="CObject.h" />
@@ -187,9 +189,13 @@
     <ClInclude Include="CRes.h" />
     <ClInclude Include="CResMgr.h" />
     <ClInclude Include="CRigidBody.h" />
+    <ClInclude Include="CRoleAssasin.h" />
+    <ClInclude Include="CRoleMagician.h" />
+    <ClInclude Include="CRoleSwordMaster.h" />
     <ClInclude Include="CScene.h" />
     <ClInclude Include="CSceneMgr.h" />
     <ClInclude Include="CScene_Start.h" />
+    <ClInclude Include="CSkill.h" />
     <ClInclude Include="CSound.h" />
     <ClInclude Include="CState.h" />
     <ClInclude Include="CStateMachine.h" />
@@ -218,7 +224,9 @@
     <ClCompile Include="CCollisionMgr.cpp" />
     <ClCompile Include="CComponent.cpp" />
     <ClCompile Include="CEventMgr.cpp" />
+    <ClCompile Include="CFactory.cpp" />
     <ClCompile Include="CGameCore.cpp" />
+    <ClCompile Include="CRole.cpp" />
     <ClCompile Include="CGround.cpp" />
     <ClCompile Include="CKeyMgr.cpp" />
     <ClCompile Include="CObject.cpp" />
@@ -228,9 +236,13 @@
     <ClCompile Include="CRes.cpp" />
     <ClCompile Include="CResMgr.cpp" />
     <ClCompile Include="CRigidBody.cpp" />
+    <ClCompile Include="CRoleAssasin.cpp" />
+    <ClCompile Include="CRoleMagician.cpp" />
+    <ClCompile Include="CRoleSwordMaster.cpp" />
     <ClCompile Include="CScene.cpp" />
     <ClCompile Include="CSceneMgr.cpp" />
     <ClCompile Include="CScene_Start.cpp" />
+    <ClCompile Include="CSkill.cpp" />
     <ClCompile Include="CSound.cpp" />
     <ClCompile Include="CState.cpp" />
     <ClCompile Include="CStateMachine.cpp" />

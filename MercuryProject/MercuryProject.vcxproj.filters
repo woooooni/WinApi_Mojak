@@ -137,6 +137,39 @@
     <Filter Include="Game\08. State\Player">
       <UniqueIdentifier>{72aa4994-a179-40d7-8cad-5191cd7bb652}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\10. GameClasses">
+      <UniqueIdentifier>{f16288e8-a7b2-418d-9f77-4574ca987522}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\10. GameClasses\Begginer">
+      <UniqueIdentifier>{fe7fb587-db43-4247-b249-88018db3336a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04. Object\UI\SettingUI">
+      <UniqueIdentifier>{906817f9-97a6-450a-891a-dfba948b267e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\11. Factory">
+      <UniqueIdentifier>{93defc02-ad85-4554-a02e-3703edb3f06d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04. Object\Skill\Begginer">
+      <UniqueIdentifier>{f37d3514-3f09-45b8-836b-dcb505497a81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04. Object\Skill\Assasin">
+      <UniqueIdentifier>{ee9bbe29-53b9-456b-8880-92b9f62d44dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04. Object\Skill\Magician">
+      <UniqueIdentifier>{1888a40f-1e96-4cf5-949c-4efe53831c20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04. Object\Skill\SwordMaster">
+      <UniqueIdentifier>{0ee23281-7506-4478-a0cc-79dedfeb74ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\10. GameClasses\Assasin">
+      <UniqueIdentifier>{5b015a41-a17a-498f-bfa6-04bffa073b87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\10. GameClasses\Magician">
+      <UniqueIdentifier>{52ad57cf-1454-4f1f-8f34-99b71484053b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\10. GameClasses\SwordMaster">
+      <UniqueIdentifier>{aad8043b-2a72-43ef-bf27-71c2343c97c8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -254,6 +287,24 @@
     <ClInclude Include="CState.h">
       <Filter>Game\08. State</Filter>
     </ClInclude>
+    <ClInclude Include="CRole.h">
+      <Filter>Game\10. GameClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="CFactory.h">
+      <Filter>Game\11. Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="CSkill.h">
+      <Filter>Game\04. Object\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="CRoleAssasin.h">
+      <Filter>Game\10. GameClasses\Assasin</Filter>
+    </ClInclude>
+    <ClInclude Include="CRoleMagician.h">
+      <Filter>Game\10. GameClasses\Magician</Filter>
+    </ClInclude>
+    <ClInclude Include="CRoleSwordMaster.h">
+      <Filter>Game\10. GameClasses\SwordMaster</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MercuryProject.rc">
@@ -364,6 +415,24 @@
     </ClCompile>
     <ClCompile Include="CState.cpp">
       <Filter>Game\08. State</Filter>
+    </ClCompile>
+    <ClCompile Include="CRole.cpp">
+      <Filter>Game\10. GameClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="CFactory.cpp">
+      <Filter>Game\11. Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkill.cpp">
+      <Filter>Game\04. Object\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="CRoleAssasin.cpp">
+      <Filter>Game\10. GameClasses\Assasin</Filter>
+    </ClCompile>
+    <ClCompile Include="CRoleMagician.cpp">
+      <Filter>Game\10. GameClasses\Magician</Filter>
+    </ClCompile>
+    <ClCompile Include="CRoleSwordMaster.cpp">
+      <Filter>Game\10. GameClasses\SwordMaster</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

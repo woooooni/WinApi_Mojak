@@ -1,4 +1,4 @@
-﻿  unity_737T5X1HSRW02ZTG.cpp
+﻿  unity_6TN88FGVMXAGLZRN.cpp
 C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CCollider.cpp(146,14): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CCollider.cpp(147,13): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Users\TinyPrince\Desktop\Study\Cpp\WinApi_Mojak\MercuryProject\CCollider.cpp(148,68): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.

@@ -134,7 +134,7 @@ void CResMgr::init()
 	if (result != FMOD_OK) assert(nullptr);
 
 	result = m_pSoundSystem->init(32, FMOD_INIT_NORMAL, nullptr);
-	if (result != FMOD_OK) assert(nullptr);
+	if (result != FMOD_OK) assert(result);
 
 	for (UINT i = 0; i < (UINT)SOUND_CHANNEL_GROUP::END; i++)
 	{

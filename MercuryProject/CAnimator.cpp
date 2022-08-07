@@ -49,12 +49,6 @@ void CAnimator::LoadAnimation(const wstring& _strRelativePath)
 	m_mapAnim.insert(make_pair(pAnim->GetName(), pAnim));
 }
 
-void CAnimator::Play(const wstring& _strName, bool _bRepeat)
-{
-	m_pCurAnim = FindAnimation(_strName);
-	m_bRepeat = _bRepeat;
-}
-
 void CAnimator::update()
 {
 

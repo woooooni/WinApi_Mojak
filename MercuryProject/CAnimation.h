@@ -28,8 +28,8 @@ private:
 
 private:
 	void SetName(const wstring& _strName) { m_strName = _strName; }
-
 	const wstring& GetName() { return m_strName; }
+
 	bool IsFinish() { return m_bFinish; }
 
 	void SetFrame(int _iFrameIdx)
@@ -46,6 +46,7 @@ public:
 	void AddSound(wstring soundKey, wstring _soundPath, int _idx);
 	//void Save(const wstring& _strRelativePath);
 	//void Load(const wstring& _strRelativePath);
+
 public:
 	void update();
 	void render(HDC _dc);

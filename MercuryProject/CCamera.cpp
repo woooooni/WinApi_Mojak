@@ -35,7 +35,14 @@ void CCamera::update()
 		if (m_pTargetObj->IsDead())
 			m_pTargetObj = nullptr;
 		else
-			m_vLookAt = m_vLookAt.Lerp(m_pTargetObj->GetPos(), DeltaTime);
+		{
+			Vec2 vObjPos = m_pTargetObj->GetPos();
+			float vDist = sqrt(((m_vLookAt.x - vObjPos.x) * (m_vLookAt.x - vObjPos.x)) + ((m_vLookAt.y - vObjPos.y) * (m_vLookAt.y - vObjPos.y)));
+
+			if (vDist > 30.f)
+				m_vLookAt = m_vLookAt.Lerp(m_pTargetObj->GetPos(), DeltaTime);
+		}
+			
 	}
 
 	//if (KEY_HOLD(KEY::UP))

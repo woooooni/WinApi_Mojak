@@ -29,9 +29,6 @@ void CSkill::init()
 
 void CSkill::update()
 {
-	if (!GetAnimator()->IsPlaying())
-	{
-		delete this;
-	}
+
 }
 

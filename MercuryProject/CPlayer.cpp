@@ -8,7 +8,8 @@
 #include "CAnimation.h"
 #include "CTimeMgr.h"
 #include "CResMgr.h"
-
+#include "CRole.h";
+#include "CRoleAssasin.h";
 CPlayer::CPlayer()
 {
 	
@@ -21,6 +22,9 @@ CPlayer::~CPlayer()
 
 void CPlayer::init()
 {
+	//m_pRole = new CRoleAssasin;
+	//m_pRole->SetOwner(this);
+
 	CreateRigidBody();
 	GetRigidBody()->SetGravity(true);
 
@@ -32,7 +36,7 @@ void CPlayer::init()
 	CreateAnimator();
 	//Texture·Îµù
 	CTexture* pTexCharacter = CResMgr::GetInst()->LoadTexture(L"character", L"texture\\character\\character_1.bmp");
-
+	
 	GetAnimator()->CreateAnimation(
 		L"IDLE"
 		, pTexCharacter
@@ -42,7 +46,19 @@ void CPlayer::init()
 		, Vec2((float)pTexCharacter->Width() / 9, 0.f)
 		, .2f
 		, 3);
-	GetAnimator()->Play(L"IDLE", true);
+
+	
+	GetAnimator()->CreateAnimation(
+		L"MOVE"
+		, pTexCharacter
+		, Vec2(588.f, 0.f)
+		, Vec2((float)pTexCharacter->Width() / 9
+			, (float)pTexCharacter->Height() / 6)
+		, Vec2((float)pTexCharacter->Width() / 9, 0.f)
+		, .2f
+		, 3);
+
+	GetAnimator()->Play(L"MOVE", true);
 }
 
 void CPlayer::update()

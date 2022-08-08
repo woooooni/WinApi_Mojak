@@ -1,12 +1,13 @@
 #pragma once
 #include "CObject.h"
 #include "CTexture.h"
+class CRole;
 class CPlayer :
     public CObject
 {
 private:
     //Private Mem
-
+    //CRole* m_pRole;
 
 private:
     //Private Func

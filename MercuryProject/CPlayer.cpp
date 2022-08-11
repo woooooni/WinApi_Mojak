@@ -30,35 +30,34 @@ void CPlayer::init()
 
 	CreateCollider();
 	Vec2 vScale = GetScale();
-	GetCollider()->SetOffsetPos(Vec2(0.f, 10.f));
+	GetCollider()->SetOffsetPos(Vec2(0.f, -10.f));
 	GetCollider()->SetScale(Vec2(vScale.x - 50.f, vScale.y - 5.f));
 
 	CreateAnimator();
 	//Texture·Îµù
-	CTexture* pTexCharacter = CResMgr::GetInst()->LoadTexture(L"character", L"texture\\character\\character_1.bmp");
+	CTexture* pTexCharacter = CResMgr::GetInst()->LoadTexture(L"character", L"texture\\character\\character_3.bmp");
 	
 	GetAnimator()->CreateAnimation(
-		L"IDLE"
+		L"IDLE_LEFT"
 		, pTexCharacter
-		, Vec2(0.f, 0.f)
+		, Vec2(0, 0)
 		, Vec2((float)pTexCharacter->Width() / 9
-			, (float)pTexCharacter->Height() / 6)
+			, (float)pTexCharacter->Height() / 12)
 		, Vec2((float)pTexCharacter->Width() / 9, 0.f)
 		, .2f
 		, 3);
 
-	
 	GetAnimator()->CreateAnimation(
-		L"MOVE"
+		L"IDLE_RIGHT"
 		, pTexCharacter
-		, Vec2(588.f, 0.f)
+		, Vec2(((float)pTexCharacter->Width() / 9) * 7, ((float)pTexCharacter->Height() / 12) * 7)
 		, Vec2((float)pTexCharacter->Width() / 9
-			, (float)pTexCharacter->Height() / 6)
+			, (float)pTexCharacter->Height() / 12)
 		, Vec2((float)pTexCharacter->Width() / 9, 0.f)
 		, .2f
 		, 3);
 
-	GetAnimator()->Play(L"MOVE", true);
+	GetAnimator()->Play(L"IDLE_RIGHT", true);
 }
 
 void CPlayer::update()
@@ -78,6 +77,7 @@ void CPlayer::update()
 	//KEY_TAP
 	if (KEY_TAP(KEY::LEFT_ARROW))
 	{
+		
 		pRigid->SetVelocity(Vec2(0.f, pRigid->GetVelocity().y));
 	}
 	if (KEY_TAP(KEY::RIGHT_ARROW))

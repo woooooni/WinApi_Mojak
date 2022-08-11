@@ -47,7 +47,7 @@ void CGround::OnCollisionEnter(CCollider* _pOther)
 		Vec2 vScale = GetCollider()->GetScale();
 		if (pRigid == nullptr || pRigid->IsGround() == false)
 			return;
-		if (vPos.y < vObjPos.y)
+		if (vPos.y > vObjPos.y)
 			return;
 
 
@@ -76,13 +76,13 @@ void CGround::OnCollision(CCollider* _pOther)
 		Vec2 vScale = GetCollider()->GetScale();
 		if (pRigid == nullptr || pRigid->IsGround() == false)
 			return;
-		if (vPos.y < vObjPos.y)
+		if (vPos.y > vObjPos.y)
 			return;
 
 		// 통과한 길이
 		// 함수의 연산결과를 바로 수식으로 사용하면 디버깅시 어려움이 있으니, 지역변수로 먼저 받아놓고 사용.
 		float fLen = abs(vObjPos.y - vPos.y);
-		float fValue = (vObjScale.y / 2.f + vScale.y / 2.f) - fLen;
+		float fValue = ((vObjScale.y / 2.f) + (vScale.y / 2.f)) - fLen;
 
 		vObjPos = pOtherObj->GetPos();
 		vObjPos.y -= fValue;
@@ -104,7 +104,7 @@ void CGround::OnCollisionExit(CCollider* _pOther)
 		Vec2 vScale = GetCollider()->GetScale();
 		if (pRigid == nullptr || pRigid->IsGround() == false)
 			return;
-		if (vPos.y < vObjPos.y)
+		if (vPos.y > vObjPos.y)
 			return;
 
 

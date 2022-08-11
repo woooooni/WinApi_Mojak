@@ -24,6 +24,12 @@ using std::wstring;
 #include<fmod.h>
 #include <fmod.hpp>
 
+#include <objidl.h>
+#include <gdiplus.h>
+using namespace Gdiplus;
+#pragma comment (lib,"Gdiplus.lib")
+
+
 #include<assert.h>
 #include<math.h>
 

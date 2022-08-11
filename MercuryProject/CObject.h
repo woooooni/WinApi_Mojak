@@ -22,6 +22,8 @@ private:
 	CRigidBody*		m_pRigidBody;
 	CStateMachine*	m_pStateMachine;
 
+	float			m_fDir;
+
 public:
 	void SetPos(Vec2 _vPos) { m_vPos = _vPos; }
 	void SetScale(Vec2 _vScale) { m_vScale = _vScale; }
@@ -34,6 +36,9 @@ public:
 
 	void SetType(GROUP_TYPE _eType) { m_eType = _eType; }
 	GROUP_TYPE GetType() { return m_eType; }
+
+	void SetDir(float _f) { m_fDir = _f; }
+	float GetDir() { return m_fDir; }
 
 	bool IsDead() { return !m_bAlive; }
 

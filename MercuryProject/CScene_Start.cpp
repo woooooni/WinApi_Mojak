@@ -77,6 +77,11 @@ void CScene_Start::Enter()
 	CCollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::GROUND, GROUP_TYPE::PLAYER);
 
 
+	CGround* pGround = new CGround;
+	pGround->SetScale(Vec2(60.f, 60.f));
+	pGround->SetPos(Vec2(60.f, 500.f));
+	AddObjectEvt(pGround, GROUP_TYPE::GROUND);
+
 	//Ground »ý¼º
 	for (int i = 0; i < 50; i++)
 	{
@@ -97,7 +102,7 @@ void CScene_Start::Enter()
 	CCamera::GetInst()->FadeIn(1.f);
 
 	//bgm Play
-	m_pBgm = CResMgr::GetInst()->LoadSound(L"BGM_01", L"bgm\\BGM_Fantagy.mp3");
+	m_pBgm = CResMgr::GetInst()->LoadSound(L"BGM_01", L"bgm\\journey.mp3");
 	m_pBgm->Play(SOUND_CHANNEL_GROUP::BGM);
 
 	init();

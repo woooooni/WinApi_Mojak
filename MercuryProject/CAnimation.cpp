@@ -104,7 +104,7 @@ void CAnimation::AddSound(wstring _soundKey, wstring _soundPath, int _idx)
 
 void CAnimation::Play(HDC _dc, Vec2 _vRenderPos)
 {
-	TransparentBlt(_dc
+	GdiTransparentBlt(_dc
 		, (int)(_vRenderPos.x - m_vecFrame[m_iCurFrm].vSlice.x / 2.f)
 		, (int)(_vRenderPos.y - m_vecFrame[m_iCurFrm].vSlice.y / 2.f)
 		, (int)(m_vecFrame[m_iCurFrm].vSlice.x)

@@ -126,3 +126,9 @@ enum class ROLE_TYPE
 	ASSASIN,
 	END
 };
+
+enum class Dir
+{
+	LEFT,
+	RIGHT,
+};

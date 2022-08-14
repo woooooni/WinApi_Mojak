@@ -10,5 +10,6 @@ public:
 	CState();
 	virtual ~CState();
 
+	friend class CObject;
 };
 

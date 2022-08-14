@@ -30,34 +30,36 @@ void CPlayer::init()
 
 	CreateCollider();
 	Vec2 vScale = GetScale();
-	GetCollider()->SetOffsetPos(Vec2(0.f, -10.f));
+	GetCollider()->SetOffsetPos(Vec2(0.f, -5.f));
 	GetCollider()->SetScale(Vec2(vScale.x - 50.f, vScale.y - 5.f));
 
 	CreateAnimator();
 	//Texture·Îµù
-	CTexture* pTexCharacter = CResMgr::GetInst()->LoadTexture(L"character", L"texture\\character\\character_3.bmp");
+	CTexture* pTexLeftCharacter = CResMgr::GetInst()->LoadTexture(L"amelia_left", L"texture\\character\\amelia_left.bmp");
+	CTexture* pTexRightCharacter = CResMgr::GetInst()->LoadTexture(L"amelia_right", L"texture\\character\\amelia_right.bmp");
+
 	
 	GetAnimator()->CreateAnimation(
 		L"IDLE_LEFT"
-		, pTexCharacter
+		, pTexLeftCharacter
 		, Vec2(0, 0)
-		, Vec2((float)pTexCharacter->Width() / 9
-			, (float)pTexCharacter->Height() / 12)
-		, Vec2((float)pTexCharacter->Width() / 9, 0.f)
+		, Vec2((float)pTexLeftCharacter->Width() / 6
+			, (float)pTexLeftCharacter->Height() / 6)
+		, Vec2((float)pTexLeftCharacter->Width() / 6, 0.f)
 		, .2f
 		, 3);
 
 	GetAnimator()->CreateAnimation(
 		L"IDLE_RIGHT"
-		, pTexCharacter
-		, Vec2(((float)pTexCharacter->Width() / 9) * 7, ((float)pTexCharacter->Height() / 12) * 7)
-		, Vec2((float)pTexCharacter->Width() / 9
-			, (float)pTexCharacter->Height() / 12)
-		, Vec2((float)pTexCharacter->Width() / 9, 0.f)
+		, pTexRightCharacter
+		, Vec2(0, 0)
+		, Vec2((float)pTexRightCharacter->Width() / 6
+			, (float)pTexRightCharacter->Height() / 6)
+		, Vec2((float)pTexRightCharacter->Width() / 6, 0.f)
 		, .2f
 		, 3);
-
 	GetAnimator()->Play(L"IDLE_RIGHT", true);
+
 }
 
 void CPlayer::update()
@@ -124,8 +126,6 @@ void CPlayer::OnCollisionEnter(CCollider* _pOther)
 		CRigidBody* rigid = GetRigidBody();
 		if (rigid == nullptr)
 			return;
-
-		rigid->SetGround(true);
 	}
 }
 
@@ -137,8 +137,6 @@ void CPlayer::OnCollision(CCollider* _pOther)
 		CRigidBody* rigid = GetRigidBody();
 		if (rigid == nullptr)
 			return;
-
-		rigid->SetGround(true);
 	}
 }
 

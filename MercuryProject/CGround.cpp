@@ -45,9 +45,9 @@ void CGround::OnCollisionEnter(CCollider* _pOther)
 
 		Vec2 vPos = GetCollider()->GetFinalPos();
 		Vec2 vScale = GetCollider()->GetScale();
-		if (pRigid == nullptr || pRigid->IsGround() == false)
+		if (pRigid == nullptr || pRigid->IsGround() == true)
 			return;
-		if (vPos.y > vObjPos.y)
+		if (vPos.y < vObjPos.y)
 			return;
 
 
@@ -60,6 +60,7 @@ void CGround::OnCollisionEnter(CCollider* _pOther)
 		vObjPos = pOtherObj->GetPos();
 		vObjPos.y -= fValue;
 
+		pRigid->SetGround(true);
 		pOtherObj->SetPos(vObjPos);
 	}
 }

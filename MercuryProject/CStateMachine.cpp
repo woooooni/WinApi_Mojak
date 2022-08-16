@@ -6,6 +6,8 @@
 
 
 CStateMachine::CStateMachine()
+	: m_pAnimator(nullptr)
+	, m_pCurState(nullptr)
 {
 }
 
@@ -13,6 +15,7 @@ CStateMachine::~CStateMachine()
 {
 	Safe_Delete_Map(m_mapStates);
 }
+
 
 void CStateMachine::update()
 {

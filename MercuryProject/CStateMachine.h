@@ -25,7 +25,12 @@ public:
 	}
 
 private:
-	void	SetState(wstring _strName) { m_pCurState = m_mapStates.find(_strName)->second; }
+	void SetState(wstring _strName) 
+	{
+		m_pCurState->Exit();
+		m_pCurState = m_mapStates.find(_strName)->second;
+		m_pCurState->Enter();
+	}
 
 public:
 	virtual void update();

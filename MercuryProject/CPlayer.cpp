@@ -150,8 +150,6 @@ void CPlayer::OnCollisionExit(CCollider* _pOther)
 		CRigidBody* rigid = GetRigidBody();
 		if (rigid == nullptr)
 			return;
-
-		rigid->SetGround(false);
 	}
 }
 

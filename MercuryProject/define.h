@@ -73,7 +73,7 @@ enum class EVENT_TYPE
 	DELETE_OBJECT,
 	SCENE_CHANGE,
 	STATE_CHANGE,
-	CHANGE_AI_STATE,
+	CHANGE_STATE,
 
 
 	END,
@@ -97,7 +97,7 @@ enum class PLAYER_STATE
 	PRONE,
 	ROPE,
 	LADDER,
-	END,
+	END
 };
 
 enum class MONSTER_STATE
@@ -108,7 +108,7 @@ enum class MONSTER_STATE
 	ATTACK,
 	RUN_AWAY,
 	DEAD,
-	END,
+	END
 };
 
 enum class SOUND_CHANNEL_GROUP
@@ -127,8 +127,8 @@ enum class ROLE_TYPE
 	END
 };
 
-enum class Dir
+enum class DIR
 {
 	LEFT,
-	RIGHT,
+	RIGHT
 };

@@ -12,7 +12,7 @@ CComponent::~CComponent()
 }
 
 CComponent::CComponent(const CComponent& _origin)
-	:m_pOwner(_origin.m_pOwner)
+	: m_pOwner(_origin.m_pOwner)
 {
 
 }

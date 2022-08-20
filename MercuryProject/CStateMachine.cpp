@@ -19,7 +19,7 @@ CStateMachine::~CStateMachine()
 
 void CStateMachine::update()
 {
-	
+	m_pCurState->update();
 }
 
 void CStateMachine::finalupdate()

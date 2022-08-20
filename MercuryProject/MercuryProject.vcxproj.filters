@@ -170,6 +170,18 @@
     <Filter Include="Game\10. GameClasses\SwordMaster">
       <UniqueIdentifier>{aad8043b-2a72-43ef-bf27-71c2343c97c8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\08. State\Player\Idle">
+      <UniqueIdentifier>{1af51fd0-efdd-4e64-9145-4e57cff54bd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\08. State\Player\Move">
+      <UniqueIdentifier>{fdb4eaa8-b302-478b-9aec-2d853e15105c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\08. State\Player\Jump">
+      <UniqueIdentifier>{2c33ab0c-7817-4fc6-b685-6150ff172f24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\08. State\Player\Damaged">
+      <UniqueIdentifier>{ba240f08-fd13-4d88-aecb-8476b0fdce0f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -305,6 +317,18 @@
     <ClInclude Include="CRoleSwordMaster.h">
       <Filter>Game\10. GameClasses\SwordMaster</Filter>
     </ClInclude>
+    <ClInclude Include="CPlayerIdle.h">
+      <Filter>Game\08. State\Player\Idle</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerMove.h">
+      <Filter>Game\08. State\Player\Move</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerJump.h">
+      <Filter>Game\08. State\Player\Jump</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerDamaged.h">
+      <Filter>Game\08. State\Player\Damaged</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MercuryProject.rc">
@@ -433,6 +457,18 @@
     </ClCompile>
     <ClCompile Include="CRoleSwordMaster.cpp">
       <Filter>Game\10. GameClasses\SwordMaster</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerIdle.cpp">
+      <Filter>Game\08. State\Player\Idle</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerMove.cpp">
+      <Filter>Game\08. State\Player\Move</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerJump.cpp">
+      <Filter>Game\08. State\Player\Jump</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerDamaged.cpp">
+      <Filter>Game\08. State\Player\Damaged</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

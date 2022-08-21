@@ -3,5 +3,9 @@
 class CPlayerIdle :
     public CState
 {
+public:
+    CPlayerIdle();
+    ~CPlayerIdle();
+
 };
 

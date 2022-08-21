@@ -3,5 +3,8 @@
 class CPlayerJump :
     public CState
 {
+public:
+    CPlayerJump();
+    ~CPlayerJump();
 };
 

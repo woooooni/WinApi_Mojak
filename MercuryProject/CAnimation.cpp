@@ -47,6 +47,7 @@ void CAnimation::update()
 		{
 			m_iCurFrm = -1;
 			m_bFinish = true;
+			m_bLastFinished = true;
 			m_fAccTime = 0;
 			return;
 		}

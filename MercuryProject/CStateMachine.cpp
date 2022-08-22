@@ -5,8 +5,8 @@
 #include "CStateMachine.h"
 
 
-CStateMachine::CStateMachine()
-	: m_pAnimator(nullptr)
+CStateMachine::CStateMachine(CAnimator* _pAnimator)
+	: m_pAnimator(_pAnimator)
 	, m_pCurState(nullptr)
 {
 }

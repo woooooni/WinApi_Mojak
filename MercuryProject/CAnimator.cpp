@@ -73,7 +73,7 @@ void CAnimator::finalupdate()
 		// C++ 코드최적화
 		// && 연산에서, 앞부분 조건이 false라면 뒷 부분 조건은 검사하지 않음.
 		// || 연산에서, 앞부분 조건이 true라면 뒷 부분 조건은 검사하지 않음.
-		if (m_bRepeat && m_pCurAnim->IsFinish())
+		if (m_bRepeat && m_pCurAnim->IsFinished())
 		{
 			m_pCurAnim->SetFrame(0);
 		}

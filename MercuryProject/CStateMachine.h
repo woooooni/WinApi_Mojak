@@ -24,6 +24,8 @@ public:
 		ChangeStateEvt(pObj, _strName);
 	}
 
+	CAnimator* GetAnimator() { return m_pAnimator; }
+
 private:
 	void SetState(wstring _strName) 
 	{
@@ -33,12 +35,12 @@ private:
 	}
 
 public:
-	virtual void update();
+	void update();
 	virtual void finalupdate();
 	virtual void render(HDC _dc);
 
 public:
-	CStateMachine();
+	CStateMachine(CAnimator* _pAnimator);
 	~CStateMachine();
 
 	friend class CEventMgr;

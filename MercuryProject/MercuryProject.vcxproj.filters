@@ -83,9 +83,6 @@
     <Filter Include="Game\07. Component\Animator\Animations">
       <UniqueIdentifier>{0dbd376b-d26d-4e11-9775-af0fffd0bba4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\07. Component\StateMachine">
-      <UniqueIdentifier>{c76bf99c-650a-4c84-a681-1c8ab95ddb24}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game\03. Managers\UI">
       <UniqueIdentifier>{ce562312-b88a-44b7-8ca3-971e780e0e92}</UniqueIdentifier>
     </Filter>
@@ -260,9 +257,6 @@
     <ClInclude Include="CAnimation.h">
       <Filter>Game\07. Component\Animator\Animations</Filter>
     </ClInclude>
-    <ClInclude Include="CStateMachine.h">
-      <Filter>Game\07. Component\StateMachine</Filter>
-    </ClInclude>
     <ClInclude Include="CRigidBody.h">
       <Filter>Game\07. Component\RigidBody</Filter>
     </ClInclude>
@@ -403,9 +397,6 @@
     </ClCompile>
     <ClCompile Include="CAnimation.cpp">
       <Filter>Game\07. Component\Animator\Animations</Filter>
-    </ClCompile>
-    <ClCompile Include="CStateMachine.cpp">
-      <Filter>Game\07. Component\StateMachine</Filter>
     </ClCompile>
     <ClCompile Include="CRigidBody.cpp">
       <Filter>Game\07. Component\RigidBody</Filter>

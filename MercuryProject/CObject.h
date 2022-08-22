@@ -5,7 +5,6 @@ class CComponent;
 class CCollider;
 class CAnimator;
 class CRigidBody;
-class CStateMachine;
 
 class CObject
 {
@@ -20,7 +19,6 @@ private:
 	CCollider*		m_pCollider;
 	CAnimator*		m_pAnimator;
 	CRigidBody*		m_pRigidBody;
-	CStateMachine*	m_pStateMachine;
 
 	float			m_fDir;
 
@@ -56,9 +54,6 @@ public:
 
 	void CreateRigidBody();
 	CRigidBody* GetRigidBody() { return m_pRigidBody; }
-
-	void CreateStateMachine();
-	CStateMachine* GetStateMachine() { return m_pStateMachine; }
 private:
 	void SetDead() { m_bAlive = false; }
 

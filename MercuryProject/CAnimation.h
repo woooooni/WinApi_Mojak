@@ -25,12 +25,12 @@ private:
 
 
 	bool					m_bFinish;		// 애니메이션이 끝났음을 알려주기위한 변수.
+	bool					m_bLastFinished;// 애니메이션이 이전에 실행되었는지 알려주기 위한 변수.
 
 private:
 	void SetName(const wstring& _strName) { m_strName = _strName; }
 	const wstring& GetName() { return m_strName; }
-
-	bool IsFinish() { return m_bFinish; }
+	bool IsFinished() { return m_bLastFinished; }
 
 	void SetFrame(int _iFrameIdx)
 	{

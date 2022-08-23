@@ -4,7 +4,7 @@ class CPlayerMove :
     public CState
 {
 public:
-    CPlayerMove();
+    CPlayerMove(wstring _strName);
     ~CPlayerMove();
 };
 

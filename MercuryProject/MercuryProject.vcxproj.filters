@@ -179,6 +179,9 @@
     <Filter Include="Game\08. State\Player\Damaged">
       <UniqueIdentifier>{ba240f08-fd13-4d88-aecb-8476b0fdce0f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\07. Component\StateMachine">
+      <UniqueIdentifier>{cff0f0f5-c14f-44ac-8c04-9eac4b7348e1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -323,6 +326,9 @@
     <ClInclude Include="CPlayerDamaged.h">
       <Filter>Game\08. State\Player\Damaged</Filter>
     </ClInclude>
+    <ClInclude Include="CStateMachine.h">
+      <Filter>Game\07. Component\StateMachine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MercuryProject.rc">
@@ -460,6 +466,9 @@
     </ClCompile>
     <ClCompile Include="CPlayerDamaged.cpp">
       <Filter>Game\08. State\Player\Damaged</Filter>
+    </ClCompile>
+    <ClCompile Include="CStateMachine.cpp">
+      <Filter>Game\07. Component\StateMachine</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

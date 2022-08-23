@@ -10,6 +10,9 @@
 #include "CResMgr.h"
 #include "CRole.h";
 #include "CRoleAssasin.h";
+#include "CState.h"
+#include "CPlayerIdle.h"
+
 CPlayer::CPlayer()
 {
 	
@@ -58,50 +61,54 @@ void CPlayer::init()
 		, Vec2((float)pTexRightCharacter->Width() / 6, 0.f)
 		, .2f
 		, 3);
-	GetAnimator()->Play(L"IDLE_RIGHT", true);
 
+	CreateStateMachine();
+	GetStateMachine()->AddState(new CPlayerIdle(L"IDLE_LEFT"));
+	GetStateMachine()->AddState(new CPlayerIdle(L"IDLE_RIGHT"));
+
+	GetStateMachine()->ChangeState(L"IDLE_LEFT");
 }
 
 void CPlayer::update()
 {
-	CRigidBody* pRigid = GetRigidBody();
-	Vec2 vPos = GetPos();
-	if (KEY_TAP(KEY::SPACE))
-	{
-		pRigid->SetGround(false);
-		pRigid->SetVelocity(Vec2(pRigid->GetVelocity().x, -400.f));
-	}
-	if (KEY_TAP(KEY::SHIFT))
-	{
-		pRigid->AddVelocity(Vec2(1001.f, pRigid->GetVelocity().y));
-	}
+	//CRigidBody* pRigid = GetRigidBody();
+	//Vec2 vPos = GetPos();
+	//if (KEY_TAP(KEY::SPACE))
+	//{
+	//	pRigid->SetGround(false);
+	//	pRigid->SetVelocity(Vec2(pRigid->GetVelocity().x, -400.f));
+	//}
+	//if (KEY_TAP(KEY::SHIFT))
+	//{
+	//	pRigid->AddVelocity(Vec2(1001.f, pRigid->GetVelocity().y));
+	//}
 
-	//KEY_TAP
-	if (KEY_TAP(KEY::LEFT_ARROW))
-	{
-		
-		pRigid->SetVelocity(Vec2(0.f, pRigid->GetVelocity().y));
-	}
-	if (KEY_TAP(KEY::RIGHT_ARROW))
-	{
-		pRigid->SetVelocity(Vec2(0.f, pRigid->GetVelocity().y));
-	}
+	////KEY_TAP
+	//if (KEY_TAP(KEY::LEFT_ARROW))
+	//{
+	//	
+	//	pRigid->SetVelocity(Vec2(0.f, pRigid->GetVelocity().y));
+	//}
+	//if (KEY_TAP(KEY::RIGHT_ARROW))
+	//{
+	//	pRigid->SetVelocity(Vec2(0.f, pRigid->GetVelocity().y));
+	//}
 
-	if (KEY_TAP(KEY::SPACE))
-	{
-		pRigid->SetGround(false);
-		pRigid->SetVelocity(Vec2(pRigid->GetVelocity().x, -400.f));
-	}
+	//if (KEY_TAP(KEY::SPACE))
+	//{
+	//	pRigid->SetGround(false);
+	//	pRigid->SetVelocity(Vec2(pRigid->GetVelocity().x, -400.f));
+	//}
 
-	if (KEY_HOLD(KEY::LEFT_ARROW))
-	{
-		vPos.x -= 300.f * DeltaTime;
-	}
-	if (KEY_HOLD(KEY::RIGHT_ARROW))
-	{
-		vPos.x += 300.f * DeltaTime;
-	}
-	SetPos(vPos);
+	//if (KEY_HOLD(KEY::LEFT_ARROW))
+	//{
+	//	vPos.x -= 300.f * DeltaTime;
+	//}
+	//if (KEY_HOLD(KEY::RIGHT_ARROW))
+	//{
+	//	vPos.x += 300.f * DeltaTime;
+	//}
+	//SetPos(vPos);
 }
 
 void CPlayer::render(HDC _dc)

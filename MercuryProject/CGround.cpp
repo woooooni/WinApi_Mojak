@@ -47,7 +47,7 @@ void CGround::OnCollisionEnter(CCollider* _pOther)
 		Vec2 vScale = GetCollider()->GetScale();
 		if (pRigid == nullptr || pRigid->IsGround() == true)
 			return;
-		if (vPos.y < vObjPos.y)
+		if (vPos.y + vScale.y / 2.f < vObjPos.y + vObjScale.y / 2.f)
 			return;
 
 

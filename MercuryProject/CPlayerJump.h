@@ -4,7 +4,7 @@ class CPlayerJump :
     public CState
 {
 public:
-    CPlayerJump();
+    CPlayerJump(wstring _strName);
     ~CPlayerJump();
 };
 

@@ -1,6 +1,8 @@
+#include "pch.h"
 #include "CPlayerJump.h"
 
-CPlayerJump::CPlayerJump()
+CPlayerJump::CPlayerJump(wstring _strName)
+	:CState(_strName)
 {
 }
 

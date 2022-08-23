@@ -30,8 +30,8 @@ private:
 private:
 	void SetName(const wstring& _strName) { m_strName = _strName; }
 	const wstring& GetName() { return m_strName; }
-	bool IsFinished() { return m_bLastFinished; }
-
+	bool IsFinished() { return m_bFinish; }
+	bool IsLastFinished() { return m_bLastFinished; }
 	void SetFrame(int _iFrameIdx)
 	{
 		m_bFinish = false;

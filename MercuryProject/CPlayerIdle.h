@@ -3,8 +3,17 @@
 class CPlayerIdle :
     public CState
 {
+
 public:
-    CPlayerIdle();
+    virtual void Enter();
+    virtual void update();
+    virtual void Exit();
+
+private:
+    void PlayerMove();
+
+public:
+    CPlayerIdle(wstring _strName);
     ~CPlayerIdle();
 
 };

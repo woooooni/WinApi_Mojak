@@ -15,6 +15,10 @@ using std::map;
 using std::make_pair;
 
 
+#include <sstream>
+using std::wstringstream;
+using std::istringstream;
+
 #include<string>
 using std::string;
 using std::wstring;

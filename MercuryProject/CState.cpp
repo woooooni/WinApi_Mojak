@@ -1,7 +1,9 @@
 #include "pch.h"
 #include "CState.h"
 
-CState::CState()
+CState::CState(wstring _strName)
+	: m_strState(_strName)
+	, m_pMachine(nullptr)
 {
 
 }

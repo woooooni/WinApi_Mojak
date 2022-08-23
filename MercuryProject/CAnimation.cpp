@@ -17,7 +17,7 @@ CAnimation::CAnimation()
 	, m_iCurFrm(0)
 	, m_bFinish(false)
 	, m_fAccTime(0)
-
+	, m_bLastFinished(false)
 {
 
 }

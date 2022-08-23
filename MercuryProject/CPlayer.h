@@ -15,6 +15,9 @@ private:
 
 
 public:
+    //void OnDamaged();
+
+public:
     virtual void init();
     virtual void update();
     virtual void render(HDC _dc);

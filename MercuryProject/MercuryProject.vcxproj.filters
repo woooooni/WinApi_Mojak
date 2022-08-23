@@ -182,6 +182,9 @@
     <Filter Include="Game\07. Component\StateMachine">
       <UniqueIdentifier>{cff0f0f5-c14f-44ac-8c04-9eac4b7348e1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\08. State\Player\Attack">
+      <UniqueIdentifier>{3c1e9137-181a-497c-b568-37747fea5008}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">

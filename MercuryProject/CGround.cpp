@@ -60,8 +60,8 @@ void CGround::OnCollisionEnter(CCollider* _pOther)
 		vObjPos = pOtherObj->GetPos();
 		vObjPos.y -= fValue;
 
-		pRigid->SetGround(true);
 		pOtherObj->SetPos(vObjPos);
+		pRigid->SetGround(true);
 	}
 }
 void CGround::OnCollision(CCollider* _pOther)
@@ -77,6 +77,6 @@ void CGround::OnCollisionExit(CCollider* _pOther)
 	CObject* pOtherObj = _pOther->GetObj();
 	if (pOtherObj->GetType() == GROUP_TYPE::PLAYER)
 	{
-		
+		CRigidBody* pRigid = pOtherObj->GetRigidBody();
 	}
 }

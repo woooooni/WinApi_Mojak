@@ -20,7 +20,7 @@ private:
 	CAnimator*		m_pAnimator;
 	CRigidBody*		m_pRigidBody;
 	CStateMachine*	m_pStateMachine;
-	float			m_fDir;
+	DIR				m_eDir;
 
 public:
 	void SetPos(Vec2 _vPos) { m_vPos = _vPos; }
@@ -35,8 +35,8 @@ public:
 	void SetType(GROUP_TYPE _eType) { m_eType = _eType; }
 	GROUP_TYPE GetType() { return m_eType; }
 
-	void SetDir(float _f) { m_fDir = _f; }
-	float GetDir() { return m_fDir; }
+	void SetDir(DIR _e) { m_eDir = _e; }
+	DIR GetDir() { return m_eDir; }
 
 	bool IsDead() { return !m_bAlive; }
 

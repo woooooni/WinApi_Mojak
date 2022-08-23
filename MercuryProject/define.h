@@ -90,13 +90,10 @@ enum class COMPONENT_TYPE
 enum class PLAYER_STATE
 {
 	IDLE,
-	WALK,
+	MOVE,
 	ATTACK,
 	JUMP,
-	ALERT,
-	PRONE,
-	ROPE,
-	LADDER,
+	JUMP_DOWN,
 	END
 };
 

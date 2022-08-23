@@ -12,6 +12,8 @@
 #include "CRoleAssasin.h";
 #include "CState.h"
 #include "CPlayerIdle.h"
+#include "CPlayerMove.h"
+#include "CPlayerJump.h"
 
 CPlayer::CPlayer()
 {
@@ -62,11 +64,77 @@ void CPlayer::init()
 		, .2f
 		, 3);
 
+	GetAnimator()->CreateAnimation(
+		L"MOVE_LEFT"
+		, pTexLeftCharacter
+		, Vec2(330, 0)
+		, Vec2((float)pTexLeftCharacter->Width() / 6
+			, (float)pTexLeftCharacter->Height() / 6)
+		, Vec2((float)pTexLeftCharacter->Width() / 6, 0.f)
+		, .2f
+		, 3);
+
+	GetAnimator()->CreateAnimation(
+		L"MOVE_RIGHT"
+		, pTexRightCharacter
+		, Vec2(330, 0)
+		, Vec2((float)pTexRightCharacter->Width() / 6
+			, (float)pTexRightCharacter->Height() / 6)
+		, Vec2((float)pTexRightCharacter->Width() / 6, 0.f)
+		, .2f
+		, 3);
+
+	GetAnimator()->CreateAnimation(
+		L"JUMP_LEFT"
+		, pTexLeftCharacter
+		, Vec2(0, 111)
+		, Vec2((float)pTexLeftCharacter->Width() / 6
+			, (float)pTexLeftCharacter->Height() / 6)
+		, Vec2((float)pTexLeftCharacter->Width() / 6, 0.f)
+		, .2f
+		, 3);
+
+	GetAnimator()->CreateAnimation(
+		L"JUMP_RIGHT"
+		, pTexRightCharacter
+		, Vec2(0, 111)
+		, Vec2((float)pTexRightCharacter->Width() / 6
+			, (float)pTexRightCharacter->Height() / 6)
+		, Vec2((float)pTexRightCharacter->Width() / 6, 0.f)
+		, .2f
+		, 3);
+
+	GetAnimator()->CreateAnimation(
+		L"JUMP_DOWN_LEFT"
+		, pTexLeftCharacter
+		, Vec2(330, 111)
+		, Vec2((float)pTexLeftCharacter->Width() / 6
+			, (float)pTexLeftCharacter->Height() / 6)
+		, Vec2((float)pTexLeftCharacter->Width() / 6, 0.f)
+		, .2f
+		, 3);
+
+	GetAnimator()->CreateAnimation(
+		L"JUMP_DOWN_RIGHT"
+		, pTexRightCharacter
+		, Vec2(330, 111)
+		, Vec2((float)pTexRightCharacter->Width() / 6
+			, (float)pTexRightCharacter->Height() / 6)
+		, Vec2((float)pTexRightCharacter->Width() / 6, 0.f)
+		, .2f
+		, 3);
+
 	CreateStateMachine();
 	GetStateMachine()->AddState(new CPlayerIdle(L"IDLE_LEFT"));
 	GetStateMachine()->AddState(new CPlayerIdle(L"IDLE_RIGHT"));
+	GetStateMachine()->AddState(new CPlayerMove(L"MOVE_LEFT"));
+	GetStateMachine()->AddState(new CPlayerMove(L"MOVE_RIGHT"));
+	GetStateMachine()->AddState(new CPlayerJump(L"JUMP_LEFT"));
+	GetStateMachine()->AddState(new CPlayerJump(L"JUMP_RIGHT"));
+	GetStateMachine()->AddState(new CPlayerJump(L"JUMP_DOWN_LEFT"));
+	GetStateMachine()->AddState(new CPlayerJump(L"JUMP_DOWN_RIGHT"));
 
-	GetStateMachine()->ChangeState(L"IDLE_LEFT");
+	GetStateMachine()->ChangeState(L"JUMP_LEFT");
 }
 
 void CPlayer::update()
@@ -130,9 +198,7 @@ void CPlayer::OnCollisionEnter(CCollider* _pOther)
 	CObject* pOtherObj = _pOther->GetObj();
 	if (pOtherObj->GetType() == GROUP_TYPE::GROUND)
 	{
-		CRigidBody* rigid = GetRigidBody();
-		if (rigid == nullptr)
-			return;
+		
 	}
 }
 
@@ -141,9 +207,7 @@ void CPlayer::OnCollision(CCollider* _pOther)
 	CObject* pOtherObj = _pOther->GetObj();
 	if (pOtherObj->GetType() == GROUP_TYPE::GROUND)
 	{
-		CRigidBody* rigid = GetRigidBody();
-		if (rigid == nullptr)
-			return;
+
 	}
 }
 

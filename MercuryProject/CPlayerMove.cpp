@@ -7,6 +7,7 @@
 #include "CEventMgr.h"
 #include "CObject.h"
 #include "CTimeMgr.h"
+#include "CPlayer.h"
 
 CPlayerMove::CPlayerMove(wstring _strName)
 	:CState(_strName)
@@ -35,9 +36,9 @@ void CPlayerMove::Exit()
 
 void CPlayerMove::PlayerMove()
 {
-	CObject* pObj = GetStateMachine()->GetObj();
-	CRigidBody* pRigid = pObj->GetRigidBody();
-	Vec2 vPos = pObj->GetPos();
+	CPlayer* pPlayer = (CPlayer*)GetStateMachine()->GetObj();
+	CRigidBody* pRigid = pPlayer->GetRigidBody();
+	Vec2 vPos = pPlayer->GetPos();
 	if (KEY_TAP(KEY::SPACE))
 	{
 		pRigid->SetGround(false);
@@ -45,7 +46,7 @@ void CPlayerMove::PlayerMove()
 		//TODO:: JUMP State·Î º¯°æ.
 		pRigid->AddVelocity(Vec2(pRigid->GetVelocity().x, -500.f));
 		
-		if (pObj->GetDir() == DIR::LEFT)
+		if (pPlayer->GetDir() == DIR::LEFT)
 		{
 			GetStateMachine()->ChangeState(L"JUMP_LEFT");
 		}
@@ -53,7 +54,6 @@ void CPlayerMove::PlayerMove()
 		{
 			GetStateMachine()->ChangeState(L"JUMP_RIGHT");
 		}
-		
 	}
 
 	if (KEY_TAP(KEY::SHIFT))
@@ -72,7 +72,7 @@ void CPlayerMove::PlayerMove()
 
 	if (KEY_AWAY(KEY::RIGHT_ARROW) || KEY_AWAY(KEY::LEFT_ARROW))
 	{
-		if (pObj->GetDir() == DIR::LEFT)
+		if (pPlayer->GetDir() == DIR::LEFT)
 		{
 			GetStateMachine()->ChangeState(L"IDLE_LEFT");
 		}

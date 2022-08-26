@@ -43,9 +43,10 @@ void CPlayerMove::PlayerMove()
 	{
 		pRigid->SetGround(false);
 
-		//TODO:: JUMP State로 변경.
+		
 		pRigid->AddVelocity(Vec2(pRigid->GetVelocity().x, -500.f));
 		
+		//TODO:: JUMP State로 변경.
 		if (pPlayer->GetDir() == DIR::LEFT)
 		{
 			GetStateMachine()->ChangeState(L"JUMP_LEFT");

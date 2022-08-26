@@ -46,27 +46,28 @@ void CPlayerJump::update()
 		if (KEY_HOLD(KEY::LEFT_ARROW))
 		{
 			vPos.x -= 300.f * DeltaTime;
+			if (pRigid->GetVelocity().y > 0)
+			{
+				GetStateMachine()->GetAnimator()->Play(L"JUMP_DOWN_LEFT", true);
+			}
+			else
+			{
+				GetStateMachine()->GetAnimator()->Play(L"JUMP_LEFT", true);
+			}
 		}
 		if (KEY_HOLD(KEY::RIGHT_ARROW))
 		{
 			vPos.x += 300.f * DeltaTime;
-		}
-		pObj->SetPos(vPos);
-
-		if (GetStateName() == L"JUMP_DOWN_LEFT" || GetStateName() == L"JUMP_DOWN_RIGHT")
-			return;
-
-		if (pRigid->GetVelocity().y > 0)
-		{
-			if (pObj->GetDir() == DIR::LEFT)
+			if (pRigid->GetVelocity().y > 0)
 			{
-				GetStateMachine()->ChangeState(L"JUMP_DOWN_LEFT");
+				GetStateMachine()->GetAnimator()->Play(L"JUMP_DOWN_RIGHT", true);
 			}
 			else
 			{
-				GetStateMachine()->ChangeState(L"JUMP_DOWN_RIGHT");
+				GetStateMachine()->GetAnimator()->Play(L"JUMP_RIGHT", true);
 			}
 		}
+		pObj->SetPos(vPos);
 	}
 	
 }

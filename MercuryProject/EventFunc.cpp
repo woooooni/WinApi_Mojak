@@ -14,7 +14,7 @@ void AddObjectEvt(CObject* _pObj, GROUP_TYPE _eGroup)
 	CEventMgr::GetInst()->AddEvent(event);
 }
 
-void DeleteObj(CObject* _pObj)
+void DeleteObjectEvt(CObject* _pObj)
 {
 	tEvent event = {};
 	event.eEven = EVENT_TYPE::DELETE_OBJECT;

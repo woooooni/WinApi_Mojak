@@ -183,6 +183,7 @@
     <ClInclude Include="CPlayerIdle.h" />
     <ClInclude Include="CPlayerJump.h" />
     <ClInclude Include="CPlayerMove.h" />
+    <ClInclude Include="CProjectile.h" />
     <ClInclude Include="CRole.h" />
     <ClInclude Include="CGround.h" />
     <ClInclude Include="CKeyMgr.h" />
@@ -235,6 +236,7 @@
     <ClCompile Include="CPlayerIdle.cpp" />
     <ClCompile Include="CPlayerJump.cpp" />
     <ClCompile Include="CPlayerMove.cpp" />
+    <ClCompile Include="CProjectile.cpp" />
     <ClCompile Include="CRole.cpp" />
     <ClCompile Include="CGround.cpp" />
     <ClCompile Include="CKeyMgr.cpp" />

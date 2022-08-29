@@ -3,7 +3,8 @@
 class CAnimator;
 class CTexture;
 class CSound;
-typedef void(*ANIMATION_EVENT)(DWORD_PTR, DWORD_PTR);
+class CPlayer;
+typedef void(*OBJECT_MEMFUNC)(void);
 
 struct tAnimFrame
 {
@@ -12,9 +13,10 @@ struct tAnimFrame
 	Vec2				vOffset;
 	CSound*				sound;
 
-	ANIMATION_EVENT		animEvent;		// 애니메이션 이벤트 함수.
-	DWORD_PTR			evtParam1;		// 애니메이션 이벤트 함수 매개변수.
-	DWORD_PTR			evtParam2;		// 애니메이션 이벤트 함수 매개변수.
+
+	//Event Func
+	CObject*			obj;
+	OBJECT_MEMFUNC		animEventFunc;
 
 	float				fDuration;
 };
@@ -51,7 +53,7 @@ public:
 	void Create(CTexture* _pTex, Vec2 _vLT, Vec2 _vSliceSize, Vec2 _vStep, float _fDuration, UINT _iFrameCount);
 	
 	void AddSound(CSound* _pSound, int _idx);
-	void AddEvent(ANIMATION_EVENT _pCallBack, DWORD_PTR param1, DWORD_PTR param2, int _idx);
+	void AddEvent(CObject* _pObj, OBJECT_MEMFUNC _pCallBack, int _idx);
 	//void Save(const wstring& _strRelativePath);
 	//void Load(const wstring& _strRelativePath);
 

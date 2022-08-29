@@ -14,6 +14,7 @@
 #include "CPlayerIdle.h"
 #include "CPlayerMove.h"
 #include "CPlayerJump.h"
+#include "CProjectile.h"
 
 CPlayer::CPlayer()
 {
@@ -124,6 +125,8 @@ void CPlayer::init()
 		, .2f
 		, 3);
 
+	GetAnimator()->FindAnimation(L"IDLE_RIGHT")->AddEvent(this, &CreateProjectile, 1);
+
 	CreateStateMachine();
 	GetStateMachine()->AddState(new CPlayerIdle(L"IDLE"));
 	GetStateMachine()->AddState(new CPlayerMove(L"MOVE"));
@@ -174,6 +177,15 @@ void CPlayer::update()
 	//SetPos(vPos);
 }
 
+void CPlayer::CreateProjectile(void)
+{
+	CProjectile* projectille = new CProjectile;
+	projectille->SetPos(Vec2(700, 700));
+	projectille->SetScale(Vec2(10, 10));
+
+	AddObjectEvt(projectille, GROUP_TYPE::PLAYER_PROJECTILE);
+}
+
 void CPlayer::render(HDC _dc)
 {
 	/*Vec2 vPos = GetPos();
@@ -218,4 +230,6 @@ void CPlayer::OnCollisionExit(CCollider* _pOther)
 			return;
 	}
 }
+
+
 

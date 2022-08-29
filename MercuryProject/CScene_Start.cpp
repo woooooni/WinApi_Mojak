@@ -103,7 +103,7 @@ void CScene_Start::Enter()
 
 	//bgm Play
 	m_pBgm = CResMgr::GetInst()->LoadSound(L"BGM_01", L"bgm\\journey.mp3");
-	m_pBgm->Play(SOUND_CHANNEL_GROUP::BGM);
+	//m_pBgm->Play(SOUND_CHANNEL_GROUP::BGM);
 
 	init();
 }

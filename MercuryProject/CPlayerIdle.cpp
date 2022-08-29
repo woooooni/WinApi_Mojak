@@ -6,6 +6,7 @@
 #include "CObject.h"
 #include "CKeyMgr.h"
 #include "CTimeMgr.h"
+#include "CPlayer.h"
 
 CPlayerIdle::CPlayerIdle(wstring _strName)
 	: CState(_strName)
@@ -28,6 +29,7 @@ void CPlayerIdle::Enter()
 		strStateName += L"_LEFT";
 	else
 		strStateName += L"_RIGHT";
+
 	GetStateMachine()->GetAnimator()->Play(strStateName, true);
 }
 
@@ -43,18 +45,19 @@ void CPlayerIdle::Exit()
 
 void CPlayerIdle::PlayerMove()
 {
-	CObject* pObj = GetStateMachine()->GetObj();
+	CPlayer* pObj = (CPlayer*)GetStateMachine()->GetObj();
 	CRigidBody* pRigid = pObj->GetRigidBody();
+
+	if (KEY_HOLD(KEY::A))
+	{
+		
+	}
+
 	if (KEY_TAP(KEY::SPACE))
 	{
 		pRigid->SetGround(false);
 		pRigid->SetVelocity(Vec2(pRigid->GetVelocity().x, -500.f));
 		GetStateMachine()->ChangeState(L"JUMP");
-	}
-
-	if (KEY_TAP(KEY::SHIFT))
-	{
-		pRigid->AddVelocity(Vec2(1001.f, pRigid->GetVelocity().y));
 	}
 
 	if (KEY_TAP(KEY::LEFT_ARROW) || KEY_TAP(KEY::RIGHT_ARROW))
@@ -75,4 +78,5 @@ void CPlayerIdle::PlayerMove()
 		GetStateMachine()->ChangeState(L"MOVE");
 		return;
 	}
+
 }

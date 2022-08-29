@@ -104,12 +104,12 @@ void CObject::finalupdate()
 
 void CObject::render(HDC _dc)
 {
-	/*Vec2 vRenderPos = CCamera::GetInst()->GetRenderPos(m_vPos);
+	Vec2 vRenderPos = CCamera::GetInst()->GetRenderPos(m_vPos);
 	Rectangle(_dc,
 		(int)(vRenderPos.x - m_vScale.x / 2.f),
 		(int)(vRenderPos.y - m_vScale.y / 2.f),
 		(int)(vRenderPos.x + m_vScale.x / 2.f),
-		(int)(vRenderPos.y + m_vScale.y / 2.f));*/
+		(int)(vRenderPos.y + m_vScale.y / 2.f));
 
 	component_render(_dc);
 }

@@ -2,6 +2,8 @@
 #include "CObject.h"
 #include "CTexture.h"
 class CRole;
+class CProjectile;
+
 class CPlayer :
     public CObject
 {
@@ -16,7 +18,8 @@ private:
 
 public:
     //void OnDamaged();
-
+    void CreateProjectile();
+    
 public:
     virtual void init();
     virtual void update();
@@ -31,4 +34,5 @@ public:
     ~CPlayer();
     
 };
+
 

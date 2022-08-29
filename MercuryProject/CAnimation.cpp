@@ -9,7 +9,7 @@
 #include "CCamera.h"
 #include "CPathMgr.h"
 #include "CResMgr.h"
-
+#include "CPlayer.h"
 
 CAnimation::CAnimation()
 	:m_pAnimator(nullptr)
@@ -70,7 +70,6 @@ void CAnimation::render(HDC _dc)
 	//카메라의 위치에 따른 렌더링 좌표로 전환.
 	vPos = CCamera::GetInst()->GetRenderPos(vPos);
 	Play(_dc, vPos);
-
 }
 
 void CAnimation::Create(CTexture* _pTex,
@@ -97,14 +96,13 @@ void CAnimation::AddSound(CSound* _pSound, int _idx)
 	m_vecFrame[_idx].sound = _pSound;
 }
 
-void CAnimation::AddEvent(ANIMATION_EVENT _pCallBack, DWORD_PTR param1, DWORD_PTR param2, int _idx)
+void CAnimation::AddEvent(CObject* _pObj, OBJECT_MEMFUNC _pCallBack, int _idx)
 {
-	if (_idx > m_vecFrame.size())
+	if (_idx >= m_vecFrame.size())
 		assert(_idx);
 
-	m_vecFrame[_idx].animEvent = _pCallBack;
-	m_vecFrame[_idx].evtParam1 = param1;
-	m_vecFrame[_idx].evtParam2 = param2;
+	m_vecFrame[_idx].obj = _pObj;
+	m_vecFrame[_idx].animEventFunc = _pCallBack;
 }
 
 void CAnimation::Play(HDC _dc, Vec2 _vRenderPos)
@@ -126,12 +124,11 @@ void CAnimation::Play(HDC _dc, Vec2 _vRenderPos)
 		m_vecFrame[m_iCurFrm].sound->Play(SOUND_CHANNEL_GROUP::SOUND_EFFECT);
 	}
 
-	if (m_vecFrame[m_iCurFrm].animEvent != nullptr)
+	if ((m_vecFrame[m_iCurFrm].animEventFunc != nullptr) && (m_vecFrame[m_iCurFrm].obj != nullptr))
 	{
-		DWORD_PTR param1 = m_vecFrame[m_iCurFrm].evtParam1;
-		DWORD_PTR param2 = m_vecFrame[m_iCurFrm].evtParam2;
-
-		m_vecFrame[m_iCurFrm].animEvent(param1, param2);
+		CObject* pObj = m_vecFrame[m_iCurFrm].obj;
+		CPlayer* pPlayer = (CPlayer*)pObj;
+		((*pPlayer).*m_vecFrame[m_iCurFrm].animEventFunc)();
 	}
 }
 

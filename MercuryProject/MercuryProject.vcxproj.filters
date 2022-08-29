@@ -179,6 +179,9 @@
     <Filter Include="Game\04. Object\Skill\Phantom\UltimateDrive">
       <UniqueIdentifier>{c8eb5ddd-6b12-4589-960a-530c23e51d0e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\04. Object\Projectile">
+      <UniqueIdentifier>{fbb95133-2389-4f30-9815-7af0bf0b4763}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -329,6 +332,9 @@
     <ClInclude Include="CSkill_UltimateDrive.h">
       <Filter>Game\04. Object\Skill\Phantom\UltimateDrive</Filter>
     </ClInclude>
+    <ClInclude Include="CProjectile.h">
+      <Filter>Game\04. Object\Projectile</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MercuryProject.rc">
@@ -472,6 +478,9 @@
     </ClCompile>
     <ClCompile Include="CSkill_UltimateDrive.cpp">
       <Filter>Game\04. Object\Skill\Phantom\UltimateDrive</Filter>
+    </ClCompile>
+    <ClCompile Include="CProjectile.cpp">
+      <Filter>Game\04. Object\Projectile</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

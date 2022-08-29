@@ -56,10 +56,17 @@ void CPlayerMove::PlayerMove()
 	}
 
 	if (KEY_TAP(KEY::LEFT_ARROW))
+	{
+		pPlayer->SetDir(DIR::LEFT);
 		GetStateMachine()->GetAnimator()->Play(L"MOVE_LEFT", true);
-
+	}
+		
 	if (KEY_TAP(KEY::RIGHT_ARROW))
+	{
+		pPlayer->SetDir(DIR::RIGHT);
 		GetStateMachine()->GetAnimator()->Play(L"MOVE_RIGHT", true);
+	}
+		
 
 	if (KEY_HOLD(KEY::LEFT_ARROW))
 	{

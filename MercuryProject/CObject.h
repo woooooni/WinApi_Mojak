@@ -9,17 +9,21 @@ class CStateMachine;
 class CObject
 {
 private:
+	//Object mem value
 	wstring			m_strName;
 	Vec2			m_vPos;
 	Vec2			m_vScale;
 	GROUP_TYPE		m_eType;
 
+	//Object Deletion
 	bool			m_bAlive;
 
+	//Components
 	CCollider*		m_pCollider;
 	CAnimator*		m_pAnimator;
 	CRigidBody*		m_pRigidBody;
 	CStateMachine*	m_pStateMachine;
+
 	DIR				m_eDir;
 
 public:

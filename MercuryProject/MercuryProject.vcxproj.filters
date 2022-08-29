@@ -146,18 +146,6 @@
     <Filter Include="Game\11. Factory">
       <UniqueIdentifier>{93defc02-ad85-4554-a02e-3703edb3f06d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\04. Object\Skill\Begginer">
-      <UniqueIdentifier>{f37d3514-3f09-45b8-836b-dcb505497a81}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\04. Object\Skill\Assasin">
-      <UniqueIdentifier>{ee9bbe29-53b9-456b-8880-92b9f62d44dd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\04. Object\Skill\Magician">
-      <UniqueIdentifier>{1888a40f-1e96-4cf5-949c-4efe53831c20}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\04. Object\Skill\SwordMaster">
-      <UniqueIdentifier>{0ee23281-7506-4478-a0cc-79dedfeb74ea}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game\10. GameClasses\Assasin">
       <UniqueIdentifier>{5b015a41-a17a-498f-bfa6-04bffa073b87}</UniqueIdentifier>
     </Filter>
@@ -184,6 +172,12 @@
     </Filter>
     <Filter Include="Game\08. State\Player\Attack">
       <UniqueIdentifier>{3c1e9137-181a-497c-b568-37747fea5008}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04. Object\Skill\Phantom">
+      <UniqueIdentifier>{82b18e70-186b-4b80-9bc7-0bce89b5f06c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04. Object\Skill\Phantom\UltimateDrive">
+      <UniqueIdentifier>{c8eb5ddd-6b12-4589-960a-530c23e51d0e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -332,6 +326,9 @@
     <ClInclude Include="CStateMachine.h">
       <Filter>Game\07. Component\StateMachine</Filter>
     </ClInclude>
+    <ClInclude Include="CSkill_UltimateDrive.h">
+      <Filter>Game\04. Object\Skill\Phantom\UltimateDrive</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MercuryProject.rc">
@@ -472,6 +469,9 @@
     </ClCompile>
     <ClCompile Include="CStateMachine.cpp">
       <Filter>Game\07. Component\StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkill_UltimateDrive.cpp">
+      <Filter>Game\04. Object\Skill\Phantom\UltimateDrive</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

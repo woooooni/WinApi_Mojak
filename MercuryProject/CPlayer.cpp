@@ -125,16 +125,11 @@ void CPlayer::init()
 		, 3);
 
 	CreateStateMachine();
-	GetStateMachine()->AddState(new CPlayerIdle(L"IDLE_LEFT"));
-	GetStateMachine()->AddState(new CPlayerIdle(L"IDLE_RIGHT"));
-	GetStateMachine()->AddState(new CPlayerMove(L"MOVE_LEFT"));
-	GetStateMachine()->AddState(new CPlayerMove(L"MOVE_RIGHT"));
-	GetStateMachine()->AddState(new CPlayerJump(L"JUMP_LEFT"));
-	GetStateMachine()->AddState(new CPlayerJump(L"JUMP_RIGHT"));
-	GetStateMachine()->AddState(new CPlayerJump(L"JUMP_DOWN_LEFT"));
-	GetStateMachine()->AddState(new CPlayerJump(L"JUMP_DOWN_RIGHT"));
+	GetStateMachine()->AddState(new CPlayerIdle(L"IDLE"));
+	GetStateMachine()->AddState(new CPlayerMove(L"MOVE"));
+	GetStateMachine()->AddState(new CPlayerJump(L"JUMP"));
 
-	GetStateMachine()->ChangeState(L"JUMP_LEFT");
+	GetStateMachine()->ChangeState(L"JUMP");
 }
 
 void CPlayer::update()

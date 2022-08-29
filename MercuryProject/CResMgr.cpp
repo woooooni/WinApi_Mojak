@@ -20,7 +20,6 @@ CResMgr::~CResMgr()
 	{
 		m_arrChannelGroup[i]->release();
 	}
-
 	m_pSoundSystem->release();
 }
 

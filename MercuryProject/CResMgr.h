@@ -27,7 +27,6 @@ public:
 
 	//Sound
 	FMOD::System* GetSoundSystem() { return m_pSoundSystem; }
-
 	
 	CSound* LoadSound(const wstring& _strKey, const wstring& _strRelativePath);
 

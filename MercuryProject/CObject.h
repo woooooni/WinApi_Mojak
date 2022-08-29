@@ -57,6 +57,7 @@ public:
 
 	void CreateStateMachine();
 	CStateMachine* GetStateMachine() { return m_pStateMachine; }
+
 private:
 	void SetDead() { m_bAlive = false; }
 
@@ -65,10 +66,10 @@ public:
 	virtual void update() = 0;
 	virtual void finalupdate();
 	virtual void render(HDC _dc);
-
-	void component_render(HDC _dc);
-
 	virtual CObject* Clone() = 0;
+
+protected:
+	void component_render(HDC _dc);
 
 public:
 	CObject();

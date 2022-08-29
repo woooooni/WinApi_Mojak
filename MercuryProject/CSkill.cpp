@@ -5,29 +5,15 @@
 #include "CAnimation.h"
 
 
-CSkill::CSkill()
-	:m_fDuration(0.f)
+CSkill::CSkill(bool _bFollow)
+	: m_fDuration(0.f)
+	, m_bFollow(_bFollow)
+	, m_pOwner(nullptr)
 {
-
+	
 }
 
 CSkill::~CSkill()
-{
-
-}
-
-void CSkill::Use()
-{
-
-}
-
-void CSkill::init()
-{
-	CreateCollider();
-	CreateAnimator();
-}
-
-void CSkill::update()
 {
 
 }

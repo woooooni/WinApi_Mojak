@@ -21,7 +21,13 @@ CPlayerMove::~CPlayerMove()
 
 void CPlayerMove::Enter()
 {
+	CObject* pObj = GetStateMachine()->GetObj();
 	wstring strStateName = GetStateName();
+	if (pObj->GetDir() == DIR::LEFT)
+		strStateName += L"_LEFT";
+	else
+		strStateName += L"_RIGHT";
+
 	GetStateMachine()->GetAnimator()->Play(strStateName, true);
 }
 
@@ -39,48 +45,37 @@ void CPlayerMove::PlayerMove()
 	CPlayer* pPlayer = (CPlayer*)GetStateMachine()->GetObj();
 	CRigidBody* pRigid = pPlayer->GetRigidBody();
 	Vec2 vPos = pPlayer->GetPos();
+
 	if (KEY_TAP(KEY::SPACE))
 	{
 		pRigid->SetGround(false);
-
-		
 		pRigid->AddVelocity(Vec2(pRigid->GetVelocity().x, -500.f));
 		
 		//TODO:: JUMP State·Î º¯°æ.
-		if (pPlayer->GetDir() == DIR::LEFT)
-		{
-			GetStateMachine()->ChangeState(L"JUMP_LEFT");
-		}
-		else
-		{
-			GetStateMachine()->ChangeState(L"JUMP_RIGHT");
-		}
+		GetStateMachine()->ChangeState(L"JUMP");
 	}
 
-	if (KEY_TAP(KEY::SHIFT))
-	{
-		pRigid->AddVelocity(Vec2(2000.f, pRigid->GetVelocity().y));
-	}
+	if (KEY_TAP(KEY::LEFT_ARROW))
+		GetStateMachine()->GetAnimator()->Play(L"MOVE_LEFT", true);
+
+	if (KEY_TAP(KEY::RIGHT_ARROW))
+		GetStateMachine()->GetAnimator()->Play(L"MOVE_RIGHT", true);
 
 	if (KEY_HOLD(KEY::LEFT_ARROW))
 	{
 		vPos.x -= 300.f * DeltaTime;
 	}
+
 	if (KEY_HOLD(KEY::RIGHT_ARROW))
 	{
 		vPos.x += 300.f * DeltaTime;
 	}
+	
 
-	if (KEY_AWAY(KEY::RIGHT_ARROW) || KEY_AWAY(KEY::LEFT_ARROW))
+	if ((KEY_NONE(KEY::RIGHT_ARROW) && KEY_NONE(KEY::LEFT_ARROW)))
 	{
-		if (pPlayer->GetDir() == DIR::LEFT)
-		{
-			GetStateMachine()->ChangeState(L"IDLE_LEFT");
-		}
-		else
-		{
-			GetStateMachine()->ChangeState(L"IDLE_RIGHT");
-		}
+		pRigid->SetVelocity(Vec2(0.f, pRigid->GetVelocity().y));
+		GetStateMachine()->ChangeState(L"IDLE");
 	}
 	GetStateMachine()->GetObj()->SetPos(vPos);
 }

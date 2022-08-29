@@ -127,3 +127,4 @@ public:
 		, y((float)_y)
 	{}
 };
+

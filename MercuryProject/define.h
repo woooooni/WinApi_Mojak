@@ -124,6 +124,7 @@ enum class ROLE_TYPE
 	END
 };
 
+
 enum class DIR
 {
 	LEFT,

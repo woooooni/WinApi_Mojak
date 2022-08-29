@@ -40,15 +40,6 @@ CAnimation* CAnimator::FindAnimation(const wstring& _strName)
 	return iter->second;
 }
 
-void CAnimator::LoadAnimation(const wstring& _strRelativePath)
-{
-	CAnimation* pAnim = new CAnimation;
-	//pAnim->Load(_strRelativePath);
-
-	pAnim->m_pAnimator = this;
-	m_mapAnim.insert(make_pair(pAnim->GetName(), pAnim));
-}
-
 void CAnimator::update()
 {
 
@@ -67,12 +58,11 @@ void CAnimator::finalupdate()
 	// ========================
 	//현재 애니메이션의 업데이트를 호출.
 	if (nullptr != m_pCurAnim)
-	{
-		m_pCurAnim->update();
-
+	{	
 		// C++ 코드최적화
 		// && 연산에서, 앞부분 조건이 false라면 뒷 부분 조건은 검사하지 않음.
 		// || 연산에서, 앞부분 조건이 true라면 뒷 부분 조건은 검사하지 않음.
+		m_pCurAnim->update();
 		if (m_bRepeat && m_pCurAnim->IsFinished())
 		{
 			m_pCurAnim->SetFrame(0);

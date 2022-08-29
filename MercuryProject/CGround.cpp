@@ -45,8 +45,10 @@ void CGround::OnCollisionEnter(CCollider* _pOther)
 
 		Vec2 vPos = GetCollider()->GetFinalPos();
 		Vec2 vScale = GetCollider()->GetScale();
+
 		if (pRigid == nullptr || pRigid->IsGround() == true)
 			return;
+
 		if (vPos.y + vScale.y / 2.f < vObjPos.y + vObjScale.y / 2.f)
 			return;
 
@@ -72,11 +74,12 @@ void CGround::OnCollision(CCollider* _pOther)
 		
 	}
 }
+
 void CGround::OnCollisionExit(CCollider* _pOther) 
 {
 	CObject* pOtherObj = _pOther->GetObj();
 	if (pOtherObj->GetType() == GROUP_TYPE::PLAYER)
 	{
-		CRigidBody* pRigid = pOtherObj->GetRigidBody();
+		
 	}
 }

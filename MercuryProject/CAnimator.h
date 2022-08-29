@@ -18,8 +18,8 @@ public:
 	void CreateAnimation(const wstring& _strName, CTexture* _pTex,
 		Vec2 _vLT, Vec2 _vSliceSize, Vec2 _vStep,
 		float _fDuration, UINT _iFrameCount);
+
 	CAnimation* FindAnimation(const wstring& _strName);
-	void LoadAnimation(const wstring& _strRelativePath);
 	void Play(const wstring& _strName, bool _bRepeat)
 	{
 		m_pCurAnim = FindAnimation(_strName);

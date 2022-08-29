@@ -7,6 +7,7 @@
 #include "CTimeMgr.h"
 #include "CKeyMgr.h"
 #include "CRigidBody.h"
+#include "CPlayer.h"
 
 CPlayerJump::CPlayerJump(wstring _strName)
 	: CState(_strName)
@@ -20,54 +21,54 @@ CPlayerJump::~CPlayerJump()
 
 void CPlayerJump::Enter()
 {
-	wstring strName = GetStateName();
+	CPlayer* pPlayer = (CPlayer*)GetStateMachine()->GetObj();
+	wstring strName;
+	if (pPlayer->GetDir() == DIR::LEFT)
+		strName = GetStateName() + L"_LEFT";
+	else
+		strName = GetStateName() + L"_RIGHT";
 	GetStateMachine()->GetAnimator()->Play(strName, true);
 }
 
 void CPlayerJump::update()
 {
-	CObject* pObj = GetStateMachine()->GetObj();
-	CRigidBody* pRigid = pObj->GetRigidBody();
+	CPlayer* pPlayer = (CPlayer*)GetStateMachine()->GetObj();
+	CRigidBody* pRigid = pPlayer->GetRigidBody();
 
 	if (pRigid->IsGround() == true)
 	{
-		if (pObj->GetDir() == DIR::LEFT)
-		{
-			GetStateMachine()->ChangeState(L"IDLE_LEFT");
-		}
-		else
-		{
-			GetStateMachine()->ChangeState(L"IDLE_RIGHT");
-		}
+		GetStateMachine()->ChangeState(L"IDLE");
+		return;
 	}
 	else
 	{
-		Vec2 vPos = pObj->GetPos();
+		Vec2 vPos = pPlayer->GetPos();
+		if (pRigid->GetVelocity().y > 0)
+		{
+			if(pPlayer->GetDir() == DIR::LEFT)
+				GetStateMachine()->GetAnimator()->Play(L"JUMP_DOWN_LEFT", true);
+			else
+				GetStateMachine()->GetAnimator()->Play(L"JUMP_DOWN_RIGHT", true);
+		}
+		else
+		{
+			if (pPlayer->GetDir() == DIR::LEFT)
+				GetStateMachine()->GetAnimator()->Play(L"JUMP_LEFT", true);
+			else
+				GetStateMachine()->GetAnimator()->Play(L"JUMP_RIGHT", true);
+		}
+
 		if (KEY_HOLD(KEY::LEFT_ARROW))
 		{
+			pPlayer->SetDir(DIR::LEFT);
 			vPos.x -= 300.f * DeltaTime;
-			if (pRigid->GetVelocity().y > 0)
-			{
-				GetStateMachine()->GetAnimator()->Play(L"JUMP_DOWN_LEFT", true);
-			}
-			else
-			{
-				GetStateMachine()->GetAnimator()->Play(L"JUMP_LEFT", true);
-			}
 		}
 		if (KEY_HOLD(KEY::RIGHT_ARROW))
 		{
+			pPlayer->SetDir(DIR::RIGHT);
 			vPos.x += 300.f * DeltaTime;
-			if (pRigid->GetVelocity().y > 0)
-			{
-				GetStateMachine()->GetAnimator()->Play(L"JUMP_DOWN_RIGHT", true);
-			}
-			else
-			{
-				GetStateMachine()->GetAnimator()->Play(L"JUMP_RIGHT", true);
-			}
 		}
-		pObj->SetPos(vPos);
+		pPlayer->SetPos(vPos);
 	}
 	
 }

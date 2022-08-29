@@ -3,14 +3,20 @@
 class CAnimator;
 class CTexture;
 class CSound;
+typedef void(*ANIMATION_EVENT)(DWORD_PTR, DWORD_PTR);
+
 struct tAnimFrame
 {
-	Vec2		vLT;
-	Vec2		vSlice;
-	Vec2		vOffset;
-	wstring		soundKey;		// 애니메이션 사운드 키.
-	wstring		soundPath;		// 애니메이션 사운드 경로.
-	float		fDuration;
+	Vec2				vLT;
+	Vec2				vSlice;
+	Vec2				vOffset;
+	CSound*				sound;
+
+	ANIMATION_EVENT		animEvent;		// 애니메이션 이벤트 함수.
+	DWORD_PTR			evtParam1;		// 애니메이션 이벤트 함수 매개변수.
+	DWORD_PTR			evtParam2;		// 애니메이션 이벤트 함수 매개변수.
+
+	float				fDuration;
 };
 
 class CAnimation
@@ -43,7 +49,9 @@ private:
 
 public:
 	void Create(CTexture* _pTex, Vec2 _vLT, Vec2 _vSliceSize, Vec2 _vStep, float _fDuration, UINT _iFrameCount);
-	void AddSound(wstring soundKey, wstring _soundPath, int _idx);
+	
+	void AddSound(CSound* _pSound, int _idx);
+	void AddEvent(ANIMATION_EVENT _pCallBack, DWORD_PTR param1, DWORD_PTR param2, int _idx);
 	//void Save(const wstring& _strRelativePath);
 	//void Load(const wstring& _strRelativePath);
 

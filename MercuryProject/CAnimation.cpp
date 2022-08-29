@@ -42,26 +42,21 @@ void CAnimation::update()
 	if (m_vecFrame[m_iCurFrm].fDuration < m_fAccTime)
 	{
 		++m_iCurFrm;
-
 		if (m_vecFrame.size() <= m_iCurFrm)
 		{
-			m_iCurFrm = -1;
+			m_iCurFrm = 0;
 			m_bFinish = true;
 			m_bLastFinished = true;
 			m_fAccTime = 0;
 			return;
 		}
-
 		m_fAccTime -= m_vecFrame[m_iCurFrm].fDuration;
 	}
 }
 
 void CAnimation::render(HDC _dc)
 {
-	if (m_bFinish)
-		return;
-
-
+	
 	CObject* pObj = m_pAnimator->GetObj();
 	Vec2 vPos = pObj->GetPos();
 
@@ -84,9 +79,9 @@ void CAnimation::Create(CTexture* _pTex,
 {
 	m_pTex = _pTex;
 
-	tAnimFrame frm = {};
 	for (UINT i = 0; i < _iFrameCount; i++)
 	{
+		tAnimFrame frm = {};
 		frm.fDuration = _fDuration;
 		frm.vSlice = _vSliceSize;
 		frm.vLT = _vLT + _vStep * (float)i;
@@ -94,13 +89,22 @@ void CAnimation::Create(CTexture* _pTex,
 	}
 }
 
-void CAnimation::AddSound(wstring _soundKey, wstring _soundPath, int _idx)
+void CAnimation::AddSound(CSound* _pSound, int _idx)
 {
 	if (_idx > m_vecFrame.size())
 		assert(nullptr);
 
-	m_vecFrame[_idx].soundKey = _soundKey;
-	m_vecFrame[_idx].soundPath = _soundPath;
+	m_vecFrame[_idx].sound = _pSound;
+}
+
+void CAnimation::AddEvent(ANIMATION_EVENT _pCallBack, DWORD_PTR param1, DWORD_PTR param2, int _idx)
+{
+	if (_idx > m_vecFrame.size())
+		assert(_idx);
+
+	m_vecFrame[_idx].animEvent = _pCallBack;
+	m_vecFrame[_idx].evtParam1 = param1;
+	m_vecFrame[_idx].evtParam2 = param2;
 }
 
 void CAnimation::Play(HDC _dc, Vec2 _vRenderPos)
@@ -117,11 +121,17 @@ void CAnimation::Play(HDC _dc, Vec2 _vRenderPos)
 		, (int)(m_vecFrame[m_iCurFrm].vSlice.y)
 		, RGB(255, 0, 255));
 
-	if (m_vecFrame[m_iCurFrm].soundKey != L"" && !m_vecFrame[m_iCurFrm].soundKey.empty())
+	if (m_vecFrame[m_iCurFrm].sound != nullptr)
 	{
-		CSound* pSound = CResMgr::GetInst()->LoadSound(m_vecFrame[m_iCurFrm].soundKey, m_vecFrame[m_iCurFrm].soundPath);
-		assert(pSound);
-		pSound->Play(SOUND_CHANNEL_GROUP::SOUND_EFFECT);
+		m_vecFrame[m_iCurFrm].sound->Play(SOUND_CHANNEL_GROUP::SOUND_EFFECT);
+	}
+
+	if (m_vecFrame[m_iCurFrm].animEvent != nullptr)
+	{
+		DWORD_PTR param1 = m_vecFrame[m_iCurFrm].evtParam1;
+		DWORD_PTR param2 = m_vecFrame[m_iCurFrm].evtParam2;
+
+		m_vecFrame[m_iCurFrm].animEvent(param1, param2);
 	}
 }
 

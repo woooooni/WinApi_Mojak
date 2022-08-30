@@ -3,13 +3,14 @@
 #include "CTexture.h"
 class CRole;
 class CProjectile;
+class CSkill_BlackJack;
 
 class CPlayer :
     public CObject
 {
 private:
     //Private Mem
-    //CRole* m_pRole;
+    CRole* m_pRole;
 
 private:
     //Private Func
@@ -18,7 +19,11 @@ private:
 
 public:
     //void OnDamaged();
-    void CreateProjectile();
+    //void CreateProjectile();
+
+public:
+    CRole* GetRole() { return m_pRole; }
+    void SetRole(ROLE_TYPE _eRole) { }
     
 public:
     virtual void init();

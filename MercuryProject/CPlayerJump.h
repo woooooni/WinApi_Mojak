@@ -5,6 +5,7 @@ class CPlayerJump :
 {
 
 private:
+    DIR  m_eEnterDir;
     bool m_bDoubleJump;
 
 public:

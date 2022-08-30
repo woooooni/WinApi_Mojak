@@ -43,6 +43,8 @@ public:
 	void SetGround(bool _bGround);
 	bool IsGround() { return m_bGround; }
 
+	void SetFricCoeff(float _f) { m_fFricCoeff = _f; }
+
 private:
 	void Move();
 

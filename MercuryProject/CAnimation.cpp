@@ -51,6 +51,19 @@ void CAnimation::update()
 			return;
 		}
 		m_fAccTime -= m_vecFrame[m_iCurFrm].fDuration;
+
+
+		if (m_vecFrame[m_iCurFrm].sound != nullptr)
+		{
+			m_vecFrame[m_iCurFrm].sound->Play(SOUND_CHANNEL_GROUP::SOUND_EFFECT);
+		}
+
+		if ((m_vecFrame[m_iCurFrm].animEventFunc != nullptr) && (m_vecFrame[m_iCurFrm].obj != nullptr))
+		{
+			CObject* pObj = m_vecFrame[m_iCurFrm].obj;
+			((*pObj).*m_vecFrame[m_iCurFrm].animEventFunc)();
+		}
+		
 	}
 }
 
@@ -78,9 +91,9 @@ void CAnimation::Create(CTexture* _pTex,
 {
 	m_pTex = _pTex;
 
+	tAnimFrame frm = {};
 	for (UINT i = 0; i < _iFrameCount; i++)
 	{
-		tAnimFrame frm = {};
 		frm.fDuration = _fDuration;
 		frm.vSlice = _vSliceSize;
 		frm.vLT = _vLT + _vStep * (float)i;
@@ -118,18 +131,6 @@ void CAnimation::Play(HDC _dc, Vec2 _vRenderPos)
 		, (int)(m_vecFrame[m_iCurFrm].vSlice.x)
 		, (int)(m_vecFrame[m_iCurFrm].vSlice.y)
 		, RGB(255, 0, 255));
-
-	if (m_vecFrame[m_iCurFrm].sound != nullptr)
-	{
-		m_vecFrame[m_iCurFrm].sound->Play(SOUND_CHANNEL_GROUP::SOUND_EFFECT);
-	}
-
-	if ((m_vecFrame[m_iCurFrm].animEventFunc != nullptr) && (m_vecFrame[m_iCurFrm].obj != nullptr))
-	{
-		CObject* pObj = m_vecFrame[m_iCurFrm].obj;
-		CPlayer* pPlayer = (CPlayer*)pObj;
-		((*pPlayer).*m_vecFrame[m_iCurFrm].animEventFunc)();
-	}
 }
 
 //void CAnimation::Save(const wstring& _strRelativePath)

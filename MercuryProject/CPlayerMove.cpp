@@ -47,10 +47,7 @@ void CPlayerMove::PlayerMove()
 	Vec2 vPos = pPlayer->GetPos();
 
 	if (KEY_TAP(KEY::SPACE))
-	{
-		pRigid->SetGround(false);
-		pRigid->AddVelocity(Vec2(pRigid->GetVelocity().x, -500.f));
-		
+	{	
 		//TODO:: JUMP State·Î º¯°æ.
 		GetStateMachine()->ChangeState(L"JUMP");
 	}
@@ -71,11 +68,13 @@ void CPlayerMove::PlayerMove()
 	if (KEY_HOLD(KEY::LEFT_ARROW))
 	{
 		vPos.x -= 300.f * DeltaTime;
+		pRigid->SetVelocity(Vec2(0, 0));
 	}
 
 	if (KEY_HOLD(KEY::RIGHT_ARROW))
 	{
 		vPos.x += 300.f * DeltaTime;
+		pRigid->SetVelocity(Vec2(0, 0));
 	}
 	
 

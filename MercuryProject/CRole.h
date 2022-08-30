@@ -7,8 +7,12 @@ public:
 	wstring					m_strName;
 	ROLE_TYPE				m_eRole;
 	CObject*				m_pOwner;
+
+	//map으로 관리하는게 편할듯?
 	vector<CSkill*>			m_vecSkill;
 
+public:
+	void update();
 
 public:
 	void SetOwner(CObject* _owner) { m_pOwner = _owner; }
@@ -21,7 +25,9 @@ public:
 	{ 
 		CSkill* skill = m_vecSkill.at(_iIdx);
 		assert(skill);
-		skill->Use();
+
+		if(skill->GetSkillInfo().bUseAble)
+			skill->Use();
 	}
 	vector<CSkill*> ClearSkill() { m_vecSkill.clear(); }
 

@@ -32,7 +32,7 @@ public:
 	bool GetFlipX() { return m_bFlipX; }
 	bool GetFlipY() { return m_bFlipY; }	
 
-	bool IsFinished() { return !m_pCurAnim->IsFinished(); }
+	bool IsFinished() { return m_pCurAnim->IsFinished(); }
 
 public:
 	void update();

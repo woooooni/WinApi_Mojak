@@ -4,8 +4,8 @@
 #include "CObject.h"
 CRigidBody::CRigidBody()
 	: m_fMass(1.f)
-	, m_fFricCoeff(100.f)
-	, m_vMaxVelocity(Vec2(300.f, 600.f))
+	, m_fFricCoeff(600.f)
+	, m_vMaxVelocity(Vec2(1000.f, 600.f))
 	, m_bGravity(true)
 	, m_bGround(false)
 	, m_vAccelA(Vec2(0, 0))
@@ -61,7 +61,11 @@ void CRigidBody::finalupdate()
 		Vec2 vFricDir = -m_vVelocity;
 		vFricDir.Normalize();
 
-		Vec2 vFriction = vFricDir * m_fFricCoeff * DeltaTime;
+		Vec2 vFriction;
+		if (IsGround())
+			vFriction = vFricDir * m_fFricCoeff * DeltaTime;
+		else
+			vFriction = vFricDir * DeltaTime;
 		if (m_vVelocity.Length() <= vFriction.Length())
 		{
 			//마찰 가속도가 본래 속도보다 큰 경우

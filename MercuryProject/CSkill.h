@@ -1,42 +1,38 @@
 #pragma once
+#include "CObject.h"
 
 typedef struct tSkillInfo
 {
     int iDamage;
-    int iDuation;
-    int iPrevDelay;
-    int iAfterDelay;
+    float fCoolTime;
+    bool bUseAble;
 
 }SKILL_INFO;
 
-class CSkill :
-    public CObject
+class CSkill
+    :public CObject
 {
 
 protected:
-    CObject*    m_pOwner;
-    float       m_fDuration;
-    bool        m_bFollow;
-    SKILL_INFO  m_tSkillInfo;
+    CObject*        m_pOwner;
+    SKILL_INFO      m_tSkillInfo;
 
+    float           m_fAccTime;
 
 public:
     void SetOwner(CObject* _pObj) { m_pOwner = _pObj; }
     CObject* GetObj() { return m_pOwner; }
-
     SKILL_INFO GetSkillInfo() { return m_tSkillInfo; }
 
 public:
-    virtual void init() {};
-    virtual void update() {};
-    virtual void render(HDC _dc) {};
-    CLONE(CSkill);
+    virtual void update();
+
 
 private:
-    virtual void Use() {};
+    virtual void Use() = 0;
 
 public:
-    CSkill(bool _bFollow);
+    CSkill();
     virtual ~CSkill();
 
     friend class CRole;

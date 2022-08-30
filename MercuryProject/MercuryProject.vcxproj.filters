@@ -134,26 +134,11 @@
     <Filter Include="Game\08. State\Player">
       <UniqueIdentifier>{72aa4994-a179-40d7-8cad-5191cd7bb652}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\10. GameClasses">
-      <UniqueIdentifier>{f16288e8-a7b2-418d-9f77-4574ca987522}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\10. GameClasses\Begginer">
-      <UniqueIdentifier>{fe7fb587-db43-4247-b249-88018db3336a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game\04. Object\UI\SettingUI">
       <UniqueIdentifier>{906817f9-97a6-450a-891a-dfba948b267e}</UniqueIdentifier>
     </Filter>
     <Filter Include="Game\11. Factory">
       <UniqueIdentifier>{93defc02-ad85-4554-a02e-3703edb3f06d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\10. GameClasses\Assasin">
-      <UniqueIdentifier>{5b015a41-a17a-498f-bfa6-04bffa073b87}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\10. GameClasses\Magician">
-      <UniqueIdentifier>{52ad57cf-1454-4f1f-8f34-99b71484053b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\10. GameClasses\SwordMaster">
-      <UniqueIdentifier>{aad8043b-2a72-43ef-bf27-71c2343c97c8}</UniqueIdentifier>
     </Filter>
     <Filter Include="Game\08. State\Player\Idle">
       <UniqueIdentifier>{1af51fd0-efdd-4e64-9145-4e57cff54bd7}</UniqueIdentifier>
@@ -181,6 +166,21 @@
     </Filter>
     <Filter Include="Game\04. Object\Projectile">
       <UniqueIdentifier>{fbb95133-2389-4f30-9815-7af0bf0b4763}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\10. Role">
+      <UniqueIdentifier>{f16288e8-a7b2-418d-9f77-4574ca987522}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04. Object\Skill\Phantom\BlackJack">
+      <UniqueIdentifier>{3cd286ba-9bd4-4418-a12b-5c19cbfba78b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04. Object\Effect">
+      <UniqueIdentifier>{8aa74274-ef3b-4edd-96de-50afcb29a8ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04. Object\Skill\Phantom\BlackJack\Effect">
+      <UniqueIdentifier>{e1cd4e73-eba3-48c0-83bc-e28909d353a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04. Object\Skill\Phantom\BlackJack\Obj">
+      <UniqueIdentifier>{85090cf4-50b8-4960-8e03-a8686c7998e1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -297,22 +297,13 @@
       <Filter>Game\08. State</Filter>
     </ClInclude>
     <ClInclude Include="CRole.h">
-      <Filter>Game\10. GameClasses</Filter>
+      <Filter>Game\10. Role</Filter>
     </ClInclude>
     <ClInclude Include="CFactory.h">
       <Filter>Game\11. Factory</Filter>
     </ClInclude>
     <ClInclude Include="CSkill.h">
       <Filter>Game\04. Object\Skill</Filter>
-    </ClInclude>
-    <ClInclude Include="CRoleAssasin.h">
-      <Filter>Game\10. GameClasses\Assasin</Filter>
-    </ClInclude>
-    <ClInclude Include="CRoleMagician.h">
-      <Filter>Game\10. GameClasses\Magician</Filter>
-    </ClInclude>
-    <ClInclude Include="CRoleSwordMaster.h">
-      <Filter>Game\10. GameClasses\SwordMaster</Filter>
     </ClInclude>
     <ClInclude Include="CPlayerIdle.h">
       <Filter>Game\08. State\Player\Idle</Filter>
@@ -334,6 +325,18 @@
     </ClInclude>
     <ClInclude Include="CProjectile.h">
       <Filter>Game\04. Object\Projectile</Filter>
+    </ClInclude>
+    <ClInclude Include="CSkill_BlackJack.h">
+      <Filter>Game\04. Object\Skill\Phantom\BlackJack</Filter>
+    </ClInclude>
+    <ClInclude Include="CSkillEffect.h">
+      <Filter>Game\04. Object\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="CBlackJackEffect.h">
+      <Filter>Game\04. Object\Skill\Phantom\BlackJack\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="CBlackJackObj.h">
+      <Filter>Game\04. Object\Skill\Phantom\BlackJack\Obj</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -444,22 +447,13 @@
       <Filter>Game\08. State</Filter>
     </ClCompile>
     <ClCompile Include="CRole.cpp">
-      <Filter>Game\10. GameClasses</Filter>
+      <Filter>Game\10. Role</Filter>
     </ClCompile>
     <ClCompile Include="CFactory.cpp">
       <Filter>Game\11. Factory</Filter>
     </ClCompile>
     <ClCompile Include="CSkill.cpp">
       <Filter>Game\04. Object\Skill</Filter>
-    </ClCompile>
-    <ClCompile Include="CRoleAssasin.cpp">
-      <Filter>Game\10. GameClasses\Assasin</Filter>
-    </ClCompile>
-    <ClCompile Include="CRoleMagician.cpp">
-      <Filter>Game\10. GameClasses\Magician</Filter>
-    </ClCompile>
-    <ClCompile Include="CRoleSwordMaster.cpp">
-      <Filter>Game\10. GameClasses\SwordMaster</Filter>
     </ClCompile>
     <ClCompile Include="CPlayerIdle.cpp">
       <Filter>Game\08. State\Player\Idle</Filter>
@@ -481,6 +475,18 @@
     </ClCompile>
     <ClCompile Include="CProjectile.cpp">
       <Filter>Game\04. Object\Projectile</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkill_BlackJack.cpp">
+      <Filter>Game\04. Object\Skill\Phantom\BlackJack</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkillEffect.cpp">
+      <Filter>Game\04. Object\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="CBlackJackEffect.cpp">
+      <Filter>Game\04. Object\Skill\Phantom\BlackJack\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="CBlackJackObj.cpp">
+      <Filter>Game\04. Object\Skill\Phantom\BlackJack\Obj</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

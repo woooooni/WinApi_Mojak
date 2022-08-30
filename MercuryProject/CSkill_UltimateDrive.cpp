@@ -2,9 +2,10 @@
 #include "CSkill_UltimateDrive.h"
 #include "CObject.h"
 #include "CCollider.h"
+#include "CAnimator.h"
+#include "CAnimation.h"
 
 CSkill_UltimateDrive::CSkill_UltimateDrive()
-	:CSkill(true)
 {
 	
 }
@@ -21,10 +22,8 @@ void CSkill_UltimateDrive::init()
 
 void CSkill_UltimateDrive::update()
 {
-	if ((m_bFollow) && (m_pOwner != nullptr))
-	{
-		
-	}
+	assert(m_pOwner);
+
 }
 
 void CSkill_UltimateDrive::render(HDC _dc)

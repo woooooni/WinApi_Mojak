@@ -22,15 +22,23 @@ CPlayerIdle::~CPlayerIdle()
 void CPlayerIdle::Enter()
 {
 	//TODO : LEFT, RIGHT STATE를 두개 만들 필요가 없네..
-	CObject* pObj = GetStateMachine()->GetObj();
+	CPlayer* pObj = (CPlayer*)GetStateMachine()->GetObj();
+	CRigidBody* pRigid = pObj->GetRigidBody();
  	wstring strStateName = GetStateName();
 
 	if (pObj->GetDir() == DIR::LEFT)
+	{
 		strStateName += L"_LEFT";
+	}
 	else
+	{
 		strStateName += L"_RIGHT";
+	}
+		
 
 	GetStateMachine()->GetAnimator()->Play(strStateName, true);
+	
+	
 }
 
 void CPlayerIdle::update()
@@ -48,15 +56,8 @@ void CPlayerIdle::PlayerMove()
 	CPlayer* pObj = (CPlayer*)GetStateMachine()->GetObj();
 	CRigidBody* pRigid = pObj->GetRigidBody();
 
-	if (KEY_HOLD(KEY::A))
-	{
-		
-	}
-
 	if (KEY_TAP(KEY::SPACE))
 	{
-		pRigid->SetGround(false);
-		pRigid->SetVelocity(Vec2(pRigid->GetVelocity().x, -500.f));
 		GetStateMachine()->ChangeState(L"JUMP");
 	}
 

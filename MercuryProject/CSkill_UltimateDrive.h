@@ -4,11 +4,14 @@ class CObject;
 class CSkill_UltimateDrive :
     public CSkill
 {
+private:
+
 
 public:
     virtual void init();
     virtual void update();
     virtual void render(HDC _dc);
+
 
 private:
     virtual void Use();

@@ -3,8 +3,10 @@
 class CAnimator;
 class CTexture;
 class CSound;
-class CPlayer;
-typedef void(*OBJECT_MEMFUNC)(void);
+class CObject;
+class CSkill;
+typedef void (CObject::* OBJECT_MEMFUNC)(void);
+typedef void (CSkill::* SKILL_MEMFUNC)(void);
 
 struct tAnimFrame
 {
@@ -14,7 +16,7 @@ struct tAnimFrame
 	CSound*				sound;
 
 
-	//Event Func
+	//Obj Event Func
 	CObject*			obj;
 	OBJECT_MEMFUNC		animEventFunc;
 

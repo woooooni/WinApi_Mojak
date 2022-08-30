@@ -3,12 +3,9 @@
 #include "CSkill.h"
 #include "CAnimator.h"
 #include "CAnimation.h"
+#include "CTimeMgr.h"
 
-
-CSkill::CSkill(bool _bFollow)
-	: m_fDuration(0.f)
-	, m_bFollow(_bFollow)
-	, m_pOwner(nullptr)
+CSkill::CSkill()
 {
 	
 }
@@ -16,5 +13,20 @@ CSkill::CSkill(bool _bFollow)
 CSkill::~CSkill()
 {
 
+}
+
+void CSkill::update()
+{
+	if (m_tSkillInfo.bUseAble == false)
+	{
+		m_fAccTime += DeltaTime;
+	}
+
+	if (m_fAccTime >= m_tSkillInfo.fCoolTime)
+	{
+		m_tSkillInfo.bUseAble = true;
+		m_fAccTime = 0;
+	}
+		
 }
 

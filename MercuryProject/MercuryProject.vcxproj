@@ -171,6 +171,8 @@
   <ItemGroup>
     <ClInclude Include="CAnimation.h" />
     <ClInclude Include="CAnimator.h" />
+    <ClInclude Include="CBlackJackEffect.h" />
+    <ClInclude Include="CBlackJackObj.h" />
     <ClInclude Include="CButtonUI.h" />
     <ClInclude Include="CCamera.h" />
     <ClInclude Include="CCollider.h" />
@@ -194,13 +196,12 @@
     <ClInclude Include="CRes.h" />
     <ClInclude Include="CResMgr.h" />
     <ClInclude Include="CRigidBody.h" />
-    <ClInclude Include="CRoleAssasin.h" />
-    <ClInclude Include="CRoleMagician.h" />
-    <ClInclude Include="CRoleSwordMaster.h" />
     <ClInclude Include="CScene.h" />
     <ClInclude Include="CSceneMgr.h" />
     <ClInclude Include="CScene_Start.h" />
     <ClInclude Include="CSkill.h" />
+    <ClInclude Include="CSkillEffect.h" />
+    <ClInclude Include="CSkill_BlackJack.h" />
     <ClInclude Include="CSkill_UltimateDrive.h" />
     <ClInclude Include="CSound.h" />
     <ClInclude Include="CState.h" />
@@ -224,6 +225,8 @@
   <ItemGroup>
     <ClCompile Include="CAnimation.cpp" />
     <ClCompile Include="CAnimator.cpp" />
+    <ClCompile Include="CBlackJackEffect.cpp" />
+    <ClCompile Include="CBlackJackObj.cpp" />
     <ClCompile Include="CButtonUI.cpp" />
     <ClCompile Include="CCamera.cpp" />
     <ClCompile Include="CCollider.cpp" />
@@ -247,13 +250,12 @@
     <ClCompile Include="CRes.cpp" />
     <ClCompile Include="CResMgr.cpp" />
     <ClCompile Include="CRigidBody.cpp" />
-    <ClCompile Include="CRoleAssasin.cpp" />
-    <ClCompile Include="CRoleMagician.cpp" />
-    <ClCompile Include="CRoleSwordMaster.cpp" />
     <ClCompile Include="CScene.cpp" />
     <ClCompile Include="CSceneMgr.cpp" />
     <ClCompile Include="CScene_Start.cpp" />
     <ClCompile Include="CSkill.cpp" />
+    <ClCompile Include="CSkillEffect.cpp" />
+    <ClCompile Include="CSkill_BlackJack.cpp" />
     <ClCompile Include="CSkill_UltimateDrive.cpp" />
     <ClCompile Include="CSound.cpp" />
     <ClCompile Include="CState.cpp" />

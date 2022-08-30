@@ -74,14 +74,14 @@ void CPlayerMove::PlayerMove()
 	{
 		if (pPlayer->GetDir() == DIR::LEFT)
 			pRigid->SetVelocity(Vec2(0, 0));
-		vPos.x -= 300.f * DeltaTime;
+		pRigid->AddVelocity(Vec2(-300.f, 0.f));
 	}
 
 	if (KEY_HOLD(KEY::RIGHT_ARROW))
 	{
 		if (pPlayer->GetDir() == DIR::RIGHT)
 			pRigid->SetVelocity(Vec2(0, 0));
-		vPos.x += 300.f * DeltaTime;
+		pRigid->AddVelocity(Vec2(300.f, 0.f));
 	}
 	
 

@@ -3,7 +3,7 @@
 #include "CTimeMgr.h"
 #include "CObject.h"
 CRigidBody::CRigidBody()
-	: m_fMass(1.f)
+	: m_fMass(2.f)
 	, m_fFricCoeff(600.f)
 	, m_vMaxVelocity(Vec2(1000.f, 600.f))
 	, m_bGravity(true)

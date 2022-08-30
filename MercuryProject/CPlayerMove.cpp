@@ -52,6 +52,11 @@ void CPlayerMove::PlayerMove()
 		GetStateMachine()->ChangeState(L"JUMP");
 	}
 
+	if (KEY_HOLD(KEY::RIGHT_ARROW) && KEY_HOLD(KEY::LEFT_ARROW))
+	{
+		GetStateMachine()->ChangeState(L"IDLE");
+	}
+
 	if (KEY_TAP(KEY::LEFT_ARROW))
 	{
 		pPlayer->SetDir(DIR::LEFT);
@@ -67,14 +72,16 @@ void CPlayerMove::PlayerMove()
 
 	if (KEY_HOLD(KEY::LEFT_ARROW))
 	{
+		if (pPlayer->GetDir() == DIR::LEFT)
+			pRigid->SetVelocity(Vec2(0, 0));
 		vPos.x -= 300.f * DeltaTime;
-		pRigid->SetVelocity(Vec2(0, 0));
 	}
 
 	if (KEY_HOLD(KEY::RIGHT_ARROW))
 	{
+		if (pPlayer->GetDir() == DIR::RIGHT)
+			pRigid->SetVelocity(Vec2(0, 0));
 		vPos.x += 300.f * DeltaTime;
-		pRigid->SetVelocity(Vec2(0, 0));
 	}
 	
 

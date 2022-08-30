@@ -43,6 +43,7 @@ void CPlayerIdle::Enter()
 
 void CPlayerIdle::update()
 {
+
 	PlayerMove();
 }
 
@@ -51,12 +52,13 @@ void CPlayerIdle::Exit()
 
 }
 
+
 void CPlayerIdle::PlayerMove()
 {
 	CPlayer* pObj = (CPlayer*)GetStateMachine()->GetObj();
 	CRigidBody* pRigid = pObj->GetRigidBody();
 
-	if (KEY_TAP(KEY::SPACE))
+	if (KEY_TAP(KEY::SPACE) || pRigid->GetVelocity().y != 0)
 	{
 		GetStateMachine()->ChangeState(L"JUMP");
 	}
@@ -64,6 +66,11 @@ void CPlayerIdle::PlayerMove()
 	if (KEY_TAP(KEY::LEFT_ARROW) || KEY_TAP(KEY::RIGHT_ARROW))
 	{
 		pRigid->SetVelocity(Vec2(0.f, pRigid->GetVelocity().y));
+	}
+
+	if (KEY_HOLD(KEY::RIGHT_ARROW) && KEY_HOLD(KEY::LEFT_ARROW))
+	{
+		return;
 	}
 
 	if (KEY_HOLD(KEY::LEFT_ARROW))
@@ -79,5 +86,4 @@ void CPlayerIdle::PlayerMove()
 		GetStateMachine()->ChangeState(L"MOVE");
 		return;
 	}
-
 }

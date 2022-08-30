@@ -34,7 +34,7 @@ void CPlayerJump::Enter()
 
 	pRigid->SetGround(false);
 	
-	pRigid->AddVelocity(Vec2(0.f, -400.f));
+	pRigid->AddVelocity(Vec2(0.f, -500.f));
 }
 
 void CPlayerJump::update()
@@ -45,7 +45,6 @@ void CPlayerJump::update()
 	if (pRigid->IsGround() == true)
 	{
 		GetStateMachine()->ChangeState(L"IDLE");
-		pRigid->SetVelocity(Vec2(0.f, 0.f));
 		return;
 	}
 	else
@@ -64,10 +63,17 @@ void CPlayerJump::update()
 
 		if (KEY_TAP(KEY::SPACE) && !m_bDoubleJump)
 		{
-			if(pPlayer->GetDir() == DIR::LEFT)
-				pRigid->AddVelocity(Vec2(-500.f, -50.f));          
+			if (pPlayer->GetDir() == DIR::LEFT)
+			{
+				pRigid->SetVelocity(Vec2(0, 0));
+				pRigid->AddVelocity(Vec2(-400.f, -200.f));
+			}
 			else
-				pRigid->AddVelocity(Vec2(500.f, -50.f));
+			{
+				pRigid->SetVelocity(Vec2(0, 0));
+				pRigid->AddVelocity(Vec2(400.f, -200.f));
+			}
+				
 
 			m_eEnterDir = pPlayer->GetDir();
 			m_bDoubleJump = true;

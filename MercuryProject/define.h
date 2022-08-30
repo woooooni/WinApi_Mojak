@@ -92,9 +92,11 @@ enum class PLAYER_STATE
 {
 	IDLE,
 	MOVE,
+	PRONE,
 	ATTACK,
 	JUMP,
-	JUMP_DOWN,
+	LADDER,
+	ROPE,
 	END
 };
 

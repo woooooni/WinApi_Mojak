@@ -10,7 +10,8 @@ class CPlayer :
 {
 private:
     //Private Mem
-    CRole* m_pRole;
+    CRole*  m_pRole;
+    bool    m_bMoveAble;
 
 private:
     //Private Func

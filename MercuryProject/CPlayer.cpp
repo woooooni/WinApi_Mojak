@@ -18,7 +18,9 @@
 #include "CSkillEffect.h"
 #include "CBlackJackEffect.h"
 #include "CSkill_BlackJack.h"
+#include "CPlayerDamaged.h"
 CPlayer::CPlayer()
+	: m_bMoveAble(true)
 {
 	
 }
@@ -39,8 +41,8 @@ void CPlayer::init()
 
 	CreateCollider();
 	Vec2 vScale = GetScale();
-	GetCollider()->SetOffsetPos(Vec2(0.f, -15.f));
-	GetCollider()->SetScale(Vec2(vScale.x - 50.f, vScale.y - 5.f));
+	GetCollider()->SetOffsetPos(Vec2(0.f, -7.f));
+	GetCollider()->SetScale(Vec2(vScale.x - 50.f, vScale.y - 20.f));
 
 	CreateAnimator();
 	//Texture·Îµù
@@ -122,6 +124,7 @@ void CPlayer::init()
 	GetStateMachine()->AddState(new CPlayerIdle(L"IDLE"));
 	GetStateMachine()->AddState(new CPlayerMove(L"MOVE"));
 	GetStateMachine()->AddState(new CPlayerJump(L"JUMP"));
+	GetStateMachine()->AddState(new CPlayerDamaged(L"DAMAGED"));
 
 	GetStateMachine()->ChangeState(L"JUMP");
 

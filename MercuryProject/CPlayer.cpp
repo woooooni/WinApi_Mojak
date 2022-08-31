@@ -19,6 +19,8 @@
 #include "CBlackJackEffect.h"
 #include "CSkill_BlackJack.h"
 #include "CPlayerDamaged.h"
+#include "CPlayerProne.h"
+
 CPlayer::CPlayer()
 	: m_bMoveAble(true)
 {
@@ -35,6 +37,7 @@ void CPlayer::init()
 {
 	//m_pRole = new CRoleAssasin;
 	//m_pRole->SetOwner(this);
+	SetScale(Vec2(100.f, 100.f));
 
 	CreateRigidBody();
 	GetRigidBody()->SetGravity(true);
@@ -49,6 +52,7 @@ void CPlayer::init()
 	CTexture* pTexCharacterIdle = CResMgr::GetInst()->LoadTexture(L"phantom_idle", L"texture\\character\\idle\\spritesheet.bmp");
 	CTexture* pTexCharacterMove = CResMgr::GetInst()->LoadTexture(L"phantom_move", L"texture\\character\\move\\spritesheet.bmp");
 	CTexture* pTexCharacterJump = CResMgr::GetInst()->LoadTexture(L"phantom_jump", L"texture\\character\\jump\\spritesheet.bmp");
+	CTexture* pTexCharacterProne = CResMgr::GetInst()->LoadTexture(L"phantom_prone", L"texture\\character\\prone\\spritesheet.bmp");
 	CTexture* pTexCharacterAlert = CResMgr::GetInst()->LoadTexture(L"phantom_alert", L"texture\\character\\alert\\spritesheet.bmp");
 	CTexture* pTexCharacterDead = CResMgr::GetInst()->LoadTexture(L"phantom_dead", L"texture\\character\\dead\\spritesheet.bmp");
 	CTexture* pTexCharacterBlackJack = CResMgr::GetInst()->LoadTexture(L"phantom_blackjack", L"texture\\character\\blackjack\\spritesheet.bmp");
@@ -118,18 +122,65 @@ void CPlayer::init()
 		, .2f
 		, 1);
 
+	GetAnimator()->CreateAnimation(
+		L"PRONE_LEFT"
+		, pTexCharacterProne
+		, Vec2(0.f, 0.f)
+		, Vec2((float)pTexCharacterProne->Width()
+			, (float)pTexCharacterProne->Height() / 2)
+		, Vec2(0.f, 0.f)
+		, .2f
+		, 1);
+
+	GetAnimator()->CreateAnimation(
+		L"PRONE_RIGHT"
+		, pTexCharacterProne
+		, Vec2(0.f, (float)pTexCharacterProne->Height() / 2)
+		, Vec2((float)pTexCharacterProne->Width()
+			, (float)pTexCharacterProne->Height() / 2)
+		, Vec2(0.f, 0.f)
+		, .2f
+		, 1);
+
+	GetAnimator()->CreateAnimation(
+		L"BLACKJACK_LEFT"
+		, pTexCharacterBlackJack
+		, Vec2(0.f, 0.f)
+		, Vec2((float)pTexCharacterBlackJack->Width() / 10
+			, (float)pTexCharacterBlackJack->Height() / 2)
+		, Vec2((float)pTexCharacterBlackJack->Width() / 10, 0.f)
+		, .1f
+		, 10
+	);
+
+	GetAnimator()->CreateAnimation(
+		L"BLACKJACK_RIGHT"
+		, pTexCharacterBlackJack
+		, Vec2(0.f, (float)pTexCharacterBlackJack->Height() / 2)
+		, Vec2((float)pTexCharacterBlackJack->Width() / 10
+			, (float)pTexCharacterBlackJack->Height() / 2)
+		, Vec2((float)pTexCharacterBlackJack->Width() / 10, 0.f)
+		, .1f
+		, 10
+	);
+
+	GetAnimator()->FindAnimation(L"PRONE_LEFT")->SetOffset(Vec2(-10, 15));
+	GetAnimator()->FindAnimation(L"PRONE_RIGHT")->SetOffset(Vec2(10, 15));
+
 	//GetAnimator()->FindAnimation(L"IDLE_RIGHT")->AddEvent(this, (OBJECT_MEMFUNC)&CPlayer::CreateProjectile, 1);
 
 	CreateStateMachine();
 	GetStateMachine()->AddState(new CPlayerIdle(L"IDLE"));
 	GetStateMachine()->AddState(new CPlayerMove(L"MOVE"));
 	GetStateMachine()->AddState(new CPlayerJump(L"JUMP"));
+	GetStateMachine()->AddState(new CPlayerProne(L"PRONE"));
 	GetStateMachine()->AddState(new CPlayerDamaged(L"DAMAGED"));
 
 	GetStateMachine()->ChangeState(L"JUMP");
 
 	m_pRole = new CRole(ROLE_TYPE::PHANTOM);
 	m_pRole->SetOwner(this);
+
 	CSkill_BlackJack* blackjack = new CSkill_BlackJack;
 	blackjack->SetOwner(this);
 	m_pRole->AddSkill(blackjack);

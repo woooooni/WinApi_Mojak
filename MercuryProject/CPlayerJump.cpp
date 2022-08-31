@@ -30,11 +30,13 @@ void CPlayerJump::Enter()
 		strName = GetStateName() + L"_LEFT";
 	else
 		strName = GetStateName() + L"_RIGHT";
-	GetStateMachine()->GetAnimator()->Play(strName, true);
+	//GetStateMachine()->GetAnimator()->Play(strName, true);
+	
+	
 
 	pRigid->SetGround(false);
 	
-	pRigid->AddVelocity(Vec2(0.f, -500.f));
+	pRigid->AddVelocity(Vec2(0.f, -400.f));
 }
 
 void CPlayerJump::update()

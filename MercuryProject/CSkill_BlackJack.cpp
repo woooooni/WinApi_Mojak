@@ -7,6 +7,9 @@
 #include "CBlackJackEffect.h"
 #include "CBlackJackObj.h"
 #include "CTimeMgr.h"
+#include "CStateMachine.h"
+#include "CSceneMgr.h"
+#include "CScene.h"
 
 
 CSkill_BlackJack::CSkill_BlackJack()
@@ -29,7 +32,6 @@ void CSkill_BlackJack::Use()
 	effect->GetAnimator()->FindAnimation(L"BLACKJACK_EFFECT_LEFT")->AddEvent(this, (OBJECT_MEMFUNC)&CSkill_BlackJack::GenerateBlackJackObj, 8);
 	effect->GetAnimator()->FindAnimation(L"BLACKJACK_EFFECT_RIGHT")->AddEvent(this, (OBJECT_MEMFUNC)&CSkill_BlackJack::GenerateBlackJackObj, 8);
 	AddObjectEvt(effect, GROUP_TYPE::EFFECT);
-	
 }
 
 void CSkill_BlackJack::GenerateBlackJackObj()
@@ -38,7 +40,8 @@ void CSkill_BlackJack::GenerateBlackJackObj()
 	{
 		CBlackJackObj* obj = new CBlackJackObj(5.f);
 		Vec2 vObjPos = GetObj()->GetPos();
-		obj->SetPos(vObjPos + Vec2((float)-150 + (150 * i), -200.f));
+		obj->SetPos(vObjPos + Vec2((float) - 150 + (150 * i), -200.f));
+		obj->SetTarget(GetObj());
 		AddObjectEvt(obj, GROUP_TYPE::PLAYER_PROJECTILE);
 	}
 }

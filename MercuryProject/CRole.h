@@ -12,7 +12,7 @@ public:
 	vector<CSkill*>			m_vecSkill;
 
 public:
-	void update();
+	virtual void update();
 
 public:
 	void SetOwner(CObject* _owner) { m_pOwner = _owner; }
@@ -23,6 +23,9 @@ public:
 	void AddSkill(CSkill* _pSkill) { m_vecSkill.push_back(_pSkill); }
 	void UseSkill(int _iIdx) 
 	{ 
+		/*CStateMachine* pMachine = m_pOwner->GetStateMachine();
+		pMachine->ChangeState(L"ATTACK");*/
+
 		CSkill* skill = m_vecSkill.at(_iIdx);
 		assert(skill);
 

@@ -86,4 +86,10 @@ void CPlayerIdle::PlayerMove()
 		GetStateMachine()->ChangeState(L"MOVE");
 		return;
 	}
+
+	if (KEY_HOLD(KEY::DOWN_ARROW))
+	{
+		GetStateMachine()->ChangeState(L"PRONE");
+		return;
+	}
 }

@@ -51,6 +51,7 @@ private:
 	tAnimFrame& GetFrame(int _iIdx) { return m_vecFrame[_iIdx]; }
 	UINT GetMaxFrame() { return (UINT)m_vecFrame.size(); }
 
+	
 public:
 	void Create(CTexture* _pTex, Vec2 _vLT, Vec2 _vSliceSize, Vec2 _vStep, float _fDuration, UINT _iFrameCount);
 	
@@ -58,6 +59,14 @@ public:
 	void AddEvent(CObject* _pObj, OBJECT_MEMFUNC _pCallBack, int _idx);
 	//void Save(const wstring& _strRelativePath);
 	//void Load(const wstring& _strRelativePath);
+
+	void SetOffset(Vec2 _vOffset)
+	{
+		for (UINT i = 0; i < m_vecFrame.size(); i++)
+		{
+			m_vecFrame[i].vOffset = _vOffset;
+		}
+	}
 
 public:
 	void update();

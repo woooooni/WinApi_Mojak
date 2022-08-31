@@ -185,6 +185,7 @@
     <ClInclude Include="CPlayerIdle.h" />
     <ClInclude Include="CPlayerJump.h" />
     <ClInclude Include="CPlayerMove.h" />
+    <ClInclude Include="CPlayerProne.h" />
     <ClInclude Include="CProjectile.h" />
     <ClInclude Include="CRole.h" />
     <ClInclude Include="CGround.h" />
@@ -239,6 +240,7 @@
     <ClCompile Include="CPlayerIdle.cpp" />
     <ClCompile Include="CPlayerJump.cpp" />
     <ClCompile Include="CPlayerMove.cpp" />
+    <ClCompile Include="CPlayerProne.cpp" />
     <ClCompile Include="CProjectile.cpp" />
     <ClCompile Include="CRole.cpp" />
     <ClCompile Include="CGround.cpp" />

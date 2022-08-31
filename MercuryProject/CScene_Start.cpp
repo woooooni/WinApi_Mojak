@@ -65,7 +65,6 @@ void CScene_Start::Enter()
 	//Player
 	CPlayer* pPlayer = new CPlayer;
 	pPlayer->SetPos(Vec2(640.f, 384.f));
-	pPlayer->SetScale(Vec2(100.f, 100.f));
 	RegisterPlayer(pPlayer);
 	AddObjectEvt(pPlayer, GROUP_TYPE::PLAYER);
 	

@@ -5,8 +5,10 @@ class CBlackJackObj :
 {
 
 private:
+    int         m_iCount;
     float       m_fAccTime;
     float       m_fDeleteTime;
+    float       m_fSpeed;
     CObject*    m_pTarget;
 
 
@@ -19,6 +21,11 @@ public:
     virtual void update();
     virtual void render(HDC _dc);
     CLONE(CBlackJackObj);
+
+public:
+    virtual void OnCollisionEnter();
+    virtual void OnCollision();
+    virtual void OnCollisionExit();
 
 public:
     CBlackJackObj(float _fDeleteTime);

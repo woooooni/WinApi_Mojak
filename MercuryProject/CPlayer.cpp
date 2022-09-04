@@ -250,33 +250,33 @@ void CPlayer::render(HDC _dc)
 
 void CPlayer::OnCollisionEnter(CCollider* _pOther)
 {
-	CObject* pOtherObj = _pOther->GetObj();
+	/*CObject* pOtherObj = _pOther->GetObj();
 	if (pOtherObj->GetType() == GROUP_TYPE::GROUND)
 	{
 		
-	}
+	}*/
 }
 
 void CPlayer::OnCollision(CCollider* _pOther)
 {
-	CObject* pOtherObj = _pOther->GetObj();
+	/*CObject* pOtherObj = _pOther->GetObj();
 	if (pOtherObj->GetType() == GROUP_TYPE::GROUND)
 	{
 
-	}
+	}*/
 }
 
 
 
 void CPlayer::OnCollisionExit(CCollider* _pOther)
 {
-	CObject* pOtherObj = _pOther->GetObj();
+	/*CObject* pOtherObj = _pOther->GetObj();
 	if (pOtherObj->GetType() == GROUP_TYPE::GROUND)
 	{
 		CRigidBody* rigid = GetRigidBody();
 		if (rigid == nullptr)
 			return;
-	}
+	}*/
 }
 
 

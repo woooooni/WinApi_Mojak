@@ -31,11 +31,7 @@ void CPlayerJump::Enter()
 	else
 		strName = GetStateName() + L"_RIGHT";
 	//GetStateMachine()->GetAnimator()->Play(strName, true);
-	
-	
-
 	pRigid->SetGround(false);
-	
 	pRigid->AddVelocity(Vec2(0.f, -400.f));
 }
 
@@ -47,6 +43,7 @@ void CPlayerJump::update()
 	if (pRigid->IsGround() == true)
 	{
 		GetStateMachine()->ChangeState(L"IDLE");
+		m_bDoubleJump = false;
 		return;
 	}
 	else
@@ -62,6 +59,7 @@ void CPlayerJump::update()
 			pPlayer->SetDir(DIR::RIGHT);
 		}
 		pPlayer->SetPos(vPos);
+
 
 		if (KEY_TAP(KEY::SPACE) && !m_bDoubleJump)
 		{
@@ -95,7 +93,7 @@ void CPlayerJump::update()
 
 void CPlayerJump::Exit()
 {
-	m_bDoubleJump = false;
+	
 }
 
 

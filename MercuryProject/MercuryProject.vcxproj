@@ -181,6 +181,7 @@
     <ClInclude Include="CEventMgr.h" />
     <ClInclude Include="CFactory.h" />
     <ClInclude Include="CGameCore.h" />
+    <ClInclude Include="CPlayerAlert.h" />
     <ClInclude Include="CPlayerDamaged.h" />
     <ClInclude Include="CPlayerIdle.h" />
     <ClInclude Include="CPlayerJump.h" />
@@ -216,6 +217,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="func.h" />
     <ClInclude Include="global.h" />
+    <ClInclude Include="memo.h" />
     <ClInclude Include="MercuryProject.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
@@ -236,6 +238,7 @@
     <ClCompile Include="CEventMgr.cpp" />
     <ClCompile Include="CFactory.cpp" />
     <ClCompile Include="CGameCore.cpp" />
+    <ClCompile Include="CPlayerAlert.cpp" />
     <ClCompile Include="CPlayerDamaged.cpp" />
     <ClCompile Include="CPlayerIdle.cpp" />
     <ClCompile Include="CPlayerJump.cpp" />

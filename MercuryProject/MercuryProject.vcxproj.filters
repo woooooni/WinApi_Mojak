@@ -185,6 +185,9 @@
     <Filter Include="Game\08. State\Player\Prone">
       <UniqueIdentifier>{cef750c3-25d7-4a43-829d-956fadd9a0ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\08. State\Player\Alert">
+      <UniqueIdentifier>{ba019784-28de-442c-8ad5-640db7a72a75}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -344,6 +347,12 @@
     <ClInclude Include="CPlayerProne.h">
       <Filter>Game\08. State\Player\Prone</Filter>
     </ClInclude>
+    <ClInclude Include="memo.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerAlert.h">
+      <Filter>Game\08. State\Player\Alert</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MercuryProject.rc">
@@ -496,6 +505,9 @@
     </ClCompile>
     <ClCompile Include="CPlayerProne.cpp">
       <Filter>Game\08. State\Player\Prone</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerAlert.cpp">
+      <Filter>Game\08. State\Player\Alert</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

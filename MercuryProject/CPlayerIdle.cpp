@@ -58,7 +58,7 @@ void CPlayerIdle::PlayerMove()
 	CPlayer* pObj = (CPlayer*)GetStateMachine()->GetObj();
 	CRigidBody* pRigid = pObj->GetRigidBody();
 
-	if (KEY_TAP(KEY::SPACE) || pRigid->GetVelocity().y != 0)
+	if (KEY_TAP(KEY::SPACE))
 	{
 		GetStateMachine()->ChangeState(L"JUMP");
 	}

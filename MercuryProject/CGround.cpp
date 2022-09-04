@@ -22,7 +22,7 @@ void CGround::init()
 	CreateCollider();
 	Vec2 vScale = GetScale();
 	GetCollider()->SetOffsetPos(Vec2(0.f, 0.f));
-	GetCollider()->SetScale(Vec2(vScale.x, vScale.y));
+	GetCollider()->SetScale(Vec2(vScale.x + 1, vScale.y + 1));
 }
 void CGround::update()
 {
@@ -72,7 +72,7 @@ void CGround::OnCollision(CCollider* _pOther)
 	CObject* pOtherObj = _pOther->GetObj();
 	if (pOtherObj->GetType() == GROUP_TYPE::PLAYER)
 	{
-		//CRigidBody* pRigid = pOtherObj->GetRigidBody();
+		CRigidBody* pRigid = pOtherObj->GetRigidBody();
 
 		//Vec2 vObjPos = _pOther->GetFinalPos();
 		//Vec2 vObjScale = _pOther->GetScale();
@@ -92,6 +92,7 @@ void CGround::OnCollision(CCollider* _pOther)
 		//pOtherObj->SetPos(vObjPos);
 		//pRigid->SetGround(true);
 		//pRigid->SetFricCoeff(1500.f);
+		pRigid->SetGround(true);
 	}
 }
 
@@ -101,5 +102,6 @@ void CGround::OnCollisionExit(CCollider* _pOther)
 	if (pOtherObj->GetType() == GROUP_TYPE::PLAYER)
 	{
 		CRigidBody* pRigid = pOtherObj->GetRigidBody();
+		pRigid->SetGround(false);
 	}
 }

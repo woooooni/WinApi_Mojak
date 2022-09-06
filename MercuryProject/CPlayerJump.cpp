@@ -9,8 +9,8 @@
 #include "CRigidBody.h"
 #include "CPlayer.h"
 
-CPlayerJump::CPlayerJump(wstring _strName)
-	: CState(_strName)
+CPlayerJump::CPlayerJump()
+	: CState((int)PLAYER_STATE::JUMP)
 	, m_bDoubleJump(false)
 {
 }
@@ -27,9 +27,9 @@ void CPlayerJump::Enter()
 
 	wstring strName;
 	if (pPlayer->GetDir() == DIR::LEFT)
-		strName = GetStateName() + L"_LEFT";
+		strName =L"JUMP_LEFT";
 	else
-		strName = GetStateName() + L"_RIGHT";
+		strName = L"JUMP_RIGHT";
 	//GetStateMachine()->GetAnimator()->Play(strName, true);
 	pRigid->SetGround(false);
 	pRigid->AddVelocity(Vec2(0.f, -400.f));
@@ -42,7 +42,7 @@ void CPlayerJump::update()
 
 	if (pRigid->IsGround() == true)
 	{
-		GetStateMachine()->ChangeState(L"IDLE");
+		GetStateMachine()->ChangeState((UINT)PLAYER_STATE::IDLE);
 		m_bDoubleJump = false;
 		return;
 	}

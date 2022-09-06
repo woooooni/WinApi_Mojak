@@ -7,8 +7,8 @@
 #include "CCollider.h"
 #include "CRigidBody.h"
 
-CPlayerProne::CPlayerProne(wstring _strName)
-	:CState(_strName)
+CPlayerProne::CPlayerProne()
+	:CState((int)PLAYER_STATE::PRONE)
 {
 
 }
@@ -20,7 +20,7 @@ CPlayerProne::~CPlayerProne()
 
 void CPlayerProne::Enter()
 {
-	wstring _strName = GetStateName();
+	wstring _strName;
 	CObject* _pObj = GetStateMachine()->GetObj();
 	CCollider* _pCollider = _pObj->GetCollider();
 	CRigidBody* _pRigid = _pObj->GetRigidBody();
@@ -28,9 +28,9 @@ void CPlayerProne::Enter()
 
 
 	if (_pObj->GetDir() == DIR::LEFT)
-		_strName += L"_LEFT";
+		_strName += L"PRONE_LEFT";
 	else
-		_strName += L"_RIGHT";
+		_strName += L"PRONE_RIGHT";
 	GetStateMachine()->GetAnimator()->Play(_strName, true);
 
 }
@@ -49,5 +49,5 @@ void CPlayerProne::Exit()
 void CPlayerProne::PlayerMove()
 {
 	if (KEY_AWAY(KEY::DOWN_ARROW))
-		GetStateMachine()->ChangeState(L"IDLE");
+		GetStateMachine()->ChangeState((UINT)PLAYER_STATE::IDLE);
 }

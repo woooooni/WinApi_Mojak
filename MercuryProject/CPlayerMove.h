@@ -12,7 +12,7 @@ public:
     virtual void update();
     virtual void Exit();
 public:
-    CPlayerMove(wstring _strName);
+    CPlayerMove();
     ~CPlayerMove();
 };
 

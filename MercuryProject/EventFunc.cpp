@@ -32,12 +32,12 @@ void ChangeSceneEvt(SCENE_TYPE _eNext)
 	CEventMgr::GetInst()->AddEvent(event);
 }
 
-void ChangeStateEvt(CObject* _obj, const wstring _strNextState)
+void ChangeStateEvt(CObject* _obj, UINT _iStateId)
 {
 	tEvent event = {};
 	event.eEven = EVENT_TYPE::STATE_CHANGE;
 	event.wParam = (DWORD_PTR)_obj;
-	event.strParam = _strNextState;
+	event.lParam = (DWORD_PTR)_iStateId;
 
 	CEventMgr::GetInst()->AddEvent(event);
 }

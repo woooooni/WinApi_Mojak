@@ -170,13 +170,13 @@ void CPlayer::init()
 	//GetAnimator()->FindAnimation(L"IDLE_RIGHT")->AddEvent(this, (OBJECT_MEMFUNC)&CPlayer::CreateProjectile, 1);
 
 	CreateStateMachine();
-	GetStateMachine()->AddState(new CPlayerIdle(L"IDLE"));
-	GetStateMachine()->AddState(new CPlayerMove(L"MOVE"));
-	GetStateMachine()->AddState(new CPlayerJump(L"JUMP"));
-	GetStateMachine()->AddState(new CPlayerProne(L"PRONE"));
-	GetStateMachine()->AddState(new CPlayerDamaged(L"DAMAGED"));
+	GetStateMachine()->AddState(new CPlayerIdle());
+	GetStateMachine()->AddState(new CPlayerMove());
+	GetStateMachine()->AddState(new CPlayerJump());
+	GetStateMachine()->AddState(new CPlayerProne());
+	GetStateMachine()->AddState(new CPlayerDamaged());
 
-	GetStateMachine()->ChangeState(L"JUMP");
+	GetStateMachine()->ChangeState((UINT)PLAYER_STATE::JUMP);
 
 	m_pRole = new CRole(ROLE_TYPE::PHANTOM);
 	m_pRole->SetOwner(this);

@@ -13,7 +13,7 @@ private:
     void PlayerMove();
 
 public:
-    CPlayerIdle(wstring _strName);
+    CPlayerIdle();
     ~CPlayerIdle();
 
 };

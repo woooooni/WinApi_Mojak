@@ -16,7 +16,7 @@ public:
     virtual void Exit();
 
 public:
-    CPlayerProne(wstring _strName);
+    CPlayerProne();
     ~CPlayerProne();
 };
 

@@ -5,7 +5,6 @@ struct tEvent
 	EVENT_TYPE	eEven;
 	DWORD_PTR		lParam;
 	DWORD_PTR		wParam;
-	wstring			strParam;
 };
 
 class CEventMgr

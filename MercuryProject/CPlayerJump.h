@@ -14,7 +14,7 @@ public:
     virtual void Exit();
 
 public:
-    CPlayerJump(wstring _strName);
+    CPlayerJump();
     ~CPlayerJump();
 };
 

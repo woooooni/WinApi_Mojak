@@ -8,8 +8,8 @@
 #include "CTimeMgr.h"
 #include "CPlayer.h"
 
-CPlayerIdle::CPlayerIdle(wstring _strName)
-	: CState(_strName)
+CPlayerIdle::CPlayerIdle()
+	: CState((int)PLAYER_STATE::IDLE)
 {
 
 }
@@ -24,15 +24,15 @@ void CPlayerIdle::Enter()
 	//TODO : LEFT, RIGHT STATE를 두개 만들 필요가 없네..
 	CPlayer* pObj = (CPlayer*)GetStateMachine()->GetObj();
 	CRigidBody* pRigid = pObj->GetRigidBody();
- 	wstring strStateName = GetStateName();
+	wstring strStateName;
 
 	if (pObj->GetDir() == DIR::LEFT)
 	{
-		strStateName += L"_LEFT";
+		strStateName = L"IDLE_LEFT";
 	}
 	else
 	{
-		strStateName += L"_RIGHT";
+		strStateName = L"IDLE_RIGHT";
 	}
 		
 
@@ -60,7 +60,7 @@ void CPlayerIdle::PlayerMove()
 
 	if (KEY_TAP(KEY::SPACE))
 	{
-		GetStateMachine()->ChangeState(L"JUMP");
+		GetStateMachine()->ChangeState((UINT)PLAYER_STATE::JUMP);
 	}
 
 	if (KEY_TAP(KEY::LEFT_ARROW) || KEY_TAP(KEY::RIGHT_ARROW))
@@ -76,20 +76,20 @@ void CPlayerIdle::PlayerMove()
 	if (KEY_HOLD(KEY::LEFT_ARROW))
 	{
 		pObj->SetDir(DIR::LEFT);
-		GetStateMachine()->ChangeState(L"MOVE");
+		GetStateMachine()->ChangeState((UINT)PLAYER_STATE::MOVE);
 		return;
 	}
 
 	if (KEY_HOLD(KEY::RIGHT_ARROW))
 	{
 		pObj->SetDir(DIR::RIGHT);
-		GetStateMachine()->ChangeState(L"MOVE");
+		GetStateMachine()->ChangeState((UINT)PLAYER_STATE::MOVE);
 		return;
 	}
 
 	if (KEY_HOLD(KEY::DOWN_ARROW))
 	{
-		GetStateMachine()->ChangeState(L"PRONE");
+		GetStateMachine()->ChangeState((UINT)PLAYER_STATE::PRONE);
 		return;
 	}
 }

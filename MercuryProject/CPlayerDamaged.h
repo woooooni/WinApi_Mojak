@@ -9,7 +9,7 @@ public:
 	virtual void Exit();
 
 public:
-	CPlayerDamaged(wstring _strName);
+	CPlayerDamaged();
 	~CPlayerDamaged();
 };
 

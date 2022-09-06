@@ -79,13 +79,13 @@ void CEventMgr::Excute(const tEvent& _eve)
 	case EVENT_TYPE::STATE_CHANGE:
 	{
 		// wParam : Object Address
-		// lParam : wstring.c_str()
+		// lParam : (int)Enum class
 
 		CObject* pObj = (CObject*)_eve.wParam;
 		CStateMachine* pMachine = pObj->GetStateMachine();
 		assert(pMachine);
 
-		pMachine->SetState(_eve.strParam);
+		pMachine->SetState((int)_eve.lParam);
 	}
 	}
 	//case EVENT_TYPE::CHANGE_AI_STATE:

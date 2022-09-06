@@ -3,14 +3,15 @@
 #include "CPlayerDamaged.h"
 
 
-CPlayerDamaged::CPlayerDamaged(wstring _strName)
-	:CState(_strName)
+CPlayerDamaged::CPlayerDamaged()
+	:CState((int)PLAYER_STATE::DAMAGED)
 {
 
 }
 
 CPlayerDamaged::~CPlayerDamaged()
 {
+
 }
 
 void CPlayerDamaged::Enter()

@@ -97,6 +97,7 @@ enum class PLAYER_STATE
 	JUMP,
 	LADDER,
 	ROPE,
+	DAMAGED,
 	END
 };
 

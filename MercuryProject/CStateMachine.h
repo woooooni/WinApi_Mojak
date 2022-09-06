@@ -8,14 +8,14 @@ class CStateMachine
 private:
 	CState*					m_pPrevState;
 	CState*					m_pCurState;
-	map<wstring, CState*>	m_mapStates;
+	map<int, CState*>		m_mapStates;
 	CAnimator*				m_pAnimator;
 
 public:
 	CState* GetCurrState() { return m_pCurState; }
-	CState* GetState(const wstring _strName) 
+	CState* GetState(const int _iEnum) 
 	{ 
-		map<wstring, CState*>::iterator iter = m_mapStates.find(_strName);
+		map<int, CState*>::iterator iter = m_mapStates.find(_iEnum);
 		if (iter == m_mapStates.end())
 			return nullptr;
 
@@ -23,30 +23,30 @@ public:
 	}
 	void AddState(CState* _state) 
 	{ 
-		wstring name = _state->GetStateName();
-		CState* pState = GetState(_state->GetStateName());
+		CState* pState = GetState(_state->m_iEnum);
 		assert(!pState);
+
+		_state->m_pMachine = this;
 
 		if (m_mapStates.size() == 0)
 			m_pCurState = _state;
 
-		m_mapStates.insert(make_pair(_state->GetStateName(), _state));
-		_state->m_pMachine = this;
+		m_mapStates.insert(make_pair(_state->m_iEnum, _state));
 	}
 
-	void ChangeState(const wstring _strName) 
+	void ChangeState(const UINT _iStateId) 
 	{ 
 		CObject* pObj = GetObj();
-		ChangeStateEvt(pObj, _strName);
+		ChangeStateEvt(pObj, _iStateId);
 	}
 
 	CAnimator* GetAnimator() { return m_pAnimator; }
 
 private:
-	void SetState(wstring _strName) 
+	void SetState(int _iEnum) 
 	{
 		
-		map<wstring, CState*>::iterator iter = m_mapStates.find(_strName);
+		map<int, CState*>::iterator iter = m_mapStates.find(_iEnum);
 		if (iter == m_mapStates.end())
 			assert(nullptr);
 

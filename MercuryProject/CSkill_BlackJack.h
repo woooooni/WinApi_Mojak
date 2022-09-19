@@ -6,9 +6,7 @@ class CSkill_BlackJack :
     public CSkill
 {
 
-
-public:
-    virtual void init() { };
+    
 
 public:
     virtual void Use();

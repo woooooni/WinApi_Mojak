@@ -6,6 +6,7 @@
 #include "CTimeMgr.h"
 #include "CResMgr.h"
 #include "CCollider.h"
+#include "CRigidBody.h"
 
 CBlackJackObj::CBlackJackObj(float _fDeleteTime)
 	: m_iCount(3)
@@ -28,7 +29,9 @@ CBlackJackObj::CBlackJackObj(float _fDeleteTime)
 
 	CreateCollider();
 	GetCollider()->SetScale(GetScale());
-	
+
+	CreateRigidBody();
+	GetRigidBody()->SetGravity(false);
 }
 
 CBlackJackObj::~CBlackJackObj()
@@ -54,19 +57,19 @@ void CBlackJackObj::update()
 	}
 		
 
-	if (m_pTarget != nullptr)
-	{
-		Vec2 vPos = GetPos();
-		Vec2 vTargetPos = m_pTarget->GetPos();
+	//if (m_pTarget != nullptr)
+	//{
+	//	Vec2 vPos = GetPos();
+	//	Vec2 vTargetPos = m_pTarget->GetPos();
 
-		float vDist = sqrt(((vPos.x - vTargetPos.x) * (vPos.x - vTargetPos.x)) + ((vPos.y - vTargetPos.y) * (vPos.y - vTargetPos.y)));
-		Vec2 vDir = (vTargetPos - vPos) * m_fSpeed * DeltaTime;
-		vDir.Normalize();
+	//	float vDist = sqrt(((vPos.x - vTargetPos.x) * (vPos.x - vTargetPos.x)) + ((vPos.y - vTargetPos.y) * (vPos.y - vTargetPos.y)));
+	//	Vec2 vDir = (vTargetPos - vPos) * m_fSpeed * DeltaTime;
+	//	vDir.Normalize();
 
-		Vec2 vNewPos = vPos + vDir * m_fSpeed * DeltaTime;
-		if (vDist > 5.f)
-			SetPos(vNewPos);
-	}
+	//	Vec2 vNewPos = vPos + vDir * m_fSpeed * DeltaTime;
+	//	if (vDist > 5.f)
+	//		SetPos(vNewPos);
+	//}
 
 	
 }

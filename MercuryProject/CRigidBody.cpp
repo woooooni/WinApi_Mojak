@@ -5,7 +5,7 @@
 CRigidBody::CRigidBody()
 	: m_fMass(2.f)
 	, m_fFricCoeff(600.f)
-	, m_vMaxVelocity(Vec2(1000.f, 600.f))
+	, m_vMaxVelocity(Vec2(1000.f, 1500.f))
 	, m_bGravity(true)
 	, m_bGround(false)
 	, m_vAccelA(Vec2(0, 0))

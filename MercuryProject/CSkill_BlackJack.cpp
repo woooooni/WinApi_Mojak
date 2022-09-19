@@ -28,7 +28,7 @@ void CSkill_BlackJack::Use()
 {
 	m_tSkillInfo.bUseAble = false;
 	CBlackJackEffect* effect = new CBlackJackEffect;
-	effect->SetFollowObj(GetObj());
+	effect->SetFollowObj(GetOwner());
 	effect->GetAnimator()->FindAnimation(L"BLACKJACK_EFFECT_LEFT")->AddEvent(this, (OBJECT_MEMFUNC)&CSkill_BlackJack::GenerateBlackJackObj, 8);
 	effect->GetAnimator()->FindAnimation(L"BLACKJACK_EFFECT_RIGHT")->AddEvent(this, (OBJECT_MEMFUNC)&CSkill_BlackJack::GenerateBlackJackObj, 8);
 	AddObjectEvt(effect, GROUP_TYPE::EFFECT);
@@ -39,9 +39,9 @@ void CSkill_BlackJack::GenerateBlackJackObj()
 	for (int i = 0; i < 3; i++)
 	{
 		CBlackJackObj* obj = new CBlackJackObj(5.f);
-		Vec2 vObjPos = GetObj()->GetPos();
+		Vec2 vObjPos = GetOwner()->GetPos();
 		obj->SetPos(vObjPos + Vec2((float) - 150 + (150 * i), -200.f));
-		obj->SetTarget(GetObj());
+		obj->SetTarget(GetOwner());
 		AddObjectEvt(obj, GROUP_TYPE::PLAYER_PROJECTILE);
 	}
 }

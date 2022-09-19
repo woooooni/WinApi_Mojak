@@ -17,14 +17,16 @@ protected:
     CObject*        m_pOwner;
     SKILL_INFO      m_tSkillInfo;
 
-    float           m_fAccTime;
+    float           m_fAccTime;     // 지난 시간 Temp
 
 public:
     void SetOwner(CObject* _pObj) { m_pOwner = _pObj; }
-    CObject* GetObj() { return m_pOwner; }
+    CObject* GetOwner() { return m_pOwner; }
+    
     SKILL_INFO GetSkillInfo() { return m_tSkillInfo; }
 
 public:
+    virtual void init() {};
     virtual void update();
 
 

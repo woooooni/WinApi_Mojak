@@ -188,6 +188,9 @@
     <Filter Include="Game\08. State\Player\Alert">
       <UniqueIdentifier>{ba019784-28de-442c-8ad5-640db7a72a75}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\04. Object\Skill\Phantom\UltimateDrive\Effect">
+      <UniqueIdentifier>{32c3aa17-a9ab-4990-95b7-6cff40963ff2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -332,9 +335,6 @@
     <ClInclude Include="CProjectile.h">
       <Filter>Game\04. Object\Projectile</Filter>
     </ClInclude>
-    <ClInclude Include="CSkill_BlackJack.h">
-      <Filter>Game\04. Object\Skill\Phantom\BlackJack</Filter>
-    </ClInclude>
     <ClInclude Include="CSkillEffect.h">
       <Filter>Game\04. Object\Effect</Filter>
     </ClInclude>
@@ -352,6 +352,9 @@
     </ClInclude>
     <ClInclude Include="CPlayerAlert.h">
       <Filter>Game\08. State\Player\Alert</Filter>
+    </ClInclude>
+    <ClInclude Include="CSkill_BlackJack.h">
+      <Filter>Game\04. Object\Skill\Phantom\BlackJack</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -491,9 +494,6 @@
     <ClCompile Include="CProjectile.cpp">
       <Filter>Game\04. Object\Projectile</Filter>
     </ClCompile>
-    <ClCompile Include="CSkill_BlackJack.cpp">
-      <Filter>Game\04. Object\Skill\Phantom\BlackJack</Filter>
-    </ClCompile>
     <ClCompile Include="CSkillEffect.cpp">
       <Filter>Game\04. Object\Effect</Filter>
     </ClCompile>
@@ -508,6 +508,9 @@
     </ClCompile>
     <ClCompile Include="CPlayerAlert.cpp">
       <Filter>Game\08. State\Player\Alert</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkill_BlackJack.cpp">
+      <Filter>Game\04. Object\Skill\Phantom\BlackJack</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

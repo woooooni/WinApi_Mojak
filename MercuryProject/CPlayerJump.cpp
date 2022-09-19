@@ -33,6 +33,7 @@ void CPlayerJump::Enter()
 	//GetStateMachine()->GetAnimator()->Play(strName, true);
 	pRigid->SetGround(false);
 	pRigid->AddVelocity(Vec2(0.f, -400.f));
+	
 }
 
 void CPlayerJump::update()
